@@ -55,10 +55,12 @@ func GetLocalCommitStack(cfg *config.Config, gitcmd GitInterface) []Commit {
 		// if not valid - run rebase to add commit ids
 		rewordPath, err := exec.LookPath("spr_reword_helper")
 		check(err)
+
+		var out string
 		rebaseCommand := fmt.Sprintf("rebase %s/%s -i --autosquash --autostash",
 			cfg.Internal.GitHubRemote, cfg.Internal.GitHubBranch)
-		gitcmd.GitWithEditor(rebaseCommand, nil, rewordPath)
-
+		gitcmd.GitWithEditor(rebaseCommand, &out, rewordPath)
+		fmt.Println(out)
 		gitcmd.MustGit(logCommand, &commitLog)
 		commits, valid = parseLocalCommitStack(commitLog)
 		if !valid {

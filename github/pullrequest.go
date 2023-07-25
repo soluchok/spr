@@ -21,6 +21,8 @@ type PullRequest struct {
 
 	MergeStatus PullRequestMergeStatus
 	Merged      bool
+	Queued      []git.Commit
+	InQueue     bool
 }
 
 type checkStatus int

@@ -130,6 +130,8 @@ func (sd *stackediff) UpdatePullRequests(ctx context.Context, reviewers []string
 	}
 	for _, pr := range githubInfo.PullRequests {
 		if _, found := localCommitMap[pr.Commit.CommitID]; !found {
+			fmt.Println(pr.Commit.CommitID, "commit is gone deletindg...")
+			os.Exit(1)
 			sd.github.CommentPullRequest(ctx, pr, "Closing pull request: commit has gone away")
 			sd.github.ClosePullRequest(ctx, pr)
 		} else {
@@ -139,6 +141,9 @@ func (sd *stackediff) UpdatePullRequests(ctx context.Context, reviewers []string
 	githubInfo.PullRequests = validPullRequests
 
 	if commitsReordered(localCommits, githubInfo.PullRequests) {
+		fmt.Println("Reordered!!")
+		os.Exit(1)
+
 		wg := new(sync.WaitGroup)
 		wg.Add(len(githubInfo.PullRequests))
 
@@ -148,6 +153,8 @@ func (sd *stackediff) UpdatePullRequests(ctx context.Context, reviewers []string
 		for i := range githubInfo.PullRequests {
 			go func(i int) {
 				pr := githubInfo.PullRequests[i]
+
+				fmt.Println("UpdatePullRequest [2]")
 				sd.github.UpdatePullRequest(ctx, sd.gitcmd, githubInfo.PullRequests, pr, pr.Commit, nil)
 				wg.Done()
 			}(i)
@@ -172,27 +179,50 @@ func (sd *stackediff) UpdatePullRequests(ctx context.Context, reviewers []string
 	var assignable []github.RepoAssignee
 
 	// iterate through local_commits and update pull_requests
+	var prevCommit *git.Commit
 	for commitIndex, c := range localCommits {
 		if c.WIP {
 			break
 		}
 		prFound := false
+
 		for _, pr := range githubInfo.PullRequests {
-			if c.CommitID == pr.Commit.CommitID {
-				prFound = true
-				var prevCommit *git.Commit
-				if commitIndex > 0 {
-					prevCommit = &localCommits[commitIndex-1]
+			for _, v := range pr.Queued {
+				if v.CommitID == c.CommitID {
+					prFound = true
 				}
+			}
+
+			// if prFound {
+			// 	break
+			// }
+
+			if c.CommitID == pr.Commit.CommitID && pr.Commit.CommitID == pr.Queued[0].CommitID {
+				fmt.Println("")
+				fmt.Println("")
+				fmt.Println(c.CommitID, c.Subject)
+				fmt.Println(pr.Commit.CommitID, pr.Commit.Subject)
+				fmt.Println("update", pr.Commit, pr.InQueue)
+
 				updateQueue = append(updateQueue, prUpdate{pr, c, prevCommit})
 				pr.Commit = c
 				if len(reviewers) != 0 {
 					fmt.Fprintf(sd.output, "warning: not updating reviewers for PR #%d\n", pr.Number)
 				}
+
+				prevCommit = &localCommits[commitIndex]
 				break
 			}
+
+			if prFound {
+				prevCommit = &localCommits[commitIndex]
+			}
 		}
+
 		if !prFound {
+
+			fmt.Println("not found", c.CommitID, c.Subject)
+			// os.Exit(1)
 			// if pull request is not found for this commit_id it means the commit
 			//  is new and we need to create a new pull request
 			var prevCommit *git.Commit
@@ -224,6 +254,7 @@ func (sd *stackediff) UpdatePullRequests(ctx context.Context, reviewers []string
 	for i := range updateQueue {
 		go func(i int) {
 			pr := updateQueue[i]
+			fmt.Println("UpdatePullRequest [1]")
 			sd.github.UpdatePullRequest(ctx, sd.gitcmd, sortedPullRequests, pr.pr, pr.commit, pr.prevCommit)
 			wg.Done()
 		}(i)
@@ -295,6 +326,8 @@ func (sd *stackediff) MergePullRequests(ctx context.Context, count *uint) {
 	prToMerge := githubInfo.PullRequests[prIndex]
 
 	// Update the base of the merging pr to target branch
+
+	fmt.Println("UpdatePullRequest [3]")
 	sd.github.UpdatePullRequest(ctx, sd.gitcmd, githubInfo.PullRequests, prToMerge, prToMerge.Commit, nil)
 	sd.profiletimer.Step("MergePullRequests::update pr base")
 
@@ -437,8 +470,19 @@ func (sd *stackediff) ProfilingSummary() {
 }
 
 func commitsReordered(localCommits []git.Commit, pullRequests []*github.PullRequest) bool {
-	for i := 0; i < len(pullRequests); i++ {
-		if localCommits[i].CommitID != pullRequests[i].Commit.CommitID {
+	var commits []git.Commit
+	for _, v := range pullRequests {
+		for i := range v.Queued {
+			commits = append(commits, v.Queued[i])
+		}
+	}
+
+	for i := 0; i < len(commits); i++ {
+		fmt.Println("commint", i, localCommits[i].CommitID, commits[i].CommitID)
+
+		if localCommits[i].CommitID != commits[i].CommitID {
+			fmt.Println(localCommits[i].CommitID, commits[i].CommitID)
+
 			return true
 		}
 	}
@@ -505,6 +549,12 @@ func (sd *stackediff) syncCommitStackToGitHub(ctx context.Context,
 
 	commitUpdated := func(c git.Commit, info *github.GitHubInfo) bool {
 		for _, pr := range info.PullRequests {
+			for _, v := range pr.Queued {
+				if v.CommitID == c.CommitID && pr.InQueue {
+					return false
+				}
+			}
+
 			if pr.Commit.CommitID == c.CommitID {
 				return pr.Commit.CommitHash != c.CommitHash
 			}
@@ -527,6 +577,7 @@ func (sd *stackediff) syncCommitStackToGitHub(ctx context.Context,
 		branchName := git.BranchNameFromCommit(sd.config, commit)
 		refNames = append(refNames,
 			commit.CommitHash+":refs/heads/"+branchName)
+		// fmt.Println("to update:", commit)
 	}
 	if len(updatedCommits) > 0 {
 		pushCommand := fmt.Sprintf("push --force --atomic %s ", sd.config.Internal.GitHubRemote)

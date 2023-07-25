@@ -5,8 +5,8 @@ package genclient
 type ActorType string
 
 const (
-	ActorType_TEAM ActorType = "TEAM"
 	ActorType_USER ActorType = "USER"
+	ActorType_TEAM ActorType = "TEAM"
 )
 
 type AuditLogOrderField string
@@ -27,14 +27,14 @@ type CheckConclusionState string
 
 const (
 	CheckConclusionState_ACTION_REQUIRED CheckConclusionState = "ACTION_REQUIRED"
+	CheckConclusionState_TIMED_OUT       CheckConclusionState = "TIMED_OUT"
 	CheckConclusionState_CANCELLED       CheckConclusionState = "CANCELLED"
 	CheckConclusionState_FAILURE         CheckConclusionState = "FAILURE"
+	CheckConclusionState_SUCCESS         CheckConclusionState = "SUCCESS"
 	CheckConclusionState_NEUTRAL         CheckConclusionState = "NEUTRAL"
 	CheckConclusionState_SKIPPED         CheckConclusionState = "SKIPPED"
-	CheckConclusionState_STALE           CheckConclusionState = "STALE"
 	CheckConclusionState_STARTUP_FAILURE CheckConclusionState = "STARTUP_FAILURE"
-	CheckConclusionState_SUCCESS         CheckConclusionState = "SUCCESS"
-	CheckConclusionState_TIMED_OUT       CheckConclusionState = "TIMED_OUT"
+	CheckConclusionState_STALE           CheckConclusionState = "STALE"
 )
 
 type CheckRunState string
@@ -66,95 +66,96 @@ const (
 type CheckStatusState string
 
 const (
-	CheckStatusState_COMPLETED   CheckStatusState = "COMPLETED"
-	CheckStatusState_IN_PROGRESS CheckStatusState = "IN_PROGRESS"
-	CheckStatusState_PENDING     CheckStatusState = "PENDING"
 	CheckStatusState_QUEUED      CheckStatusState = "QUEUED"
-	CheckStatusState_REQUESTED   CheckStatusState = "REQUESTED"
+	CheckStatusState_IN_PROGRESS CheckStatusState = "IN_PROGRESS"
+	CheckStatusState_COMPLETED   CheckStatusState = "COMPLETED"
 	CheckStatusState_WAITING     CheckStatusState = "WAITING"
+	CheckStatusState_PENDING     CheckStatusState = "PENDING"
+	CheckStatusState_REQUESTED   CheckStatusState = "REQUESTED"
 )
 
 type CollaboratorAffiliation string
 
 const (
-	CollaboratorAffiliation_ALL     CollaboratorAffiliation = "ALL"
-	CollaboratorAffiliation_DIRECT  CollaboratorAffiliation = "DIRECT"
 	CollaboratorAffiliation_OUTSIDE CollaboratorAffiliation = "OUTSIDE"
+	CollaboratorAffiliation_DIRECT  CollaboratorAffiliation = "DIRECT"
+	CollaboratorAffiliation_ALL     CollaboratorAffiliation = "ALL"
 )
 
 type CommentAuthorAssociation string
 
 const (
+	CommentAuthorAssociation_MEMBER                 CommentAuthorAssociation = "MEMBER"
+	CommentAuthorAssociation_OWNER                  CommentAuthorAssociation = "OWNER"
+	CommentAuthorAssociation_MANNEQUIN              CommentAuthorAssociation = "MANNEQUIN"
 	CommentAuthorAssociation_COLLABORATOR           CommentAuthorAssociation = "COLLABORATOR"
 	CommentAuthorAssociation_CONTRIBUTOR            CommentAuthorAssociation = "CONTRIBUTOR"
-	CommentAuthorAssociation_FIRST_TIMER            CommentAuthorAssociation = "FIRST_TIMER"
 	CommentAuthorAssociation_FIRST_TIME_CONTRIBUTOR CommentAuthorAssociation = "FIRST_TIME_CONTRIBUTOR"
-	CommentAuthorAssociation_MANNEQUIN              CommentAuthorAssociation = "MANNEQUIN"
-	CommentAuthorAssociation_MEMBER                 CommentAuthorAssociation = "MEMBER"
+	CommentAuthorAssociation_FIRST_TIMER            CommentAuthorAssociation = "FIRST_TIMER"
 	CommentAuthorAssociation_NONE                   CommentAuthorAssociation = "NONE"
-	CommentAuthorAssociation_OWNER                  CommentAuthorAssociation = "OWNER"
 )
 
 type CommentCannotUpdateReason string
 
 const (
 	CommentCannotUpdateReason_ARCHIVED                CommentCannotUpdateReason = "ARCHIVED"
-	CommentCannotUpdateReason_DENIED                  CommentCannotUpdateReason = "DENIED"
 	CommentCannotUpdateReason_INSUFFICIENT_ACCESS     CommentCannotUpdateReason = "INSUFFICIENT_ACCESS"
 	CommentCannotUpdateReason_LOCKED                  CommentCannotUpdateReason = "LOCKED"
 	CommentCannotUpdateReason_LOGIN_REQUIRED          CommentCannotUpdateReason = "LOGIN_REQUIRED"
 	CommentCannotUpdateReason_MAINTENANCE             CommentCannotUpdateReason = "MAINTENANCE"
 	CommentCannotUpdateReason_VERIFIED_EMAIL_REQUIRED CommentCannotUpdateReason = "VERIFIED_EMAIL_REQUIRED"
+	CommentCannotUpdateReason_DENIED                  CommentCannotUpdateReason = "DENIED"
 )
 
 type CommitContributionOrderField string
 
 const (
-	CommitContributionOrderField_COMMIT_COUNT CommitContributionOrderField = "COMMIT_COUNT"
 	CommitContributionOrderField_OCCURRED_AT  CommitContributionOrderField = "OCCURRED_AT"
+	CommitContributionOrderField_COMMIT_COUNT CommitContributionOrderField = "COMMIT_COUNT"
 )
 
 type ComparisonStatus string
 
 const (
+	ComparisonStatus_DIVERGED  ComparisonStatus = "DIVERGED"
 	ComparisonStatus_AHEAD     ComparisonStatus = "AHEAD"
 	ComparisonStatus_BEHIND    ComparisonStatus = "BEHIND"
-	ComparisonStatus_DIVERGED  ComparisonStatus = "DIVERGED"
 	ComparisonStatus_IDENTICAL ComparisonStatus = "IDENTICAL"
 )
 
 type ContributionLevel string
 
 const (
-	ContributionLevel_FIRST_QUARTILE  ContributionLevel = "FIRST_QUARTILE"
-	ContributionLevel_FOURTH_QUARTILE ContributionLevel = "FOURTH_QUARTILE"
 	ContributionLevel_NONE            ContributionLevel = "NONE"
+	ContributionLevel_FIRST_QUARTILE  ContributionLevel = "FIRST_QUARTILE"
 	ContributionLevel_SECOND_QUARTILE ContributionLevel = "SECOND_QUARTILE"
 	ContributionLevel_THIRD_QUARTILE  ContributionLevel = "THIRD_QUARTILE"
+	ContributionLevel_FOURTH_QUARTILE ContributionLevel = "FOURTH_QUARTILE"
 )
 
 type DefaultRepositoryPermissionField string
 
 const (
-	DefaultRepositoryPermissionField_ADMIN DefaultRepositoryPermissionField = "ADMIN"
 	DefaultRepositoryPermissionField_NONE  DefaultRepositoryPermissionField = "NONE"
 	DefaultRepositoryPermissionField_READ  DefaultRepositoryPermissionField = "READ"
 	DefaultRepositoryPermissionField_WRITE DefaultRepositoryPermissionField = "WRITE"
+	DefaultRepositoryPermissionField_ADMIN DefaultRepositoryPermissionField = "ADMIN"
 )
 
 type DependencyGraphEcosystem string
 
 const (
-	DependencyGraphEcosystem_ACTIONS  DependencyGraphEcosystem = "ACTIONS"
+	DependencyGraphEcosystem_RUBYGEMS DependencyGraphEcosystem = "RUBYGEMS"
+	DependencyGraphEcosystem_NPM      DependencyGraphEcosystem = "NPM"
+	DependencyGraphEcosystem_PIP      DependencyGraphEcosystem = "PIP"
+	DependencyGraphEcosystem_MAVEN    DependencyGraphEcosystem = "MAVEN"
+	DependencyGraphEcosystem_NUGET    DependencyGraphEcosystem = "NUGET"
 	DependencyGraphEcosystem_COMPOSER DependencyGraphEcosystem = "COMPOSER"
 	DependencyGraphEcosystem_GO       DependencyGraphEcosystem = "GO"
-	DependencyGraphEcosystem_MAVEN    DependencyGraphEcosystem = "MAVEN"
-	DependencyGraphEcosystem_NPM      DependencyGraphEcosystem = "NPM"
-	DependencyGraphEcosystem_NUGET    DependencyGraphEcosystem = "NUGET"
-	DependencyGraphEcosystem_PIP      DependencyGraphEcosystem = "PIP"
-	DependencyGraphEcosystem_PUB      DependencyGraphEcosystem = "PUB"
-	DependencyGraphEcosystem_RUBYGEMS DependencyGraphEcosystem = "RUBYGEMS"
+	DependencyGraphEcosystem_ACTIONS  DependencyGraphEcosystem = "ACTIONS"
 	DependencyGraphEcosystem_RUST     DependencyGraphEcosystem = "RUST"
+	DependencyGraphEcosystem_PUB      DependencyGraphEcosystem = "PUB"
+	DependencyGraphEcosystem_SWIFT    DependencyGraphEcosystem = "SWIFT"
 )
 
 type DeploymentOrderField string
@@ -186,23 +187,23 @@ const (
 	DeploymentState_ERROR       DeploymentState = "ERROR"
 	DeploymentState_FAILURE     DeploymentState = "FAILURE"
 	DeploymentState_INACTIVE    DeploymentState = "INACTIVE"
-	DeploymentState_IN_PROGRESS DeploymentState = "IN_PROGRESS"
 	DeploymentState_PENDING     DeploymentState = "PENDING"
-	DeploymentState_QUEUED      DeploymentState = "QUEUED"
 	DeploymentState_SUCCESS     DeploymentState = "SUCCESS"
+	DeploymentState_QUEUED      DeploymentState = "QUEUED"
+	DeploymentState_IN_PROGRESS DeploymentState = "IN_PROGRESS"
 	DeploymentState_WAITING     DeploymentState = "WAITING"
 )
 
 type DeploymentStatusState string
 
 const (
-	DeploymentStatusState_ERROR       DeploymentStatusState = "ERROR"
+	DeploymentStatusState_PENDING     DeploymentStatusState = "PENDING"
+	DeploymentStatusState_SUCCESS     DeploymentStatusState = "SUCCESS"
 	DeploymentStatusState_FAILURE     DeploymentStatusState = "FAILURE"
 	DeploymentStatusState_INACTIVE    DeploymentStatusState = "INACTIVE"
-	DeploymentStatusState_IN_PROGRESS DeploymentStatusState = "IN_PROGRESS"
-	DeploymentStatusState_PENDING     DeploymentStatusState = "PENDING"
+	DeploymentStatusState_ERROR       DeploymentStatusState = "ERROR"
 	DeploymentStatusState_QUEUED      DeploymentStatusState = "QUEUED"
-	DeploymentStatusState_SUCCESS     DeploymentStatusState = "SUCCESS"
+	DeploymentStatusState_IN_PROGRESS DeploymentStatusState = "IN_PROGRESS"
 	DeploymentStatusState_WAITING     DeploymentStatusState = "WAITING"
 )
 
@@ -216,9 +217,9 @@ const (
 type DiscussionCloseReason string
 
 const (
-	DiscussionCloseReason_DUPLICATE DiscussionCloseReason = "DUPLICATE"
-	DiscussionCloseReason_OUTDATED  DiscussionCloseReason = "OUTDATED"
 	DiscussionCloseReason_RESOLVED  DiscussionCloseReason = "RESOLVED"
+	DiscussionCloseReason_OUTDATED  DiscussionCloseReason = "OUTDATED"
+	DiscussionCloseReason_DUPLICATE DiscussionCloseReason = "DUPLICATE"
 )
 
 type DiscussionOrderField string
@@ -238,27 +239,27 @@ const (
 type DiscussionState string
 
 const (
-	DiscussionState_CLOSED DiscussionState = "CLOSED"
 	DiscussionState_OPEN   DiscussionState = "OPEN"
+	DiscussionState_CLOSED DiscussionState = "CLOSED"
 )
 
 type DiscussionStateReason string
 
 const (
-	DiscussionStateReason_DUPLICATE DiscussionStateReason = "DUPLICATE"
-	DiscussionStateReason_OUTDATED  DiscussionStateReason = "OUTDATED"
-	DiscussionStateReason_REOPENED  DiscussionStateReason = "REOPENED"
 	DiscussionStateReason_RESOLVED  DiscussionStateReason = "RESOLVED"
+	DiscussionStateReason_OUTDATED  DiscussionStateReason = "OUTDATED"
+	DiscussionStateReason_DUPLICATE DiscussionStateReason = "DUPLICATE"
+	DiscussionStateReason_REOPENED  DiscussionStateReason = "REOPENED"
 )
 
 type DismissReason string
 
 const (
 	DismissReason_FIX_STARTED    DismissReason = "FIX_STARTED"
-	DismissReason_INACCURATE     DismissReason = "INACCURATE"
-	DismissReason_NOT_USED       DismissReason = "NOT_USED"
 	DismissReason_NO_BANDWIDTH   DismissReason = "NO_BANDWIDTH"
 	DismissReason_TOLERABLE_RISK DismissReason = "TOLERABLE_RISK"
+	DismissReason_INACCURATE     DismissReason = "INACCURATE"
+	DismissReason_NOT_USED       DismissReason = "NOT_USED"
 )
 
 type EnterpriseAdministratorInvitationOrderField string
@@ -270,36 +271,36 @@ const (
 type EnterpriseAdministratorRole string
 
 const (
-	EnterpriseAdministratorRole_BILLING_MANAGER EnterpriseAdministratorRole = "BILLING_MANAGER"
 	EnterpriseAdministratorRole_OWNER           EnterpriseAdministratorRole = "OWNER"
+	EnterpriseAdministratorRole_BILLING_MANAGER EnterpriseAdministratorRole = "BILLING_MANAGER"
 )
 
 type EnterpriseAllowPrivateRepositoryForkingPolicyValue string
 
 const (
 	EnterpriseAllowPrivateRepositoryForkingPolicyValue_ENTERPRISE_ORGANIZATIONS               EnterpriseAllowPrivateRepositoryForkingPolicyValue = "ENTERPRISE_ORGANIZATIONS"
-	EnterpriseAllowPrivateRepositoryForkingPolicyValue_ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS EnterpriseAllowPrivateRepositoryForkingPolicyValue = "ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS"
-	EnterpriseAllowPrivateRepositoryForkingPolicyValue_EVERYWHERE                             EnterpriseAllowPrivateRepositoryForkingPolicyValue = "EVERYWHERE"
 	EnterpriseAllowPrivateRepositoryForkingPolicyValue_SAME_ORGANIZATION                      EnterpriseAllowPrivateRepositoryForkingPolicyValue = "SAME_ORGANIZATION"
 	EnterpriseAllowPrivateRepositoryForkingPolicyValue_SAME_ORGANIZATION_USER_ACCOUNTS        EnterpriseAllowPrivateRepositoryForkingPolicyValue = "SAME_ORGANIZATION_USER_ACCOUNTS"
+	EnterpriseAllowPrivateRepositoryForkingPolicyValue_ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS EnterpriseAllowPrivateRepositoryForkingPolicyValue = "ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS"
 	EnterpriseAllowPrivateRepositoryForkingPolicyValue_USER_ACCOUNTS                          EnterpriseAllowPrivateRepositoryForkingPolicyValue = "USER_ACCOUNTS"
+	EnterpriseAllowPrivateRepositoryForkingPolicyValue_EVERYWHERE                             EnterpriseAllowPrivateRepositoryForkingPolicyValue = "EVERYWHERE"
 )
 
 type EnterpriseDefaultRepositoryPermissionSettingValue string
 
 const (
-	EnterpriseDefaultRepositoryPermissionSettingValue_ADMIN     EnterpriseDefaultRepositoryPermissionSettingValue = "ADMIN"
-	EnterpriseDefaultRepositoryPermissionSettingValue_NONE      EnterpriseDefaultRepositoryPermissionSettingValue = "NONE"
 	EnterpriseDefaultRepositoryPermissionSettingValue_NO_POLICY EnterpriseDefaultRepositoryPermissionSettingValue = "NO_POLICY"
-	EnterpriseDefaultRepositoryPermissionSettingValue_READ      EnterpriseDefaultRepositoryPermissionSettingValue = "READ"
+	EnterpriseDefaultRepositoryPermissionSettingValue_ADMIN     EnterpriseDefaultRepositoryPermissionSettingValue = "ADMIN"
 	EnterpriseDefaultRepositoryPermissionSettingValue_WRITE     EnterpriseDefaultRepositoryPermissionSettingValue = "WRITE"
+	EnterpriseDefaultRepositoryPermissionSettingValue_READ      EnterpriseDefaultRepositoryPermissionSettingValue = "READ"
+	EnterpriseDefaultRepositoryPermissionSettingValue_NONE      EnterpriseDefaultRepositoryPermissionSettingValue = "NONE"
 )
 
 type EnterpriseEnabledDisabledSettingValue string
 
 const (
-	EnterpriseEnabledDisabledSettingValue_DISABLED  EnterpriseEnabledDisabledSettingValue = "DISABLED"
 	EnterpriseEnabledDisabledSettingValue_ENABLED   EnterpriseEnabledDisabledSettingValue = "ENABLED"
+	EnterpriseEnabledDisabledSettingValue_DISABLED  EnterpriseEnabledDisabledSettingValue = "DISABLED"
 	EnterpriseEnabledDisabledSettingValue_NO_POLICY EnterpriseEnabledDisabledSettingValue = "NO_POLICY"
 )
 
@@ -313,33 +314,33 @@ const (
 type EnterpriseMemberOrderField string
 
 const (
-	EnterpriseMemberOrderField_CREATED_AT EnterpriseMemberOrderField = "CREATED_AT"
 	EnterpriseMemberOrderField_LOGIN      EnterpriseMemberOrderField = "LOGIN"
+	EnterpriseMemberOrderField_CREATED_AT EnterpriseMemberOrderField = "CREATED_AT"
 )
 
 type EnterpriseMembersCanCreateRepositoriesSettingValue string
 
 const (
-	EnterpriseMembersCanCreateRepositoriesSettingValue_ALL       EnterpriseMembersCanCreateRepositoriesSettingValue = "ALL"
-	EnterpriseMembersCanCreateRepositoriesSettingValue_DISABLED  EnterpriseMembersCanCreateRepositoriesSettingValue = "DISABLED"
 	EnterpriseMembersCanCreateRepositoriesSettingValue_NO_POLICY EnterpriseMembersCanCreateRepositoriesSettingValue = "NO_POLICY"
-	EnterpriseMembersCanCreateRepositoriesSettingValue_PRIVATE   EnterpriseMembersCanCreateRepositoriesSettingValue = "PRIVATE"
+	EnterpriseMembersCanCreateRepositoriesSettingValue_ALL       EnterpriseMembersCanCreateRepositoriesSettingValue = "ALL"
 	EnterpriseMembersCanCreateRepositoriesSettingValue_PUBLIC    EnterpriseMembersCanCreateRepositoriesSettingValue = "PUBLIC"
+	EnterpriseMembersCanCreateRepositoriesSettingValue_PRIVATE   EnterpriseMembersCanCreateRepositoriesSettingValue = "PRIVATE"
+	EnterpriseMembersCanCreateRepositoriesSettingValue_DISABLED  EnterpriseMembersCanCreateRepositoriesSettingValue = "DISABLED"
 )
 
 type EnterpriseMembersCanMakePurchasesSettingValue string
 
 const (
-	EnterpriseMembersCanMakePurchasesSettingValue_DISABLED EnterpriseMembersCanMakePurchasesSettingValue = "DISABLED"
 	EnterpriseMembersCanMakePurchasesSettingValue_ENABLED  EnterpriseMembersCanMakePurchasesSettingValue = "ENABLED"
+	EnterpriseMembersCanMakePurchasesSettingValue_DISABLED EnterpriseMembersCanMakePurchasesSettingValue = "DISABLED"
 )
 
 type EnterpriseServerInstallationOrderField string
 
 const (
-	EnterpriseServerInstallationOrderField_CREATED_AT    EnterpriseServerInstallationOrderField = "CREATED_AT"
-	EnterpriseServerInstallationOrderField_CUSTOMER_NAME EnterpriseServerInstallationOrderField = "CUSTOMER_NAME"
 	EnterpriseServerInstallationOrderField_HOST_NAME     EnterpriseServerInstallationOrderField = "HOST_NAME"
+	EnterpriseServerInstallationOrderField_CUSTOMER_NAME EnterpriseServerInstallationOrderField = "CUSTOMER_NAME"
+	EnterpriseServerInstallationOrderField_CREATED_AT    EnterpriseServerInstallationOrderField = "CREATED_AT"
 )
 
 type EnterpriseServerUserAccountEmailOrderField string
@@ -364,9 +365,9 @@ const (
 type EnterpriseServerUserAccountsUploadSyncState string
 
 const (
-	EnterpriseServerUserAccountsUploadSyncState_FAILURE EnterpriseServerUserAccountsUploadSyncState = "FAILURE"
 	EnterpriseServerUserAccountsUploadSyncState_PENDING EnterpriseServerUserAccountsUploadSyncState = "PENDING"
 	EnterpriseServerUserAccountsUploadSyncState_SUCCESS EnterpriseServerUserAccountsUploadSyncState = "SUCCESS"
+	EnterpriseServerUserAccountsUploadSyncState_FAILURE EnterpriseServerUserAccountsUploadSyncState = "FAILURE"
 )
 
 type EnterpriseUserAccountMembershipRole string
@@ -384,95 +385,101 @@ const (
 	EnterpriseUserDeployment_SERVER EnterpriseUserDeployment = "SERVER"
 )
 
+type EnvironmentOrderField string
+
+const (
+	EnvironmentOrderField_NAME EnvironmentOrderField = "NAME"
+)
+
 type FileViewedState string
 
 const (
 	FileViewedState_DISMISSED FileViewedState = "DISMISSED"
-	FileViewedState_UNVIEWED  FileViewedState = "UNVIEWED"
 	FileViewedState_VIEWED    FileViewedState = "VIEWED"
+	FileViewedState_UNVIEWED  FileViewedState = "UNVIEWED"
 )
 
 type FundingPlatform string
 
 const (
-	FundingPlatform_COMMUNITY_BRIDGE FundingPlatform = "COMMUNITY_BRIDGE"
-	FundingPlatform_CUSTOM           FundingPlatform = "CUSTOM"
 	FundingPlatform_GITHUB           FundingPlatform = "GITHUB"
-	FundingPlatform_ISSUEHUNT        FundingPlatform = "ISSUEHUNT"
-	FundingPlatform_KO_FI            FundingPlatform = "KO_FI"
-	FundingPlatform_LFX_CROWDFUNDING FundingPlatform = "LFX_CROWDFUNDING"
-	FundingPlatform_LIBERAPAY        FundingPlatform = "LIBERAPAY"
-	FundingPlatform_OPEN_COLLECTIVE  FundingPlatform = "OPEN_COLLECTIVE"
-	FundingPlatform_OTECHIE          FundingPlatform = "OTECHIE"
 	FundingPlatform_PATREON          FundingPlatform = "PATREON"
+	FundingPlatform_OPEN_COLLECTIVE  FundingPlatform = "OPEN_COLLECTIVE"
+	FundingPlatform_KO_FI            FundingPlatform = "KO_FI"
 	FundingPlatform_TIDELIFT         FundingPlatform = "TIDELIFT"
+	FundingPlatform_COMMUNITY_BRIDGE FundingPlatform = "COMMUNITY_BRIDGE"
+	FundingPlatform_LIBERAPAY        FundingPlatform = "LIBERAPAY"
+	FundingPlatform_ISSUEHUNT        FundingPlatform = "ISSUEHUNT"
+	FundingPlatform_OTECHIE          FundingPlatform = "OTECHIE"
+	FundingPlatform_LFX_CROWDFUNDING FundingPlatform = "LFX_CROWDFUNDING"
+	FundingPlatform_CUSTOM           FundingPlatform = "CUSTOM"
 )
 
 type GistOrderField string
 
 const (
 	GistOrderField_CREATED_AT GistOrderField = "CREATED_AT"
-	GistOrderField_PUSHED_AT  GistOrderField = "PUSHED_AT"
 	GistOrderField_UPDATED_AT GistOrderField = "UPDATED_AT"
+	GistOrderField_PUSHED_AT  GistOrderField = "PUSHED_AT"
 )
 
 type GistPrivacy string
 
 const (
-	GistPrivacy_ALL    GistPrivacy = "ALL"
 	GistPrivacy_PUBLIC GistPrivacy = "PUBLIC"
 	GistPrivacy_SECRET GistPrivacy = "SECRET"
+	GistPrivacy_ALL    GistPrivacy = "ALL"
 )
 
 type GitSignatureState string
 
 const (
-	GitSignatureState_BAD_CERT              GitSignatureState = "BAD_CERT"
-	GitSignatureState_BAD_EMAIL             GitSignatureState = "BAD_EMAIL"
-	GitSignatureState_EXPIRED_KEY           GitSignatureState = "EXPIRED_KEY"
-	GitSignatureState_GPGVERIFY_ERROR       GitSignatureState = "GPGVERIFY_ERROR"
-	GitSignatureState_GPGVERIFY_UNAVAILABLE GitSignatureState = "GPGVERIFY_UNAVAILABLE"
+	GitSignatureState_VALID                 GitSignatureState = "VALID"
 	GitSignatureState_INVALID               GitSignatureState = "INVALID"
 	GitSignatureState_MALFORMED_SIG         GitSignatureState = "MALFORMED_SIG"
-	GitSignatureState_NOT_SIGNING_KEY       GitSignatureState = "NOT_SIGNING_KEY"
-	GitSignatureState_NO_USER               GitSignatureState = "NO_USER"
-	GitSignatureState_OCSP_ERROR            GitSignatureState = "OCSP_ERROR"
-	GitSignatureState_OCSP_PENDING          GitSignatureState = "OCSP_PENDING"
-	GitSignatureState_OCSP_REVOKED          GitSignatureState = "OCSP_REVOKED"
 	GitSignatureState_UNKNOWN_KEY           GitSignatureState = "UNKNOWN_KEY"
+	GitSignatureState_BAD_EMAIL             GitSignatureState = "BAD_EMAIL"
+	GitSignatureState_UNVERIFIED_EMAIL      GitSignatureState = "UNVERIFIED_EMAIL"
+	GitSignatureState_NO_USER               GitSignatureState = "NO_USER"
 	GitSignatureState_UNKNOWN_SIG_TYPE      GitSignatureState = "UNKNOWN_SIG_TYPE"
 	GitSignatureState_UNSIGNED              GitSignatureState = "UNSIGNED"
-	GitSignatureState_UNVERIFIED_EMAIL      GitSignatureState = "UNVERIFIED_EMAIL"
-	GitSignatureState_VALID                 GitSignatureState = "VALID"
+	GitSignatureState_GPGVERIFY_UNAVAILABLE GitSignatureState = "GPGVERIFY_UNAVAILABLE"
+	GitSignatureState_GPGVERIFY_ERROR       GitSignatureState = "GPGVERIFY_ERROR"
+	GitSignatureState_NOT_SIGNING_KEY       GitSignatureState = "NOT_SIGNING_KEY"
+	GitSignatureState_EXPIRED_KEY           GitSignatureState = "EXPIRED_KEY"
+	GitSignatureState_OCSP_PENDING          GitSignatureState = "OCSP_PENDING"
+	GitSignatureState_OCSP_ERROR            GitSignatureState = "OCSP_ERROR"
+	GitSignatureState_BAD_CERT              GitSignatureState = "BAD_CERT"
+	GitSignatureState_OCSP_REVOKED          GitSignatureState = "OCSP_REVOKED"
 )
 
 type IdentityProviderConfigurationState string
 
 const (
-	IdentityProviderConfigurationState_CONFIGURED   IdentityProviderConfigurationState = "CONFIGURED"
 	IdentityProviderConfigurationState_ENFORCED     IdentityProviderConfigurationState = "ENFORCED"
+	IdentityProviderConfigurationState_CONFIGURED   IdentityProviderConfigurationState = "CONFIGURED"
 	IdentityProviderConfigurationState_UNCONFIGURED IdentityProviderConfigurationState = "UNCONFIGURED"
 )
 
 type IpAllowListEnabledSettingValue string
 
 const (
-	IpAllowListEnabledSettingValue_DISABLED IpAllowListEnabledSettingValue = "DISABLED"
 	IpAllowListEnabledSettingValue_ENABLED  IpAllowListEnabledSettingValue = "ENABLED"
+	IpAllowListEnabledSettingValue_DISABLED IpAllowListEnabledSettingValue = "DISABLED"
 )
 
 type IpAllowListEntryOrderField string
 
 const (
-	IpAllowListEntryOrderField_ALLOW_LIST_VALUE IpAllowListEntryOrderField = "ALLOW_LIST_VALUE"
 	IpAllowListEntryOrderField_CREATED_AT       IpAllowListEntryOrderField = "CREATED_AT"
+	IpAllowListEntryOrderField_ALLOW_LIST_VALUE IpAllowListEntryOrderField = "ALLOW_LIST_VALUE"
 )
 
 type IpAllowListForInstalledAppsEnabledSettingValue string
 
 const (
-	IpAllowListForInstalledAppsEnabledSettingValue_DISABLED IpAllowListForInstalledAppsEnabledSettingValue = "DISABLED"
 	IpAllowListForInstalledAppsEnabledSettingValue_ENABLED  IpAllowListForInstalledAppsEnabledSettingValue = "ENABLED"
+	IpAllowListForInstalledAppsEnabledSettingValue_DISABLED IpAllowListForInstalledAppsEnabledSettingValue = "DISABLED"
 )
 
 type IssueClosedStateReason string
@@ -491,29 +498,31 @@ const (
 type IssueOrderField string
 
 const (
-	IssueOrderField_COMMENTS   IssueOrderField = "COMMENTS"
 	IssueOrderField_CREATED_AT IssueOrderField = "CREATED_AT"
 	IssueOrderField_UPDATED_AT IssueOrderField = "UPDATED_AT"
+	IssueOrderField_COMMENTS   IssueOrderField = "COMMENTS"
 )
 
 type IssueState string
 
 const (
-	IssueState_CLOSED IssueState = "CLOSED"
 	IssueState_OPEN   IssueState = "OPEN"
+	IssueState_CLOSED IssueState = "CLOSED"
 )
 
 type IssueStateReason string
 
 const (
-	IssueStateReason_COMPLETED   IssueStateReason = "COMPLETED"
-	IssueStateReason_NOT_PLANNED IssueStateReason = "NOT_PLANNED"
 	IssueStateReason_REOPENED    IssueStateReason = "REOPENED"
+	IssueStateReason_NOT_PLANNED IssueStateReason = "NOT_PLANNED"
+	IssueStateReason_COMPLETED   IssueStateReason = "COMPLETED"
 )
 
 type IssueTimelineItemsItemType string
 
 const (
+	IssueTimelineItemsItemType_ISSUE_COMMENT                  IssueTimelineItemsItemType = "ISSUE_COMMENT"
+	IssueTimelineItemsItemType_CROSS_REFERENCED_EVENT         IssueTimelineItemsItemType = "CROSS_REFERENCED_EVENT"
 	IssueTimelineItemsItemType_ADDED_TO_PROJECT_EVENT         IssueTimelineItemsItemType = "ADDED_TO_PROJECT_EVENT"
 	IssueTimelineItemsItemType_ASSIGNED_EVENT                 IssueTimelineItemsItemType = "ASSIGNED_EVENT"
 	IssueTimelineItemsItemType_CLOSED_EVENT                   IssueTimelineItemsItemType = "CLOSED_EVENT"
@@ -521,10 +530,8 @@ const (
 	IssueTimelineItemsItemType_CONNECTED_EVENT                IssueTimelineItemsItemType = "CONNECTED_EVENT"
 	IssueTimelineItemsItemType_CONVERTED_NOTE_TO_ISSUE_EVENT  IssueTimelineItemsItemType = "CONVERTED_NOTE_TO_ISSUE_EVENT"
 	IssueTimelineItemsItemType_CONVERTED_TO_DISCUSSION_EVENT  IssueTimelineItemsItemType = "CONVERTED_TO_DISCUSSION_EVENT"
-	IssueTimelineItemsItemType_CROSS_REFERENCED_EVENT         IssueTimelineItemsItemType = "CROSS_REFERENCED_EVENT"
 	IssueTimelineItemsItemType_DEMILESTONED_EVENT             IssueTimelineItemsItemType = "DEMILESTONED_EVENT"
 	IssueTimelineItemsItemType_DISCONNECTED_EVENT             IssueTimelineItemsItemType = "DISCONNECTED_EVENT"
-	IssueTimelineItemsItemType_ISSUE_COMMENT                  IssueTimelineItemsItemType = "ISSUE_COMMENT"
 	IssueTimelineItemsItemType_LABELED_EVENT                  IssueTimelineItemsItemType = "LABELED_EVENT"
 	IssueTimelineItemsItemType_LOCKED_EVENT                   IssueTimelineItemsItemType = "LOCKED_EVENT"
 	IssueTimelineItemsItemType_MARKED_AS_DUPLICATE_EVENT      IssueTimelineItemsItemType = "MARKED_AS_DUPLICATE_EVENT"
@@ -541,17 +548,17 @@ const (
 	IssueTimelineItemsItemType_UNASSIGNED_EVENT               IssueTimelineItemsItemType = "UNASSIGNED_EVENT"
 	IssueTimelineItemsItemType_UNLABELED_EVENT                IssueTimelineItemsItemType = "UNLABELED_EVENT"
 	IssueTimelineItemsItemType_UNLOCKED_EVENT                 IssueTimelineItemsItemType = "UNLOCKED_EVENT"
+	IssueTimelineItemsItemType_USER_BLOCKED_EVENT             IssueTimelineItemsItemType = "USER_BLOCKED_EVENT"
 	IssueTimelineItemsItemType_UNMARKED_AS_DUPLICATE_EVENT    IssueTimelineItemsItemType = "UNMARKED_AS_DUPLICATE_EVENT"
 	IssueTimelineItemsItemType_UNPINNED_EVENT                 IssueTimelineItemsItemType = "UNPINNED_EVENT"
 	IssueTimelineItemsItemType_UNSUBSCRIBED_EVENT             IssueTimelineItemsItemType = "UNSUBSCRIBED_EVENT"
-	IssueTimelineItemsItemType_USER_BLOCKED_EVENT             IssueTimelineItemsItemType = "USER_BLOCKED_EVENT"
 )
 
 type LabelOrderField string
 
 const (
-	LabelOrderField_CREATED_AT LabelOrderField = "CREATED_AT"
 	LabelOrderField_NAME       LabelOrderField = "NAME"
+	LabelOrderField_CREATED_AT LabelOrderField = "CREATED_AT"
 )
 
 type LanguageOrderField string
@@ -564,41 +571,41 @@ type LockReason string
 
 const (
 	LockReason_OFF_TOPIC  LockReason = "OFF_TOPIC"
+	LockReason_TOO_HEATED LockReason = "TOO_HEATED"
 	LockReason_RESOLVED   LockReason = "RESOLVED"
 	LockReason_SPAM       LockReason = "SPAM"
-	LockReason_TOO_HEATED LockReason = "TOO_HEATED"
 )
 
 type MannequinOrderField string
 
 const (
-	MannequinOrderField_CREATED_AT MannequinOrderField = "CREATED_AT"
 	MannequinOrderField_LOGIN      MannequinOrderField = "LOGIN"
+	MannequinOrderField_CREATED_AT MannequinOrderField = "CREATED_AT"
 )
 
 type MergeCommitMessage string
 
 const (
-	MergeCommitMessage_BLANK    MergeCommitMessage = "BLANK"
-	MergeCommitMessage_PR_BODY  MergeCommitMessage = "PR_BODY"
 	MergeCommitMessage_PR_TITLE MergeCommitMessage = "PR_TITLE"
+	MergeCommitMessage_PR_BODY  MergeCommitMessage = "PR_BODY"
+	MergeCommitMessage_BLANK    MergeCommitMessage = "BLANK"
 )
 
 type MergeCommitTitle string
 
 const (
-	MergeCommitTitle_MERGE_MESSAGE MergeCommitTitle = "MERGE_MESSAGE"
 	MergeCommitTitle_PR_TITLE      MergeCommitTitle = "PR_TITLE"
+	MergeCommitTitle_MERGE_MESSAGE MergeCommitTitle = "MERGE_MESSAGE"
 )
 
 type MergeQueueEntryState string
 
 const (
-	MergeQueueEntryState_AWAITING_CHECKS MergeQueueEntryState = "AWAITING_CHECKS"
-	MergeQueueEntryState_LOCKED          MergeQueueEntryState = "LOCKED"
-	MergeQueueEntryState_MERGEABLE       MergeQueueEntryState = "MERGEABLE"
 	MergeQueueEntryState_QUEUED          MergeQueueEntryState = "QUEUED"
+	MergeQueueEntryState_AWAITING_CHECKS MergeQueueEntryState = "AWAITING_CHECKS"
+	MergeQueueEntryState_MERGEABLE       MergeQueueEntryState = "MERGEABLE"
 	MergeQueueEntryState_UNMERGEABLE     MergeQueueEntryState = "UNMERGEABLE"
+	MergeQueueEntryState_LOCKED          MergeQueueEntryState = "LOCKED"
 )
 
 type MergeQueueMergingStrategy string
@@ -608,24 +615,11 @@ const (
 	MergeQueueMergingStrategy_HEADGREEN MergeQueueMergingStrategy = "HEADGREEN"
 )
 
-type MergeStateStatus string
-
-const (
-	MergeStateStatus_BEHIND    MergeStateStatus = "BEHIND"
-	MergeStateStatus_BLOCKED   MergeStateStatus = "BLOCKED"
-	MergeStateStatus_CLEAN     MergeStateStatus = "CLEAN"
-	MergeStateStatus_DIRTY     MergeStateStatus = "DIRTY"
-	MergeStateStatus_DRAFT     MergeStateStatus = "DRAFT"
-	MergeStateStatus_HAS_HOOKS MergeStateStatus = "HAS_HOOKS"
-	MergeStateStatus_UNKNOWN   MergeStateStatus = "UNKNOWN"
-	MergeStateStatus_UNSTABLE  MergeStateStatus = "UNSTABLE"
-)
-
 type MergeableState string
 
 const (
-	MergeableState_CONFLICTING MergeableState = "CONFLICTING"
 	MergeableState_MERGEABLE   MergeableState = "MERGEABLE"
+	MergeableState_CONFLICTING MergeableState = "CONFLICTING"
 	MergeableState_UNKNOWN     MergeableState = "UNKNOWN"
 )
 
@@ -640,36 +634,36 @@ const (
 type MigrationState string
 
 const (
-	MigrationState_FAILED             MigrationState = "FAILED"
-	MigrationState_FAILED_VALIDATION  MigrationState = "FAILED_VALIDATION"
-	MigrationState_IN_PROGRESS        MigrationState = "IN_PROGRESS"
 	MigrationState_NOT_STARTED        MigrationState = "NOT_STARTED"
-	MigrationState_PENDING_VALIDATION MigrationState = "PENDING_VALIDATION"
 	MigrationState_QUEUED             MigrationState = "QUEUED"
+	MigrationState_IN_PROGRESS        MigrationState = "IN_PROGRESS"
 	MigrationState_SUCCEEDED          MigrationState = "SUCCEEDED"
+	MigrationState_FAILED             MigrationState = "FAILED"
+	MigrationState_PENDING_VALIDATION MigrationState = "PENDING_VALIDATION"
+	MigrationState_FAILED_VALIDATION  MigrationState = "FAILED_VALIDATION"
 )
 
 type MilestoneOrderField string
 
 const (
-	MilestoneOrderField_CREATED_AT MilestoneOrderField = "CREATED_AT"
 	MilestoneOrderField_DUE_DATE   MilestoneOrderField = "DUE_DATE"
-	MilestoneOrderField_NUMBER     MilestoneOrderField = "NUMBER"
+	MilestoneOrderField_CREATED_AT MilestoneOrderField = "CREATED_AT"
 	MilestoneOrderField_UPDATED_AT MilestoneOrderField = "UPDATED_AT"
+	MilestoneOrderField_NUMBER     MilestoneOrderField = "NUMBER"
 )
 
 type MilestoneState string
 
 const (
-	MilestoneState_CLOSED MilestoneState = "CLOSED"
 	MilestoneState_OPEN   MilestoneState = "OPEN"
+	MilestoneState_CLOSED MilestoneState = "CLOSED"
 )
 
 type NotificationRestrictionSettingValue string
 
 const (
-	NotificationRestrictionSettingValue_DISABLED NotificationRestrictionSettingValue = "DISABLED"
 	NotificationRestrictionSettingValue_ENABLED  NotificationRestrictionSettingValue = "ENABLED"
+	NotificationRestrictionSettingValue_DISABLED NotificationRestrictionSettingValue = "DISABLED"
 )
 
 type OIDCProviderType string
@@ -682,8 +676,8 @@ type OauthApplicationCreateAuditEntryState string
 
 const (
 	OauthApplicationCreateAuditEntryState_ACTIVE           OauthApplicationCreateAuditEntryState = "ACTIVE"
-	OauthApplicationCreateAuditEntryState_PENDING_DELETION OauthApplicationCreateAuditEntryState = "PENDING_DELETION"
 	OauthApplicationCreateAuditEntryState_SUSPENDED        OauthApplicationCreateAuditEntryState = "SUSPENDED"
+	OauthApplicationCreateAuditEntryState_PENDING_DELETION OauthApplicationCreateAuditEntryState = "PENDING_DELETION"
 )
 
 type OperationType string
@@ -708,18 +702,18 @@ const (
 type OrgAddMemberAuditEntryPermission string
 
 const (
-	OrgAddMemberAuditEntryPermission_ADMIN OrgAddMemberAuditEntryPermission = "ADMIN"
 	OrgAddMemberAuditEntryPermission_READ  OrgAddMemberAuditEntryPermission = "READ"
+	OrgAddMemberAuditEntryPermission_ADMIN OrgAddMemberAuditEntryPermission = "ADMIN"
 )
 
 type OrgCreateAuditEntryBillingPlan string
 
 const (
+	OrgCreateAuditEntryBillingPlan_FREE            OrgCreateAuditEntryBillingPlan = "FREE"
 	OrgCreateAuditEntryBillingPlan_BUSINESS        OrgCreateAuditEntryBillingPlan = "BUSINESS"
 	OrgCreateAuditEntryBillingPlan_BUSINESS_PLUS   OrgCreateAuditEntryBillingPlan = "BUSINESS_PLUS"
-	OrgCreateAuditEntryBillingPlan_FREE            OrgCreateAuditEntryBillingPlan = "FREE"
-	OrgCreateAuditEntryBillingPlan_TIERED_PER_SEAT OrgCreateAuditEntryBillingPlan = "TIERED_PER_SEAT"
 	OrgCreateAuditEntryBillingPlan_UNLIMITED       OrgCreateAuditEntryBillingPlan = "UNLIMITED"
+	OrgCreateAuditEntryBillingPlan_TIERED_PER_SEAT OrgCreateAuditEntryBillingPlan = "TIERED_PER_SEAT"
 )
 
 type OrgEnterpriseOwnerOrderField string
@@ -731,127 +725,129 @@ const (
 type OrgRemoveBillingManagerAuditEntryReason string
 
 const (
+	OrgRemoveBillingManagerAuditEntryReason_TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE           OrgRemoveBillingManagerAuditEntryReason = "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE"
 	OrgRemoveBillingManagerAuditEntryReason_SAML_EXTERNAL_IDENTITY_MISSING                  OrgRemoveBillingManagerAuditEntryReason = "SAML_EXTERNAL_IDENTITY_MISSING"
 	OrgRemoveBillingManagerAuditEntryReason_SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY OrgRemoveBillingManagerAuditEntryReason = "SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY"
-	OrgRemoveBillingManagerAuditEntryReason_TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE           OrgRemoveBillingManagerAuditEntryReason = "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE"
 )
 
 type OrgRemoveMemberAuditEntryMembershipType string
 
 const (
+	OrgRemoveMemberAuditEntryMembershipType_SUSPENDED            OrgRemoveMemberAuditEntryMembershipType = "SUSPENDED"
+	OrgRemoveMemberAuditEntryMembershipType_DIRECT_MEMBER        OrgRemoveMemberAuditEntryMembershipType = "DIRECT_MEMBER"
 	OrgRemoveMemberAuditEntryMembershipType_ADMIN                OrgRemoveMemberAuditEntryMembershipType = "ADMIN"
 	OrgRemoveMemberAuditEntryMembershipType_BILLING_MANAGER      OrgRemoveMemberAuditEntryMembershipType = "BILLING_MANAGER"
-	OrgRemoveMemberAuditEntryMembershipType_DIRECT_MEMBER        OrgRemoveMemberAuditEntryMembershipType = "DIRECT_MEMBER"
-	OrgRemoveMemberAuditEntryMembershipType_OUTSIDE_COLLABORATOR OrgRemoveMemberAuditEntryMembershipType = "OUTSIDE_COLLABORATOR"
-	OrgRemoveMemberAuditEntryMembershipType_SUSPENDED            OrgRemoveMemberAuditEntryMembershipType = "SUSPENDED"
 	OrgRemoveMemberAuditEntryMembershipType_UNAFFILIATED         OrgRemoveMemberAuditEntryMembershipType = "UNAFFILIATED"
+	OrgRemoveMemberAuditEntryMembershipType_OUTSIDE_COLLABORATOR OrgRemoveMemberAuditEntryMembershipType = "OUTSIDE_COLLABORATOR"
 )
 
 type OrgRemoveMemberAuditEntryReason string
 
 const (
+	OrgRemoveMemberAuditEntryReason_TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE           OrgRemoveMemberAuditEntryReason = "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE"
 	OrgRemoveMemberAuditEntryReason_SAML_EXTERNAL_IDENTITY_MISSING                  OrgRemoveMemberAuditEntryReason = "SAML_EXTERNAL_IDENTITY_MISSING"
 	OrgRemoveMemberAuditEntryReason_SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY OrgRemoveMemberAuditEntryReason = "SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY"
-	OrgRemoveMemberAuditEntryReason_TWO_FACTOR_ACCOUNT_RECOVERY                     OrgRemoveMemberAuditEntryReason = "TWO_FACTOR_ACCOUNT_RECOVERY"
-	OrgRemoveMemberAuditEntryReason_TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE           OrgRemoveMemberAuditEntryReason = "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE"
 	OrgRemoveMemberAuditEntryReason_USER_ACCOUNT_DELETED                            OrgRemoveMemberAuditEntryReason = "USER_ACCOUNT_DELETED"
+	OrgRemoveMemberAuditEntryReason_TWO_FACTOR_ACCOUNT_RECOVERY                     OrgRemoveMemberAuditEntryReason = "TWO_FACTOR_ACCOUNT_RECOVERY"
 )
 
 type OrgRemoveOutsideCollaboratorAuditEntryMembershipType string
 
 const (
-	OrgRemoveOutsideCollaboratorAuditEntryMembershipType_BILLING_MANAGER      OrgRemoveOutsideCollaboratorAuditEntryMembershipType = "BILLING_MANAGER"
 	OrgRemoveOutsideCollaboratorAuditEntryMembershipType_OUTSIDE_COLLABORATOR OrgRemoveOutsideCollaboratorAuditEntryMembershipType = "OUTSIDE_COLLABORATOR"
 	OrgRemoveOutsideCollaboratorAuditEntryMembershipType_UNAFFILIATED         OrgRemoveOutsideCollaboratorAuditEntryMembershipType = "UNAFFILIATED"
+	OrgRemoveOutsideCollaboratorAuditEntryMembershipType_BILLING_MANAGER      OrgRemoveOutsideCollaboratorAuditEntryMembershipType = "BILLING_MANAGER"
 )
 
 type OrgRemoveOutsideCollaboratorAuditEntryReason string
 
 const (
-	OrgRemoveOutsideCollaboratorAuditEntryReason_SAML_EXTERNAL_IDENTITY_MISSING        OrgRemoveOutsideCollaboratorAuditEntryReason = "SAML_EXTERNAL_IDENTITY_MISSING"
 	OrgRemoveOutsideCollaboratorAuditEntryReason_TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE OrgRemoveOutsideCollaboratorAuditEntryReason = "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE"
+	OrgRemoveOutsideCollaboratorAuditEntryReason_SAML_EXTERNAL_IDENTITY_MISSING        OrgRemoveOutsideCollaboratorAuditEntryReason = "SAML_EXTERNAL_IDENTITY_MISSING"
 )
 
 type OrgUpdateDefaultRepositoryPermissionAuditEntryPermission string
 
 const (
-	OrgUpdateDefaultRepositoryPermissionAuditEntryPermission_ADMIN OrgUpdateDefaultRepositoryPermissionAuditEntryPermission = "ADMIN"
-	OrgUpdateDefaultRepositoryPermissionAuditEntryPermission_NONE  OrgUpdateDefaultRepositoryPermissionAuditEntryPermission = "NONE"
 	OrgUpdateDefaultRepositoryPermissionAuditEntryPermission_READ  OrgUpdateDefaultRepositoryPermissionAuditEntryPermission = "READ"
 	OrgUpdateDefaultRepositoryPermissionAuditEntryPermission_WRITE OrgUpdateDefaultRepositoryPermissionAuditEntryPermission = "WRITE"
+	OrgUpdateDefaultRepositoryPermissionAuditEntryPermission_ADMIN OrgUpdateDefaultRepositoryPermissionAuditEntryPermission = "ADMIN"
+	OrgUpdateDefaultRepositoryPermissionAuditEntryPermission_NONE  OrgUpdateDefaultRepositoryPermissionAuditEntryPermission = "NONE"
 )
 
 type OrgUpdateMemberAuditEntryPermission string
 
 const (
-	OrgUpdateMemberAuditEntryPermission_ADMIN OrgUpdateMemberAuditEntryPermission = "ADMIN"
 	OrgUpdateMemberAuditEntryPermission_READ  OrgUpdateMemberAuditEntryPermission = "READ"
+	OrgUpdateMemberAuditEntryPermission_ADMIN OrgUpdateMemberAuditEntryPermission = "ADMIN"
 )
 
 type OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility string
 
 const (
 	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_ALL              OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "ALL"
-	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_INTERNAL         OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "INTERNAL"
+	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PUBLIC           OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PUBLIC"
 	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_NONE             OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "NONE"
 	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PRIVATE          OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PRIVATE"
-	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PRIVATE_INTERNAL OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PRIVATE_INTERNAL"
-	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PUBLIC           OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PUBLIC"
+	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_INTERNAL         OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "INTERNAL"
 	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PUBLIC_INTERNAL  OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PUBLIC_INTERNAL"
+	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PRIVATE_INTERNAL OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PRIVATE_INTERNAL"
 	OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility_PUBLIC_PRIVATE   OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility = "PUBLIC_PRIVATE"
 )
 
 type OrganizationInvitationRole string
 
 const (
+	OrganizationInvitationRole_DIRECT_MEMBER   OrganizationInvitationRole = "DIRECT_MEMBER"
 	OrganizationInvitationRole_ADMIN           OrganizationInvitationRole = "ADMIN"
 	OrganizationInvitationRole_BILLING_MANAGER OrganizationInvitationRole = "BILLING_MANAGER"
-	OrganizationInvitationRole_DIRECT_MEMBER   OrganizationInvitationRole = "DIRECT_MEMBER"
 	OrganizationInvitationRole_REINSTATE       OrganizationInvitationRole = "REINSTATE"
 )
 
 type OrganizationInvitationSource string
 
 const (
+	OrganizationInvitationSource_UNKNOWN OrganizationInvitationSource = "UNKNOWN"
 	OrganizationInvitationSource_MEMBER  OrganizationInvitationSource = "MEMBER"
 	OrganizationInvitationSource_SCIM    OrganizationInvitationSource = "SCIM"
-	OrganizationInvitationSource_UNKNOWN OrganizationInvitationSource = "UNKNOWN"
 )
 
 type OrganizationInvitationType string
 
 const (
-	OrganizationInvitationType_EMAIL OrganizationInvitationType = "EMAIL"
 	OrganizationInvitationType_USER  OrganizationInvitationType = "USER"
+	OrganizationInvitationType_EMAIL OrganizationInvitationType = "EMAIL"
 )
 
 type OrganizationMemberRole string
 
 const (
-	OrganizationMemberRole_ADMIN  OrganizationMemberRole = "ADMIN"
 	OrganizationMemberRole_MEMBER OrganizationMemberRole = "MEMBER"
+	OrganizationMemberRole_ADMIN  OrganizationMemberRole = "ADMIN"
 )
 
 type OrganizationMembersCanCreateRepositoriesSettingValue string
 
 const (
 	OrganizationMembersCanCreateRepositoriesSettingValue_ALL      OrganizationMembersCanCreateRepositoriesSettingValue = "ALL"
-	OrganizationMembersCanCreateRepositoriesSettingValue_DISABLED OrganizationMembersCanCreateRepositoriesSettingValue = "DISABLED"
-	OrganizationMembersCanCreateRepositoriesSettingValue_INTERNAL OrganizationMembersCanCreateRepositoriesSettingValue = "INTERNAL"
 	OrganizationMembersCanCreateRepositoriesSettingValue_PRIVATE  OrganizationMembersCanCreateRepositoriesSettingValue = "PRIVATE"
+	OrganizationMembersCanCreateRepositoriesSettingValue_INTERNAL OrganizationMembersCanCreateRepositoriesSettingValue = "INTERNAL"
+	OrganizationMembersCanCreateRepositoriesSettingValue_DISABLED OrganizationMembersCanCreateRepositoriesSettingValue = "DISABLED"
 )
 
 type OrganizationMigrationState string
 
 const (
-	OrganizationMigrationState_FAILED              OrganizationMigrationState = "FAILED"
-	OrganizationMigrationState_IN_PROGRESS         OrganizationMigrationState = "IN_PROGRESS"
 	OrganizationMigrationState_NOT_STARTED         OrganizationMigrationState = "NOT_STARTED"
-	OrganizationMigrationState_POST_REPO_MIGRATION OrganizationMigrationState = "POST_REPO_MIGRATION"
-	OrganizationMigrationState_PRE_REPO_MIGRATION  OrganizationMigrationState = "PRE_REPO_MIGRATION"
 	OrganizationMigrationState_QUEUED              OrganizationMigrationState = "QUEUED"
+	OrganizationMigrationState_IN_PROGRESS         OrganizationMigrationState = "IN_PROGRESS"
+	OrganizationMigrationState_PRE_REPO_MIGRATION  OrganizationMigrationState = "PRE_REPO_MIGRATION"
 	OrganizationMigrationState_REPO_MIGRATION      OrganizationMigrationState = "REPO_MIGRATION"
+	OrganizationMigrationState_POST_REPO_MIGRATION OrganizationMigrationState = "POST_REPO_MIGRATION"
 	OrganizationMigrationState_SUCCEEDED           OrganizationMigrationState = "SUCCEEDED"
+	OrganizationMigrationState_FAILED              OrganizationMigrationState = "FAILED"
+	OrganizationMigrationState_PENDING_VALIDATION  OrganizationMigrationState = "PENDING_VALIDATION"
+	OrganizationMigrationState_FAILED_VALIDATION   OrganizationMigrationState = "FAILED_VALIDATION"
 )
 
 type OrganizationOrderField string
@@ -876,13 +872,13 @@ const (
 type PackageType string
 
 const (
-	PackageType_DEBIAN   PackageType = "DEBIAN"
-	PackageType_DOCKER   PackageType = "DOCKER"
-	PackageType_MAVEN    PackageType = "MAVEN"
 	PackageType_NPM      PackageType = "NPM"
+	PackageType_RUBYGEMS PackageType = "RUBYGEMS"
+	PackageType_MAVEN    PackageType = "MAVEN"
+	PackageType_DOCKER   PackageType = "DOCKER"
+	PackageType_DEBIAN   PackageType = "DEBIAN"
 	PackageType_NUGET    PackageType = "NUGET"
 	PackageType_PYPI     PackageType = "PYPI"
-	PackageType_RUBYGEMS PackageType = "RUBYGEMS"
 )
 
 type PackageVersionOrderField string
@@ -895,45 +891,45 @@ type PatchStatus string
 
 const (
 	PatchStatus_ADDED    PatchStatus = "ADDED"
-	PatchStatus_CHANGED  PatchStatus = "CHANGED"
-	PatchStatus_COPIED   PatchStatus = "COPIED"
 	PatchStatus_DELETED  PatchStatus = "DELETED"
-	PatchStatus_MODIFIED PatchStatus = "MODIFIED"
 	PatchStatus_RENAMED  PatchStatus = "RENAMED"
+	PatchStatus_COPIED   PatchStatus = "COPIED"
+	PatchStatus_MODIFIED PatchStatus = "MODIFIED"
+	PatchStatus_CHANGED  PatchStatus = "CHANGED"
 )
 
 type PinnableItemType string
 
 const (
+	PinnableItemType_REPOSITORY   PinnableItemType = "REPOSITORY"
 	PinnableItemType_GIST         PinnableItemType = "GIST"
 	PinnableItemType_ISSUE        PinnableItemType = "ISSUE"
-	PinnableItemType_ORGANIZATION PinnableItemType = "ORGANIZATION"
 	PinnableItemType_PROJECT      PinnableItemType = "PROJECT"
 	PinnableItemType_PULL_REQUEST PinnableItemType = "PULL_REQUEST"
-	PinnableItemType_REPOSITORY   PinnableItemType = "REPOSITORY"
-	PinnableItemType_TEAM         PinnableItemType = "TEAM"
 	PinnableItemType_USER         PinnableItemType = "USER"
+	PinnableItemType_ORGANIZATION PinnableItemType = "ORGANIZATION"
+	PinnableItemType_TEAM         PinnableItemType = "TEAM"
 )
 
 type PinnedDiscussionGradient string
 
 const (
+	PinnedDiscussionGradient_RED_ORANGE   PinnedDiscussionGradient = "RED_ORANGE"
 	PinnedDiscussionGradient_BLUE_MINT    PinnedDiscussionGradient = "BLUE_MINT"
 	PinnedDiscussionGradient_BLUE_PURPLE  PinnedDiscussionGradient = "BLUE_PURPLE"
 	PinnedDiscussionGradient_PINK_BLUE    PinnedDiscussionGradient = "PINK_BLUE"
 	PinnedDiscussionGradient_PURPLE_CORAL PinnedDiscussionGradient = "PURPLE_CORAL"
-	PinnedDiscussionGradient_RED_ORANGE   PinnedDiscussionGradient = "RED_ORANGE"
 )
 
 type PinnedDiscussionPattern string
 
 const (
-	PinnedDiscussionPattern_CHEVRON_UP PinnedDiscussionPattern = "CHEVRON_UP"
-	PinnedDiscussionPattern_DOT        PinnedDiscussionPattern = "DOT"
 	PinnedDiscussionPattern_DOT_FILL   PinnedDiscussionPattern = "DOT_FILL"
-	PinnedDiscussionPattern_HEART_FILL PinnedDiscussionPattern = "HEART_FILL"
 	PinnedDiscussionPattern_PLUS       PinnedDiscussionPattern = "PLUS"
 	PinnedDiscussionPattern_ZAP        PinnedDiscussionPattern = "ZAP"
+	PinnedDiscussionPattern_CHEVRON_UP PinnedDiscussionPattern = "CHEVRON_UP"
+	PinnedDiscussionPattern_DOT        PinnedDiscussionPattern = "DOT"
+	PinnedDiscussionPattern_HEART_FILL PinnedDiscussionPattern = "HEART_FILL"
 )
 
 type ProjectCardArchivedState string
@@ -954,69 +950,69 @@ const (
 type ProjectColumnPurpose string
 
 const (
-	ProjectColumnPurpose_DONE        ProjectColumnPurpose = "DONE"
-	ProjectColumnPurpose_IN_PROGRESS ProjectColumnPurpose = "IN_PROGRESS"
 	ProjectColumnPurpose_TODO        ProjectColumnPurpose = "TODO"
+	ProjectColumnPurpose_IN_PROGRESS ProjectColumnPurpose = "IN_PROGRESS"
+	ProjectColumnPurpose_DONE        ProjectColumnPurpose = "DONE"
 )
 
 type ProjectOrderField string
 
 const (
 	ProjectOrderField_CREATED_AT ProjectOrderField = "CREATED_AT"
-	ProjectOrderField_NAME       ProjectOrderField = "NAME"
 	ProjectOrderField_UPDATED_AT ProjectOrderField = "UPDATED_AT"
+	ProjectOrderField_NAME       ProjectOrderField = "NAME"
 )
 
 type ProjectState string
 
 const (
-	ProjectState_CLOSED ProjectState = "CLOSED"
 	ProjectState_OPEN   ProjectState = "OPEN"
+	ProjectState_CLOSED ProjectState = "CLOSED"
 )
 
 type ProjectTemplate string
 
 const (
+	ProjectTemplate_BASIC_KANBAN             ProjectTemplate = "BASIC_KANBAN"
 	ProjectTemplate_AUTOMATED_KANBAN_V2      ProjectTemplate = "AUTOMATED_KANBAN_V2"
 	ProjectTemplate_AUTOMATED_REVIEWS_KANBAN ProjectTemplate = "AUTOMATED_REVIEWS_KANBAN"
-	ProjectTemplate_BASIC_KANBAN             ProjectTemplate = "BASIC_KANBAN"
 	ProjectTemplate_BUG_TRIAGE               ProjectTemplate = "BUG_TRIAGE"
 )
 
 type ProjectV2CustomFieldType string
 
 const (
-	ProjectV2CustomFieldType_DATE          ProjectV2CustomFieldType = "DATE"
-	ProjectV2CustomFieldType_NUMBER        ProjectV2CustomFieldType = "NUMBER"
-	ProjectV2CustomFieldType_SINGLE_SELECT ProjectV2CustomFieldType = "SINGLE_SELECT"
 	ProjectV2CustomFieldType_TEXT          ProjectV2CustomFieldType = "TEXT"
+	ProjectV2CustomFieldType_SINGLE_SELECT ProjectV2CustomFieldType = "SINGLE_SELECT"
+	ProjectV2CustomFieldType_NUMBER        ProjectV2CustomFieldType = "NUMBER"
+	ProjectV2CustomFieldType_DATE          ProjectV2CustomFieldType = "DATE"
 )
 
 type ProjectV2FieldOrderField string
 
 const (
+	ProjectV2FieldOrderField_POSITION   ProjectV2FieldOrderField = "POSITION"
 	ProjectV2FieldOrderField_CREATED_AT ProjectV2FieldOrderField = "CREATED_AT"
 	ProjectV2FieldOrderField_NAME       ProjectV2FieldOrderField = "NAME"
-	ProjectV2FieldOrderField_POSITION   ProjectV2FieldOrderField = "POSITION"
 )
 
 type ProjectV2FieldType string
 
 const (
 	ProjectV2FieldType_ASSIGNEES            ProjectV2FieldType = "ASSIGNEES"
+	ProjectV2FieldType_LINKED_PULL_REQUESTS ProjectV2FieldType = "LINKED_PULL_REQUESTS"
+	ProjectV2FieldType_REVIEWERS            ProjectV2FieldType = "REVIEWERS"
+	ProjectV2FieldType_LABELS               ProjectV2FieldType = "LABELS"
+	ProjectV2FieldType_MILESTONE            ProjectV2FieldType = "MILESTONE"
+	ProjectV2FieldType_REPOSITORY           ProjectV2FieldType = "REPOSITORY"
+	ProjectV2FieldType_TITLE                ProjectV2FieldType = "TITLE"
+	ProjectV2FieldType_TEXT                 ProjectV2FieldType = "TEXT"
+	ProjectV2FieldType_SINGLE_SELECT        ProjectV2FieldType = "SINGLE_SELECT"
+	ProjectV2FieldType_NUMBER               ProjectV2FieldType = "NUMBER"
 	ProjectV2FieldType_DATE                 ProjectV2FieldType = "DATE"
 	ProjectV2FieldType_ITERATION            ProjectV2FieldType = "ITERATION"
-	ProjectV2FieldType_LABELS               ProjectV2FieldType = "LABELS"
-	ProjectV2FieldType_LINKED_PULL_REQUESTS ProjectV2FieldType = "LINKED_PULL_REQUESTS"
-	ProjectV2FieldType_MILESTONE            ProjectV2FieldType = "MILESTONE"
-	ProjectV2FieldType_NUMBER               ProjectV2FieldType = "NUMBER"
-	ProjectV2FieldType_REPOSITORY           ProjectV2FieldType = "REPOSITORY"
-	ProjectV2FieldType_REVIEWERS            ProjectV2FieldType = "REVIEWERS"
-	ProjectV2FieldType_SINGLE_SELECT        ProjectV2FieldType = "SINGLE_SELECT"
-	ProjectV2FieldType_TEXT                 ProjectV2FieldType = "TEXT"
-	ProjectV2FieldType_TITLE                ProjectV2FieldType = "TITLE"
-	ProjectV2FieldType_TRACKED_BY           ProjectV2FieldType = "TRACKED_BY"
 	ProjectV2FieldType_TRACKS               ProjectV2FieldType = "TRACKS"
+	ProjectV2FieldType_TRACKED_BY           ProjectV2FieldType = "TRACKED_BY"
 )
 
 type ProjectV2ItemFieldValueOrderField string
@@ -1034,72 +1030,81 @@ const (
 type ProjectV2ItemType string
 
 const (
-	ProjectV2ItemType_DRAFT_ISSUE  ProjectV2ItemType = "DRAFT_ISSUE"
 	ProjectV2ItemType_ISSUE        ProjectV2ItemType = "ISSUE"
 	ProjectV2ItemType_PULL_REQUEST ProjectV2ItemType = "PULL_REQUEST"
+	ProjectV2ItemType_DRAFT_ISSUE  ProjectV2ItemType = "DRAFT_ISSUE"
 	ProjectV2ItemType_REDACTED     ProjectV2ItemType = "REDACTED"
 )
 
 type ProjectV2OrderField string
 
 const (
-	ProjectV2OrderField_CREATED_AT ProjectV2OrderField = "CREATED_AT"
-	ProjectV2OrderField_NUMBER     ProjectV2OrderField = "NUMBER"
 	ProjectV2OrderField_TITLE      ProjectV2OrderField = "TITLE"
+	ProjectV2OrderField_NUMBER     ProjectV2OrderField = "NUMBER"
 	ProjectV2OrderField_UPDATED_AT ProjectV2OrderField = "UPDATED_AT"
+	ProjectV2OrderField_CREATED_AT ProjectV2OrderField = "CREATED_AT"
+)
+
+type ProjectV2Roles string
+
+const (
+	ProjectV2Roles_NONE   ProjectV2Roles = "NONE"
+	ProjectV2Roles_READER ProjectV2Roles = "READER"
+	ProjectV2Roles_WRITER ProjectV2Roles = "WRITER"
+	ProjectV2Roles_ADMIN  ProjectV2Roles = "ADMIN"
 )
 
 type ProjectV2SingleSelectFieldOptionColor string
 
 const (
-	ProjectV2SingleSelectFieldOptionColor_BLUE   ProjectV2SingleSelectFieldOptionColor = "BLUE"
 	ProjectV2SingleSelectFieldOptionColor_GRAY   ProjectV2SingleSelectFieldOptionColor = "GRAY"
+	ProjectV2SingleSelectFieldOptionColor_BLUE   ProjectV2SingleSelectFieldOptionColor = "BLUE"
 	ProjectV2SingleSelectFieldOptionColor_GREEN  ProjectV2SingleSelectFieldOptionColor = "GREEN"
+	ProjectV2SingleSelectFieldOptionColor_YELLOW ProjectV2SingleSelectFieldOptionColor = "YELLOW"
 	ProjectV2SingleSelectFieldOptionColor_ORANGE ProjectV2SingleSelectFieldOptionColor = "ORANGE"
+	ProjectV2SingleSelectFieldOptionColor_RED    ProjectV2SingleSelectFieldOptionColor = "RED"
 	ProjectV2SingleSelectFieldOptionColor_PINK   ProjectV2SingleSelectFieldOptionColor = "PINK"
 	ProjectV2SingleSelectFieldOptionColor_PURPLE ProjectV2SingleSelectFieldOptionColor = "PURPLE"
-	ProjectV2SingleSelectFieldOptionColor_RED    ProjectV2SingleSelectFieldOptionColor = "RED"
-	ProjectV2SingleSelectFieldOptionColor_YELLOW ProjectV2SingleSelectFieldOptionColor = "YELLOW"
 )
 
 type ProjectV2State string
 
 const (
-	ProjectV2State_CLOSED ProjectV2State = "CLOSED"
 	ProjectV2State_OPEN   ProjectV2State = "OPEN"
+	ProjectV2State_CLOSED ProjectV2State = "CLOSED"
 )
 
 type ProjectV2ViewLayout string
 
 const (
 	ProjectV2ViewLayout_BOARD_LAYOUT   ProjectV2ViewLayout = "BOARD_LAYOUT"
-	ProjectV2ViewLayout_ROADMAP_LAYOUT ProjectV2ViewLayout = "ROADMAP_LAYOUT"
 	ProjectV2ViewLayout_TABLE_LAYOUT   ProjectV2ViewLayout = "TABLE_LAYOUT"
+	ProjectV2ViewLayout_ROADMAP_LAYOUT ProjectV2ViewLayout = "ROADMAP_LAYOUT"
 )
 
 type ProjectV2ViewOrderField string
 
 const (
+	ProjectV2ViewOrderField_POSITION   ProjectV2ViewOrderField = "POSITION"
 	ProjectV2ViewOrderField_CREATED_AT ProjectV2ViewOrderField = "CREATED_AT"
 	ProjectV2ViewOrderField_NAME       ProjectV2ViewOrderField = "NAME"
-	ProjectV2ViewOrderField_POSITION   ProjectV2ViewOrderField = "POSITION"
 )
 
 type ProjectV2WorkflowsOrderField string
 
 const (
-	ProjectV2WorkflowsOrderField_CREATED_AT ProjectV2WorkflowsOrderField = "CREATED_AT"
 	ProjectV2WorkflowsOrderField_NAME       ProjectV2WorkflowsOrderField = "NAME"
 	ProjectV2WorkflowsOrderField_NUMBER     ProjectV2WorkflowsOrderField = "NUMBER"
 	ProjectV2WorkflowsOrderField_UPDATED_AT ProjectV2WorkflowsOrderField = "UPDATED_AT"
+	ProjectV2WorkflowsOrderField_CREATED_AT ProjectV2WorkflowsOrderField = "CREATED_AT"
 )
 
 type PullRequestMergeMethod string
 
 const (
 	PullRequestMergeMethod_MERGE  PullRequestMergeMethod = "MERGE"
-	PullRequestMergeMethod_REBASE PullRequestMergeMethod = "REBASE"
 	PullRequestMergeMethod_SQUASH PullRequestMergeMethod = "SQUASH"
+	PullRequestMergeMethod_REBASE PullRequestMergeMethod = "REBASE"
 )
 
 type PullRequestOrderField string
@@ -1119,51 +1124,53 @@ const (
 type PullRequestReviewDecision string
 
 const (
-	PullRequestReviewDecision_APPROVED          PullRequestReviewDecision = "APPROVED"
 	PullRequestReviewDecision_CHANGES_REQUESTED PullRequestReviewDecision = "CHANGES_REQUESTED"
+	PullRequestReviewDecision_APPROVED          PullRequestReviewDecision = "APPROVED"
 	PullRequestReviewDecision_REVIEW_REQUIRED   PullRequestReviewDecision = "REVIEW_REQUIRED"
 )
 
 type PullRequestReviewEvent string
 
 const (
-	PullRequestReviewEvent_APPROVE         PullRequestReviewEvent = "APPROVE"
 	PullRequestReviewEvent_COMMENT         PullRequestReviewEvent = "COMMENT"
-	PullRequestReviewEvent_DISMISS         PullRequestReviewEvent = "DISMISS"
+	PullRequestReviewEvent_APPROVE         PullRequestReviewEvent = "APPROVE"
 	PullRequestReviewEvent_REQUEST_CHANGES PullRequestReviewEvent = "REQUEST_CHANGES"
+	PullRequestReviewEvent_DISMISS         PullRequestReviewEvent = "DISMISS"
 )
 
 type PullRequestReviewState string
 
 const (
+	PullRequestReviewState_PENDING           PullRequestReviewState = "PENDING"
+	PullRequestReviewState_COMMENTED         PullRequestReviewState = "COMMENTED"
 	PullRequestReviewState_APPROVED          PullRequestReviewState = "APPROVED"
 	PullRequestReviewState_CHANGES_REQUESTED PullRequestReviewState = "CHANGES_REQUESTED"
-	PullRequestReviewState_COMMENTED         PullRequestReviewState = "COMMENTED"
 	PullRequestReviewState_DISMISSED         PullRequestReviewState = "DISMISSED"
-	PullRequestReviewState_PENDING           PullRequestReviewState = "PENDING"
 )
 
 type PullRequestReviewThreadSubjectType string
 
 const (
-	PullRequestReviewThreadSubjectType_FILE PullRequestReviewThreadSubjectType = "FILE"
 	PullRequestReviewThreadSubjectType_LINE PullRequestReviewThreadSubjectType = "LINE"
+	PullRequestReviewThreadSubjectType_FILE PullRequestReviewThreadSubjectType = "FILE"
 )
 
 type PullRequestState string
 
 const (
+	PullRequestState_OPEN   PullRequestState = "OPEN"
 	PullRequestState_CLOSED PullRequestState = "CLOSED"
 	PullRequestState_MERGED PullRequestState = "MERGED"
-	PullRequestState_OPEN   PullRequestState = "OPEN"
 )
 
 type PullRequestTimelineItemsItemType string
 
 const (
-	PullRequestTimelineItemsItemType_ADDED_TO_MERGE_QUEUE_EVENT            PullRequestTimelineItemsItemType = "ADDED_TO_MERGE_QUEUE_EVENT"
-	PullRequestTimelineItemsItemType_ADDED_TO_PROJECT_EVENT                PullRequestTimelineItemsItemType = "ADDED_TO_PROJECT_EVENT"
-	PullRequestTimelineItemsItemType_ASSIGNED_EVENT                        PullRequestTimelineItemsItemType = "ASSIGNED_EVENT"
+	PullRequestTimelineItemsItemType_PULL_REQUEST_COMMIT                   PullRequestTimelineItemsItemType = "PULL_REQUEST_COMMIT"
+	PullRequestTimelineItemsItemType_PULL_REQUEST_COMMIT_COMMENT_THREAD    PullRequestTimelineItemsItemType = "PULL_REQUEST_COMMIT_COMMENT_THREAD"
+	PullRequestTimelineItemsItemType_PULL_REQUEST_REVIEW                   PullRequestTimelineItemsItemType = "PULL_REQUEST_REVIEW"
+	PullRequestTimelineItemsItemType_PULL_REQUEST_REVIEW_THREAD            PullRequestTimelineItemsItemType = "PULL_REQUEST_REVIEW_THREAD"
+	PullRequestTimelineItemsItemType_PULL_REQUEST_REVISION_MARKER          PullRequestTimelineItemsItemType = "PULL_REQUEST_REVISION_MARKER"
 	PullRequestTimelineItemsItemType_AUTOMATIC_BASE_CHANGE_FAILED_EVENT    PullRequestTimelineItemsItemType = "AUTOMATIC_BASE_CHANGE_FAILED_EVENT"
 	PullRequestTimelineItemsItemType_AUTOMATIC_BASE_CHANGE_SUCCEEDED_EVENT PullRequestTimelineItemsItemType = "AUTOMATIC_BASE_CHANGE_SUCCEEDED_EVENT"
 	PullRequestTimelineItemsItemType_AUTO_MERGE_DISABLED_EVENT             PullRequestTimelineItemsItemType = "AUTO_MERGE_DISABLED_EVENT"
@@ -1171,74 +1178,72 @@ const (
 	PullRequestTimelineItemsItemType_AUTO_REBASE_ENABLED_EVENT             PullRequestTimelineItemsItemType = "AUTO_REBASE_ENABLED_EVENT"
 	PullRequestTimelineItemsItemType_AUTO_SQUASH_ENABLED_EVENT             PullRequestTimelineItemsItemType = "AUTO_SQUASH_ENABLED_EVENT"
 	PullRequestTimelineItemsItemType_BASE_REF_CHANGED_EVENT                PullRequestTimelineItemsItemType = "BASE_REF_CHANGED_EVENT"
-	PullRequestTimelineItemsItemType_BASE_REF_DELETED_EVENT                PullRequestTimelineItemsItemType = "BASE_REF_DELETED_EVENT"
 	PullRequestTimelineItemsItemType_BASE_REF_FORCE_PUSHED_EVENT           PullRequestTimelineItemsItemType = "BASE_REF_FORCE_PUSHED_EVENT"
+	PullRequestTimelineItemsItemType_BASE_REF_DELETED_EVENT                PullRequestTimelineItemsItemType = "BASE_REF_DELETED_EVENT"
+	PullRequestTimelineItemsItemType_DEPLOYED_EVENT                        PullRequestTimelineItemsItemType = "DEPLOYED_EVENT"
+	PullRequestTimelineItemsItemType_DEPLOYMENT_ENVIRONMENT_CHANGED_EVENT  PullRequestTimelineItemsItemType = "DEPLOYMENT_ENVIRONMENT_CHANGED_EVENT"
+	PullRequestTimelineItemsItemType_HEAD_REF_DELETED_EVENT                PullRequestTimelineItemsItemType = "HEAD_REF_DELETED_EVENT"
+	PullRequestTimelineItemsItemType_HEAD_REF_FORCE_PUSHED_EVENT           PullRequestTimelineItemsItemType = "HEAD_REF_FORCE_PUSHED_EVENT"
+	PullRequestTimelineItemsItemType_HEAD_REF_RESTORED_EVENT               PullRequestTimelineItemsItemType = "HEAD_REF_RESTORED_EVENT"
+	PullRequestTimelineItemsItemType_MERGED_EVENT                          PullRequestTimelineItemsItemType = "MERGED_EVENT"
+	PullRequestTimelineItemsItemType_REVIEW_DISMISSED_EVENT                PullRequestTimelineItemsItemType = "REVIEW_DISMISSED_EVENT"
+	PullRequestTimelineItemsItemType_REVIEW_REQUESTED_EVENT                PullRequestTimelineItemsItemType = "REVIEW_REQUESTED_EVENT"
+	PullRequestTimelineItemsItemType_REVIEW_REQUEST_REMOVED_EVENT          PullRequestTimelineItemsItemType = "REVIEW_REQUEST_REMOVED_EVENT"
+	PullRequestTimelineItemsItemType_READY_FOR_REVIEW_EVENT                PullRequestTimelineItemsItemType = "READY_FOR_REVIEW_EVENT"
+	PullRequestTimelineItemsItemType_CONVERT_TO_DRAFT_EVENT                PullRequestTimelineItemsItemType = "CONVERT_TO_DRAFT_EVENT"
+	PullRequestTimelineItemsItemType_ADDED_TO_MERGE_QUEUE_EVENT            PullRequestTimelineItemsItemType = "ADDED_TO_MERGE_QUEUE_EVENT"
+	PullRequestTimelineItemsItemType_REMOVED_FROM_MERGE_QUEUE_EVENT        PullRequestTimelineItemsItemType = "REMOVED_FROM_MERGE_QUEUE_EVENT"
+	PullRequestTimelineItemsItemType_ISSUE_COMMENT                         PullRequestTimelineItemsItemType = "ISSUE_COMMENT"
+	PullRequestTimelineItemsItemType_CROSS_REFERENCED_EVENT                PullRequestTimelineItemsItemType = "CROSS_REFERENCED_EVENT"
+	PullRequestTimelineItemsItemType_ADDED_TO_PROJECT_EVENT                PullRequestTimelineItemsItemType = "ADDED_TO_PROJECT_EVENT"
+	PullRequestTimelineItemsItemType_ASSIGNED_EVENT                        PullRequestTimelineItemsItemType = "ASSIGNED_EVENT"
 	PullRequestTimelineItemsItemType_CLOSED_EVENT                          PullRequestTimelineItemsItemType = "CLOSED_EVENT"
 	PullRequestTimelineItemsItemType_COMMENT_DELETED_EVENT                 PullRequestTimelineItemsItemType = "COMMENT_DELETED_EVENT"
 	PullRequestTimelineItemsItemType_CONNECTED_EVENT                       PullRequestTimelineItemsItemType = "CONNECTED_EVENT"
 	PullRequestTimelineItemsItemType_CONVERTED_NOTE_TO_ISSUE_EVENT         PullRequestTimelineItemsItemType = "CONVERTED_NOTE_TO_ISSUE_EVENT"
 	PullRequestTimelineItemsItemType_CONVERTED_TO_DISCUSSION_EVENT         PullRequestTimelineItemsItemType = "CONVERTED_TO_DISCUSSION_EVENT"
-	PullRequestTimelineItemsItemType_CONVERT_TO_DRAFT_EVENT                PullRequestTimelineItemsItemType = "CONVERT_TO_DRAFT_EVENT"
-	PullRequestTimelineItemsItemType_CROSS_REFERENCED_EVENT                PullRequestTimelineItemsItemType = "CROSS_REFERENCED_EVENT"
 	PullRequestTimelineItemsItemType_DEMILESTONED_EVENT                    PullRequestTimelineItemsItemType = "DEMILESTONED_EVENT"
-	PullRequestTimelineItemsItemType_DEPLOYED_EVENT                        PullRequestTimelineItemsItemType = "DEPLOYED_EVENT"
-	PullRequestTimelineItemsItemType_DEPLOYMENT_ENVIRONMENT_CHANGED_EVENT  PullRequestTimelineItemsItemType = "DEPLOYMENT_ENVIRONMENT_CHANGED_EVENT"
 	PullRequestTimelineItemsItemType_DISCONNECTED_EVENT                    PullRequestTimelineItemsItemType = "DISCONNECTED_EVENT"
-	PullRequestTimelineItemsItemType_HEAD_REF_DELETED_EVENT                PullRequestTimelineItemsItemType = "HEAD_REF_DELETED_EVENT"
-	PullRequestTimelineItemsItemType_HEAD_REF_FORCE_PUSHED_EVENT           PullRequestTimelineItemsItemType = "HEAD_REF_FORCE_PUSHED_EVENT"
-	PullRequestTimelineItemsItemType_HEAD_REF_RESTORED_EVENT               PullRequestTimelineItemsItemType = "HEAD_REF_RESTORED_EVENT"
-	PullRequestTimelineItemsItemType_ISSUE_COMMENT                         PullRequestTimelineItemsItemType = "ISSUE_COMMENT"
 	PullRequestTimelineItemsItemType_LABELED_EVENT                         PullRequestTimelineItemsItemType = "LABELED_EVENT"
 	PullRequestTimelineItemsItemType_LOCKED_EVENT                          PullRequestTimelineItemsItemType = "LOCKED_EVENT"
 	PullRequestTimelineItemsItemType_MARKED_AS_DUPLICATE_EVENT             PullRequestTimelineItemsItemType = "MARKED_AS_DUPLICATE_EVENT"
 	PullRequestTimelineItemsItemType_MENTIONED_EVENT                       PullRequestTimelineItemsItemType = "MENTIONED_EVENT"
-	PullRequestTimelineItemsItemType_MERGED_EVENT                          PullRequestTimelineItemsItemType = "MERGED_EVENT"
 	PullRequestTimelineItemsItemType_MILESTONED_EVENT                      PullRequestTimelineItemsItemType = "MILESTONED_EVENT"
 	PullRequestTimelineItemsItemType_MOVED_COLUMNS_IN_PROJECT_EVENT        PullRequestTimelineItemsItemType = "MOVED_COLUMNS_IN_PROJECT_EVENT"
 	PullRequestTimelineItemsItemType_PINNED_EVENT                          PullRequestTimelineItemsItemType = "PINNED_EVENT"
-	PullRequestTimelineItemsItemType_PULL_REQUEST_COMMIT                   PullRequestTimelineItemsItemType = "PULL_REQUEST_COMMIT"
-	PullRequestTimelineItemsItemType_PULL_REQUEST_COMMIT_COMMENT_THREAD    PullRequestTimelineItemsItemType = "PULL_REQUEST_COMMIT_COMMENT_THREAD"
-	PullRequestTimelineItemsItemType_PULL_REQUEST_REVIEW                   PullRequestTimelineItemsItemType = "PULL_REQUEST_REVIEW"
-	PullRequestTimelineItemsItemType_PULL_REQUEST_REVIEW_THREAD            PullRequestTimelineItemsItemType = "PULL_REQUEST_REVIEW_THREAD"
-	PullRequestTimelineItemsItemType_PULL_REQUEST_REVISION_MARKER          PullRequestTimelineItemsItemType = "PULL_REQUEST_REVISION_MARKER"
-	PullRequestTimelineItemsItemType_READY_FOR_REVIEW_EVENT                PullRequestTimelineItemsItemType = "READY_FOR_REVIEW_EVENT"
 	PullRequestTimelineItemsItemType_REFERENCED_EVENT                      PullRequestTimelineItemsItemType = "REFERENCED_EVENT"
-	PullRequestTimelineItemsItemType_REMOVED_FROM_MERGE_QUEUE_EVENT        PullRequestTimelineItemsItemType = "REMOVED_FROM_MERGE_QUEUE_EVENT"
 	PullRequestTimelineItemsItemType_REMOVED_FROM_PROJECT_EVENT            PullRequestTimelineItemsItemType = "REMOVED_FROM_PROJECT_EVENT"
 	PullRequestTimelineItemsItemType_RENAMED_TITLE_EVENT                   PullRequestTimelineItemsItemType = "RENAMED_TITLE_EVENT"
 	PullRequestTimelineItemsItemType_REOPENED_EVENT                        PullRequestTimelineItemsItemType = "REOPENED_EVENT"
-	PullRequestTimelineItemsItemType_REVIEW_DISMISSED_EVENT                PullRequestTimelineItemsItemType = "REVIEW_DISMISSED_EVENT"
-	PullRequestTimelineItemsItemType_REVIEW_REQUESTED_EVENT                PullRequestTimelineItemsItemType = "REVIEW_REQUESTED_EVENT"
-	PullRequestTimelineItemsItemType_REVIEW_REQUEST_REMOVED_EVENT          PullRequestTimelineItemsItemType = "REVIEW_REQUEST_REMOVED_EVENT"
 	PullRequestTimelineItemsItemType_SUBSCRIBED_EVENT                      PullRequestTimelineItemsItemType = "SUBSCRIBED_EVENT"
 	PullRequestTimelineItemsItemType_TRANSFERRED_EVENT                     PullRequestTimelineItemsItemType = "TRANSFERRED_EVENT"
 	PullRequestTimelineItemsItemType_UNASSIGNED_EVENT                      PullRequestTimelineItemsItemType = "UNASSIGNED_EVENT"
 	PullRequestTimelineItemsItemType_UNLABELED_EVENT                       PullRequestTimelineItemsItemType = "UNLABELED_EVENT"
 	PullRequestTimelineItemsItemType_UNLOCKED_EVENT                        PullRequestTimelineItemsItemType = "UNLOCKED_EVENT"
+	PullRequestTimelineItemsItemType_USER_BLOCKED_EVENT                    PullRequestTimelineItemsItemType = "USER_BLOCKED_EVENT"
 	PullRequestTimelineItemsItemType_UNMARKED_AS_DUPLICATE_EVENT           PullRequestTimelineItemsItemType = "UNMARKED_AS_DUPLICATE_EVENT"
 	PullRequestTimelineItemsItemType_UNPINNED_EVENT                        PullRequestTimelineItemsItemType = "UNPINNED_EVENT"
 	PullRequestTimelineItemsItemType_UNSUBSCRIBED_EVENT                    PullRequestTimelineItemsItemType = "UNSUBSCRIBED_EVENT"
-	PullRequestTimelineItemsItemType_USER_BLOCKED_EVENT                    PullRequestTimelineItemsItemType = "USER_BLOCKED_EVENT"
 )
 
 type PullRequestUpdateState string
 
 const (
-	PullRequestUpdateState_CLOSED PullRequestUpdateState = "CLOSED"
 	PullRequestUpdateState_OPEN   PullRequestUpdateState = "OPEN"
+	PullRequestUpdateState_CLOSED PullRequestUpdateState = "CLOSED"
 )
 
 type ReactionContent string
 
 const (
-	ReactionContent_CONFUSED    ReactionContent = "CONFUSED"
-	ReactionContent_EYES        ReactionContent = "EYES"
-	ReactionContent_HEART       ReactionContent = "HEART"
-	ReactionContent_HOORAY      ReactionContent = "HOORAY"
-	ReactionContent_LAUGH       ReactionContent = "LAUGH"
-	ReactionContent_ROCKET      ReactionContent = "ROCKET"
-	ReactionContent_THUMBS_DOWN ReactionContent = "THUMBS_DOWN"
 	ReactionContent_THUMBS_UP   ReactionContent = "THUMBS_UP"
+	ReactionContent_THUMBS_DOWN ReactionContent = "THUMBS_DOWN"
+	ReactionContent_LAUGH       ReactionContent = "LAUGH"
+	ReactionContent_HOORAY      ReactionContent = "HOORAY"
+	ReactionContent_CONFUSED    ReactionContent = "CONFUSED"
+	ReactionContent_HEART       ReactionContent = "HEART"
+	ReactionContent_ROCKET      ReactionContent = "ROCKET"
+	ReactionContent_EYES        ReactionContent = "EYES"
 )
 
 type ReactionOrderField string
@@ -1250,8 +1255,8 @@ const (
 type RefOrderField string
 
 const (
-	RefOrderField_ALPHABETICAL    RefOrderField = "ALPHABETICAL"
 	RefOrderField_TAG_COMMIT_DATE RefOrderField = "TAG_COMMIT_DATE"
+	RefOrderField_ALPHABETICAL    RefOrderField = "ALPHABETICAL"
 )
 
 type ReleaseOrderField string
@@ -1320,20 +1325,20 @@ const (
 type ReportedContentClassifiers string
 
 const (
+	ReportedContentClassifiers_SPAM      ReportedContentClassifiers = "SPAM"
 	ReportedContentClassifiers_ABUSE     ReportedContentClassifiers = "ABUSE"
-	ReportedContentClassifiers_DUPLICATE ReportedContentClassifiers = "DUPLICATE"
 	ReportedContentClassifiers_OFF_TOPIC ReportedContentClassifiers = "OFF_TOPIC"
 	ReportedContentClassifiers_OUTDATED  ReportedContentClassifiers = "OUTDATED"
+	ReportedContentClassifiers_DUPLICATE ReportedContentClassifiers = "DUPLICATE"
 	ReportedContentClassifiers_RESOLVED  ReportedContentClassifiers = "RESOLVED"
-	ReportedContentClassifiers_SPAM      ReportedContentClassifiers = "SPAM"
 )
 
 type RepositoryAffiliation string
 
 const (
+	RepositoryAffiliation_OWNER               RepositoryAffiliation = "OWNER"
 	RepositoryAffiliation_COLLABORATOR        RepositoryAffiliation = "COLLABORATOR"
 	RepositoryAffiliation_ORGANIZATION_MEMBER RepositoryAffiliation = "ORGANIZATION_MEMBER"
-	RepositoryAffiliation_OWNER               RepositoryAffiliation = "OWNER"
 )
 
 type RepositoryContributionType string
@@ -1342,16 +1347,16 @@ const (
 	RepositoryContributionType_COMMIT              RepositoryContributionType = "COMMIT"
 	RepositoryContributionType_ISSUE               RepositoryContributionType = "ISSUE"
 	RepositoryContributionType_PULL_REQUEST        RepositoryContributionType = "PULL_REQUEST"
-	RepositoryContributionType_PULL_REQUEST_REVIEW RepositoryContributionType = "PULL_REQUEST_REVIEW"
 	RepositoryContributionType_REPOSITORY          RepositoryContributionType = "REPOSITORY"
+	RepositoryContributionType_PULL_REQUEST_REVIEW RepositoryContributionType = "PULL_REQUEST_REVIEW"
 )
 
 type RepositoryInteractionLimit string
 
 const (
-	RepositoryInteractionLimit_COLLABORATORS_ONLY RepositoryInteractionLimit = "COLLABORATORS_ONLY"
-	RepositoryInteractionLimit_CONTRIBUTORS_ONLY  RepositoryInteractionLimit = "CONTRIBUTORS_ONLY"
 	RepositoryInteractionLimit_EXISTING_USERS     RepositoryInteractionLimit = "EXISTING_USERS"
+	RepositoryInteractionLimit_CONTRIBUTORS_ONLY  RepositoryInteractionLimit = "CONTRIBUTORS_ONLY"
+	RepositoryInteractionLimit_COLLABORATORS_ONLY RepositoryInteractionLimit = "COLLABORATORS_ONLY"
 	RepositoryInteractionLimit_NO_LIMIT           RepositoryInteractionLimit = "NO_LIMIT"
 )
 
@@ -1359,17 +1364,17 @@ type RepositoryInteractionLimitExpiry string
 
 const (
 	RepositoryInteractionLimitExpiry_ONE_DAY    RepositoryInteractionLimitExpiry = "ONE_DAY"
-	RepositoryInteractionLimitExpiry_ONE_MONTH  RepositoryInteractionLimitExpiry = "ONE_MONTH"
-	RepositoryInteractionLimitExpiry_ONE_WEEK   RepositoryInteractionLimitExpiry = "ONE_WEEK"
-	RepositoryInteractionLimitExpiry_SIX_MONTHS RepositoryInteractionLimitExpiry = "SIX_MONTHS"
 	RepositoryInteractionLimitExpiry_THREE_DAYS RepositoryInteractionLimitExpiry = "THREE_DAYS"
+	RepositoryInteractionLimitExpiry_ONE_WEEK   RepositoryInteractionLimitExpiry = "ONE_WEEK"
+	RepositoryInteractionLimitExpiry_ONE_MONTH  RepositoryInteractionLimitExpiry = "ONE_MONTH"
+	RepositoryInteractionLimitExpiry_SIX_MONTHS RepositoryInteractionLimitExpiry = "SIX_MONTHS"
 )
 
 type RepositoryInteractionLimitOrigin string
 
 const (
-	RepositoryInteractionLimitOrigin_ORGANIZATION RepositoryInteractionLimitOrigin = "ORGANIZATION"
 	RepositoryInteractionLimitOrigin_REPOSITORY   RepositoryInteractionLimitOrigin = "REPOSITORY"
+	RepositoryInteractionLimitOrigin_ORGANIZATION RepositoryInteractionLimitOrigin = "ORGANIZATION"
 	RepositoryInteractionLimitOrigin_USER         RepositoryInteractionLimitOrigin = "USER"
 )
 
@@ -1382,10 +1387,10 @@ const (
 type RepositoryLockReason string
 
 const (
-	RepositoryLockReason_BILLING           RepositoryLockReason = "BILLING"
-	RepositoryLockReason_MIGRATING         RepositoryLockReason = "MIGRATING"
 	RepositoryLockReason_MOVING            RepositoryLockReason = "MOVING"
+	RepositoryLockReason_BILLING           RepositoryLockReason = "BILLING"
 	RepositoryLockReason_RENAME            RepositoryLockReason = "RENAME"
+	RepositoryLockReason_MIGRATING         RepositoryLockReason = "MIGRATING"
 	RepositoryLockReason_TRADE_RESTRICTION RepositoryLockReason = "TRADE_RESTRICTION"
 )
 
@@ -1406,10 +1411,10 @@ type RepositoryOrderField string
 
 const (
 	RepositoryOrderField_CREATED_AT RepositoryOrderField = "CREATED_AT"
-	RepositoryOrderField_NAME       RepositoryOrderField = "NAME"
-	RepositoryOrderField_PUSHED_AT  RepositoryOrderField = "PUSHED_AT"
-	RepositoryOrderField_STARGAZERS RepositoryOrderField = "STARGAZERS"
 	RepositoryOrderField_UPDATED_AT RepositoryOrderField = "UPDATED_AT"
+	RepositoryOrderField_PUSHED_AT  RepositoryOrderField = "PUSHED_AT"
+	RepositoryOrderField_NAME       RepositoryOrderField = "NAME"
+	RepositoryOrderField_STARGAZERS RepositoryOrderField = "STARGAZERS"
 )
 
 type RepositoryPermission string
@@ -1417,35 +1422,42 @@ type RepositoryPermission string
 const (
 	RepositoryPermission_ADMIN    RepositoryPermission = "ADMIN"
 	RepositoryPermission_MAINTAIN RepositoryPermission = "MAINTAIN"
-	RepositoryPermission_READ     RepositoryPermission = "READ"
-	RepositoryPermission_TRIAGE   RepositoryPermission = "TRIAGE"
 	RepositoryPermission_WRITE    RepositoryPermission = "WRITE"
+	RepositoryPermission_TRIAGE   RepositoryPermission = "TRIAGE"
+	RepositoryPermission_READ     RepositoryPermission = "READ"
 )
 
 type RepositoryPrivacy string
 
 const (
-	RepositoryPrivacy_PRIVATE RepositoryPrivacy = "PRIVATE"
 	RepositoryPrivacy_PUBLIC  RepositoryPrivacy = "PUBLIC"
+	RepositoryPrivacy_PRIVATE RepositoryPrivacy = "PRIVATE"
 )
 
 type RepositoryRuleType string
 
 const (
-	RepositoryRuleType_BRANCH_NAME_PATTERN         RepositoryRuleType = "BRANCH_NAME_PATTERN"
-	RepositoryRuleType_COMMITTER_EMAIL_PATTERN     RepositoryRuleType = "COMMITTER_EMAIL_PATTERN"
-	RepositoryRuleType_COMMIT_AUTHOR_EMAIL_PATTERN RepositoryRuleType = "COMMIT_AUTHOR_EMAIL_PATTERN"
-	RepositoryRuleType_COMMIT_MESSAGE_PATTERN      RepositoryRuleType = "COMMIT_MESSAGE_PATTERN"
 	RepositoryRuleType_CREATION                    RepositoryRuleType = "CREATION"
-	RepositoryRuleType_DELETION                    RepositoryRuleType = "DELETION"
-	RepositoryRuleType_NON_FAST_FORWARD            RepositoryRuleType = "NON_FAST_FORWARD"
-	RepositoryRuleType_PULL_REQUEST                RepositoryRuleType = "PULL_REQUEST"
-	RepositoryRuleType_REQUIRED_DEPLOYMENTS        RepositoryRuleType = "REQUIRED_DEPLOYMENTS"
-	RepositoryRuleType_REQUIRED_LINEAR_HISTORY     RepositoryRuleType = "REQUIRED_LINEAR_HISTORY"
-	RepositoryRuleType_REQUIRED_SIGNATURES         RepositoryRuleType = "REQUIRED_SIGNATURES"
-	RepositoryRuleType_REQUIRED_STATUS_CHECKS      RepositoryRuleType = "REQUIRED_STATUS_CHECKS"
-	RepositoryRuleType_TAG_NAME_PATTERN            RepositoryRuleType = "TAG_NAME_PATTERN"
 	RepositoryRuleType_UPDATE                      RepositoryRuleType = "UPDATE"
+	RepositoryRuleType_DELETION                    RepositoryRuleType = "DELETION"
+	RepositoryRuleType_REQUIRED_LINEAR_HISTORY     RepositoryRuleType = "REQUIRED_LINEAR_HISTORY"
+	RepositoryRuleType_REQUIRED_DEPLOYMENTS        RepositoryRuleType = "REQUIRED_DEPLOYMENTS"
+	RepositoryRuleType_REQUIRED_SIGNATURES         RepositoryRuleType = "REQUIRED_SIGNATURES"
+	RepositoryRuleType_PULL_REQUEST                RepositoryRuleType = "PULL_REQUEST"
+	RepositoryRuleType_REQUIRED_STATUS_CHECKS      RepositoryRuleType = "REQUIRED_STATUS_CHECKS"
+	RepositoryRuleType_NON_FAST_FORWARD            RepositoryRuleType = "NON_FAST_FORWARD"
+	RepositoryRuleType_COMMIT_MESSAGE_PATTERN      RepositoryRuleType = "COMMIT_MESSAGE_PATTERN"
+	RepositoryRuleType_COMMIT_AUTHOR_EMAIL_PATTERN RepositoryRuleType = "COMMIT_AUTHOR_EMAIL_PATTERN"
+	RepositoryRuleType_COMMITTER_EMAIL_PATTERN     RepositoryRuleType = "COMMITTER_EMAIL_PATTERN"
+	RepositoryRuleType_BRANCH_NAME_PATTERN         RepositoryRuleType = "BRANCH_NAME_PATTERN"
+	RepositoryRuleType_TAG_NAME_PATTERN            RepositoryRuleType = "TAG_NAME_PATTERN"
+)
+
+type RepositoryRulesetBypassActorBypassMode string
+
+const (
+	RepositoryRulesetBypassActorBypassMode_ALWAYS       RepositoryRulesetBypassActorBypassMode = "ALWAYS"
+	RepositoryRulesetBypassActorBypassMode_PULL_REQUEST RepositoryRulesetBypassActorBypassMode = "PULL_REQUEST"
 )
 
 type RepositoryRulesetTarget string
@@ -1458,58 +1470,50 @@ const (
 type RepositoryVisibility string
 
 const (
-	RepositoryVisibility_INTERNAL RepositoryVisibility = "INTERNAL"
 	RepositoryVisibility_PRIVATE  RepositoryVisibility = "PRIVATE"
 	RepositoryVisibility_PUBLIC   RepositoryVisibility = "PUBLIC"
+	RepositoryVisibility_INTERNAL RepositoryVisibility = "INTERNAL"
 )
 
 type RepositoryVulnerabilityAlertDependencyScope string
 
 const (
-	RepositoryVulnerabilityAlertDependencyScope_DEVELOPMENT RepositoryVulnerabilityAlertDependencyScope = "DEVELOPMENT"
 	RepositoryVulnerabilityAlertDependencyScope_RUNTIME     RepositoryVulnerabilityAlertDependencyScope = "RUNTIME"
+	RepositoryVulnerabilityAlertDependencyScope_DEVELOPMENT RepositoryVulnerabilityAlertDependencyScope = "DEVELOPMENT"
 )
 
 type RepositoryVulnerabilityAlertState string
 
 const (
-	RepositoryVulnerabilityAlertState_AUTO_DISMISSED RepositoryVulnerabilityAlertState = "AUTO_DISMISSED"
-	RepositoryVulnerabilityAlertState_DISMISSED      RepositoryVulnerabilityAlertState = "DISMISSED"
-	RepositoryVulnerabilityAlertState_FIXED          RepositoryVulnerabilityAlertState = "FIXED"
 	RepositoryVulnerabilityAlertState_OPEN           RepositoryVulnerabilityAlertState = "OPEN"
+	RepositoryVulnerabilityAlertState_FIXED          RepositoryVulnerabilityAlertState = "FIXED"
+	RepositoryVulnerabilityAlertState_DISMISSED      RepositoryVulnerabilityAlertState = "DISMISSED"
+	RepositoryVulnerabilityAlertState_AUTO_DISMISSED RepositoryVulnerabilityAlertState = "AUTO_DISMISSED"
 )
 
 type RequestableCheckStatusState string
 
 const (
-	RequestableCheckStatusState_COMPLETED   RequestableCheckStatusState = "COMPLETED"
-	RequestableCheckStatusState_IN_PROGRESS RequestableCheckStatusState = "IN_PROGRESS"
-	RequestableCheckStatusState_PENDING     RequestableCheckStatusState = "PENDING"
 	RequestableCheckStatusState_QUEUED      RequestableCheckStatusState = "QUEUED"
+	RequestableCheckStatusState_IN_PROGRESS RequestableCheckStatusState = "IN_PROGRESS"
+	RequestableCheckStatusState_COMPLETED   RequestableCheckStatusState = "COMPLETED"
 	RequestableCheckStatusState_WAITING     RequestableCheckStatusState = "WAITING"
+	RequestableCheckStatusState_PENDING     RequestableCheckStatusState = "PENDING"
 )
 
 type RoleInOrganization string
 
 const (
-	RoleInOrganization_DIRECT_MEMBER RoleInOrganization = "DIRECT_MEMBER"
 	RoleInOrganization_OWNER         RoleInOrganization = "OWNER"
+	RoleInOrganization_DIRECT_MEMBER RoleInOrganization = "DIRECT_MEMBER"
 	RoleInOrganization_UNAFFILIATED  RoleInOrganization = "UNAFFILIATED"
-)
-
-type RuleBypassMode string
-
-const (
-	RuleBypassMode_NONE         RuleBypassMode = "NONE"
-	RuleBypassMode_ORGANIZATION RuleBypassMode = "ORGANIZATION"
-	RuleBypassMode_REPOSITORY   RuleBypassMode = "REPOSITORY"
 )
 
 type RuleEnforcement string
 
 const (
-	RuleEnforcement_ACTIVE   RuleEnforcement = "ACTIVE"
 	RuleEnforcement_DISABLED RuleEnforcement = "DISABLED"
+	RuleEnforcement_ACTIVE   RuleEnforcement = "ACTIVE"
 	RuleEnforcement_EVALUATE RuleEnforcement = "EVALUATE"
 )
 
@@ -1540,10 +1544,10 @@ const (
 type SearchType string
 
 const (
-	SearchType_DISCUSSION SearchType = "DISCUSSION"
 	SearchType_ISSUE      SearchType = "ISSUE"
 	SearchType_REPOSITORY SearchType = "REPOSITORY"
 	SearchType_USER       SearchType = "USER"
+	SearchType_DISCUSSION SearchType = "DISCUSSION"
 )
 
 type SecurityAdvisoryClassification string
@@ -1556,9 +1560,9 @@ const (
 type SecurityAdvisoryEcosystem string
 
 const (
-	SecurityAdvisoryEcosystem_ACTIONS  SecurityAdvisoryEcosystem = "ACTIONS"
 	SecurityAdvisoryEcosystem_COMPOSER SecurityAdvisoryEcosystem = "COMPOSER"
 	SecurityAdvisoryEcosystem_ERLANG   SecurityAdvisoryEcosystem = "ERLANG"
+	SecurityAdvisoryEcosystem_ACTIONS  SecurityAdvisoryEcosystem = "ACTIONS"
 	SecurityAdvisoryEcosystem_GO       SecurityAdvisoryEcosystem = "GO"
 	SecurityAdvisoryEcosystem_MAVEN    SecurityAdvisoryEcosystem = "MAVEN"
 	SecurityAdvisoryEcosystem_NPM      SecurityAdvisoryEcosystem = "NPM"
@@ -1567,6 +1571,7 @@ const (
 	SecurityAdvisoryEcosystem_PUB      SecurityAdvisoryEcosystem = "PUB"
 	SecurityAdvisoryEcosystem_RUBYGEMS SecurityAdvisoryEcosystem = "RUBYGEMS"
 	SecurityAdvisoryEcosystem_RUST     SecurityAdvisoryEcosystem = "RUST"
+	SecurityAdvisoryEcosystem_SWIFT    SecurityAdvisoryEcosystem = "SWIFT"
 )
 
 type SecurityAdvisoryIdentifierType string
@@ -1586,10 +1591,10 @@ const (
 type SecurityAdvisorySeverity string
 
 const (
-	SecurityAdvisorySeverity_CRITICAL SecurityAdvisorySeverity = "CRITICAL"
-	SecurityAdvisorySeverity_HIGH     SecurityAdvisorySeverity = "HIGH"
 	SecurityAdvisorySeverity_LOW      SecurityAdvisorySeverity = "LOW"
 	SecurityAdvisorySeverity_MODERATE SecurityAdvisorySeverity = "MODERATE"
+	SecurityAdvisorySeverity_HIGH     SecurityAdvisorySeverity = "HIGH"
+	SecurityAdvisorySeverity_CRITICAL SecurityAdvisorySeverity = "CRITICAL"
 )
 
 type SecurityVulnerabilityOrderField string
@@ -1601,8 +1606,8 @@ const (
 type SocialAccountProvider string
 
 const (
-	SocialAccountProvider_FACEBOOK  SocialAccountProvider = "FACEBOOK"
 	SocialAccountProvider_GENERIC   SocialAccountProvider = "GENERIC"
+	SocialAccountProvider_FACEBOOK  SocialAccountProvider = "FACEBOOK"
 	SocialAccountProvider_HOMETOWN  SocialAccountProvider = "HOMETOWN"
 	SocialAccountProvider_INSTAGRAM SocialAccountProvider = "INSTAGRAM"
 	SocialAccountProvider_LINKEDIN  SocialAccountProvider = "LINKEDIN"
@@ -1629,12 +1634,12 @@ const (
 type SponsorsActivityAction string
 
 const (
-	SponsorsActivityAction_CANCELLED_SPONSORSHIP  SponsorsActivityAction = "CANCELLED_SPONSORSHIP"
 	SponsorsActivityAction_NEW_SPONSORSHIP        SponsorsActivityAction = "NEW_SPONSORSHIP"
-	SponsorsActivityAction_PENDING_CHANGE         SponsorsActivityAction = "PENDING_CHANGE"
-	SponsorsActivityAction_REFUND                 SponsorsActivityAction = "REFUND"
-	SponsorsActivityAction_SPONSOR_MATCH_DISABLED SponsorsActivityAction = "SPONSOR_MATCH_DISABLED"
+	SponsorsActivityAction_CANCELLED_SPONSORSHIP  SponsorsActivityAction = "CANCELLED_SPONSORSHIP"
 	SponsorsActivityAction_TIER_CHANGE            SponsorsActivityAction = "TIER_CHANGE"
+	SponsorsActivityAction_REFUND                 SponsorsActivityAction = "REFUND"
+	SponsorsActivityAction_PENDING_CHANGE         SponsorsActivityAction = "PENDING_CHANGE"
+	SponsorsActivityAction_SPONSOR_MATCH_DISABLED SponsorsActivityAction = "SPONSOR_MATCH_DISABLED"
 )
 
 type SponsorsActivityOrderField string
@@ -1646,259 +1651,259 @@ const (
 type SponsorsActivityPeriod string
 
 const (
-	SponsorsActivityPeriod_ALL   SponsorsActivityPeriod = "ALL"
 	SponsorsActivityPeriod_DAY   SponsorsActivityPeriod = "DAY"
-	SponsorsActivityPeriod_MONTH SponsorsActivityPeriod = "MONTH"
 	SponsorsActivityPeriod_WEEK  SponsorsActivityPeriod = "WEEK"
+	SponsorsActivityPeriod_MONTH SponsorsActivityPeriod = "MONTH"
+	SponsorsActivityPeriod_ALL   SponsorsActivityPeriod = "ALL"
 )
 
 type SponsorsCountryOrRegionCode string
 
 const (
-	SponsorsCountryOrRegionCode_AD SponsorsCountryOrRegionCode = "AD"
-	SponsorsCountryOrRegionCode_AE SponsorsCountryOrRegionCode = "AE"
 	SponsorsCountryOrRegionCode_AF SponsorsCountryOrRegionCode = "AF"
-	SponsorsCountryOrRegionCode_AG SponsorsCountryOrRegionCode = "AG"
-	SponsorsCountryOrRegionCode_AI SponsorsCountryOrRegionCode = "AI"
-	SponsorsCountryOrRegionCode_AL SponsorsCountryOrRegionCode = "AL"
-	SponsorsCountryOrRegionCode_AM SponsorsCountryOrRegionCode = "AM"
-	SponsorsCountryOrRegionCode_AO SponsorsCountryOrRegionCode = "AO"
-	SponsorsCountryOrRegionCode_AQ SponsorsCountryOrRegionCode = "AQ"
-	SponsorsCountryOrRegionCode_AR SponsorsCountryOrRegionCode = "AR"
-	SponsorsCountryOrRegionCode_AS SponsorsCountryOrRegionCode = "AS"
-	SponsorsCountryOrRegionCode_AT SponsorsCountryOrRegionCode = "AT"
-	SponsorsCountryOrRegionCode_AU SponsorsCountryOrRegionCode = "AU"
-	SponsorsCountryOrRegionCode_AW SponsorsCountryOrRegionCode = "AW"
 	SponsorsCountryOrRegionCode_AX SponsorsCountryOrRegionCode = "AX"
+	SponsorsCountryOrRegionCode_AL SponsorsCountryOrRegionCode = "AL"
+	SponsorsCountryOrRegionCode_DZ SponsorsCountryOrRegionCode = "DZ"
+	SponsorsCountryOrRegionCode_AS SponsorsCountryOrRegionCode = "AS"
+	SponsorsCountryOrRegionCode_AD SponsorsCountryOrRegionCode = "AD"
+	SponsorsCountryOrRegionCode_AO SponsorsCountryOrRegionCode = "AO"
+	SponsorsCountryOrRegionCode_AI SponsorsCountryOrRegionCode = "AI"
+	SponsorsCountryOrRegionCode_AQ SponsorsCountryOrRegionCode = "AQ"
+	SponsorsCountryOrRegionCode_AG SponsorsCountryOrRegionCode = "AG"
+	SponsorsCountryOrRegionCode_AR SponsorsCountryOrRegionCode = "AR"
+	SponsorsCountryOrRegionCode_AM SponsorsCountryOrRegionCode = "AM"
+	SponsorsCountryOrRegionCode_AW SponsorsCountryOrRegionCode = "AW"
+	SponsorsCountryOrRegionCode_AU SponsorsCountryOrRegionCode = "AU"
+	SponsorsCountryOrRegionCode_AT SponsorsCountryOrRegionCode = "AT"
 	SponsorsCountryOrRegionCode_AZ SponsorsCountryOrRegionCode = "AZ"
-	SponsorsCountryOrRegionCode_BA SponsorsCountryOrRegionCode = "BA"
-	SponsorsCountryOrRegionCode_BB SponsorsCountryOrRegionCode = "BB"
-	SponsorsCountryOrRegionCode_BD SponsorsCountryOrRegionCode = "BD"
-	SponsorsCountryOrRegionCode_BE SponsorsCountryOrRegionCode = "BE"
-	SponsorsCountryOrRegionCode_BF SponsorsCountryOrRegionCode = "BF"
-	SponsorsCountryOrRegionCode_BG SponsorsCountryOrRegionCode = "BG"
+	SponsorsCountryOrRegionCode_BS SponsorsCountryOrRegionCode = "BS"
 	SponsorsCountryOrRegionCode_BH SponsorsCountryOrRegionCode = "BH"
-	SponsorsCountryOrRegionCode_BI SponsorsCountryOrRegionCode = "BI"
+	SponsorsCountryOrRegionCode_BD SponsorsCountryOrRegionCode = "BD"
+	SponsorsCountryOrRegionCode_BB SponsorsCountryOrRegionCode = "BB"
+	SponsorsCountryOrRegionCode_BY SponsorsCountryOrRegionCode = "BY"
+	SponsorsCountryOrRegionCode_BE SponsorsCountryOrRegionCode = "BE"
+	SponsorsCountryOrRegionCode_BZ SponsorsCountryOrRegionCode = "BZ"
 	SponsorsCountryOrRegionCode_BJ SponsorsCountryOrRegionCode = "BJ"
-	SponsorsCountryOrRegionCode_BL SponsorsCountryOrRegionCode = "BL"
 	SponsorsCountryOrRegionCode_BM SponsorsCountryOrRegionCode = "BM"
-	SponsorsCountryOrRegionCode_BN SponsorsCountryOrRegionCode = "BN"
+	SponsorsCountryOrRegionCode_BT SponsorsCountryOrRegionCode = "BT"
 	SponsorsCountryOrRegionCode_BO SponsorsCountryOrRegionCode = "BO"
 	SponsorsCountryOrRegionCode_BQ SponsorsCountryOrRegionCode = "BQ"
-	SponsorsCountryOrRegionCode_BR SponsorsCountryOrRegionCode = "BR"
-	SponsorsCountryOrRegionCode_BS SponsorsCountryOrRegionCode = "BS"
-	SponsorsCountryOrRegionCode_BT SponsorsCountryOrRegionCode = "BT"
-	SponsorsCountryOrRegionCode_BV SponsorsCountryOrRegionCode = "BV"
+	SponsorsCountryOrRegionCode_BA SponsorsCountryOrRegionCode = "BA"
 	SponsorsCountryOrRegionCode_BW SponsorsCountryOrRegionCode = "BW"
-	SponsorsCountryOrRegionCode_BY SponsorsCountryOrRegionCode = "BY"
-	SponsorsCountryOrRegionCode_BZ SponsorsCountryOrRegionCode = "BZ"
-	SponsorsCountryOrRegionCode_CA SponsorsCountryOrRegionCode = "CA"
-	SponsorsCountryOrRegionCode_CC SponsorsCountryOrRegionCode = "CC"
-	SponsorsCountryOrRegionCode_CD SponsorsCountryOrRegionCode = "CD"
-	SponsorsCountryOrRegionCode_CF SponsorsCountryOrRegionCode = "CF"
-	SponsorsCountryOrRegionCode_CG SponsorsCountryOrRegionCode = "CG"
-	SponsorsCountryOrRegionCode_CH SponsorsCountryOrRegionCode = "CH"
-	SponsorsCountryOrRegionCode_CI SponsorsCountryOrRegionCode = "CI"
-	SponsorsCountryOrRegionCode_CK SponsorsCountryOrRegionCode = "CK"
-	SponsorsCountryOrRegionCode_CL SponsorsCountryOrRegionCode = "CL"
+	SponsorsCountryOrRegionCode_BV SponsorsCountryOrRegionCode = "BV"
+	SponsorsCountryOrRegionCode_BR SponsorsCountryOrRegionCode = "BR"
+	SponsorsCountryOrRegionCode_IO SponsorsCountryOrRegionCode = "IO"
+	SponsorsCountryOrRegionCode_BN SponsorsCountryOrRegionCode = "BN"
+	SponsorsCountryOrRegionCode_BG SponsorsCountryOrRegionCode = "BG"
+	SponsorsCountryOrRegionCode_BF SponsorsCountryOrRegionCode = "BF"
+	SponsorsCountryOrRegionCode_BI SponsorsCountryOrRegionCode = "BI"
+	SponsorsCountryOrRegionCode_KH SponsorsCountryOrRegionCode = "KH"
 	SponsorsCountryOrRegionCode_CM SponsorsCountryOrRegionCode = "CM"
-	SponsorsCountryOrRegionCode_CN SponsorsCountryOrRegionCode = "CN"
-	SponsorsCountryOrRegionCode_CO SponsorsCountryOrRegionCode = "CO"
-	SponsorsCountryOrRegionCode_CR SponsorsCountryOrRegionCode = "CR"
+	SponsorsCountryOrRegionCode_CA SponsorsCountryOrRegionCode = "CA"
 	SponsorsCountryOrRegionCode_CV SponsorsCountryOrRegionCode = "CV"
-	SponsorsCountryOrRegionCode_CW SponsorsCountryOrRegionCode = "CW"
+	SponsorsCountryOrRegionCode_KY SponsorsCountryOrRegionCode = "KY"
+	SponsorsCountryOrRegionCode_CF SponsorsCountryOrRegionCode = "CF"
+	SponsorsCountryOrRegionCode_TD SponsorsCountryOrRegionCode = "TD"
+	SponsorsCountryOrRegionCode_CL SponsorsCountryOrRegionCode = "CL"
+	SponsorsCountryOrRegionCode_CN SponsorsCountryOrRegionCode = "CN"
 	SponsorsCountryOrRegionCode_CX SponsorsCountryOrRegionCode = "CX"
+	SponsorsCountryOrRegionCode_CC SponsorsCountryOrRegionCode = "CC"
+	SponsorsCountryOrRegionCode_CO SponsorsCountryOrRegionCode = "CO"
+	SponsorsCountryOrRegionCode_KM SponsorsCountryOrRegionCode = "KM"
+	SponsorsCountryOrRegionCode_CG SponsorsCountryOrRegionCode = "CG"
+	SponsorsCountryOrRegionCode_CD SponsorsCountryOrRegionCode = "CD"
+	SponsorsCountryOrRegionCode_CK SponsorsCountryOrRegionCode = "CK"
+	SponsorsCountryOrRegionCode_CR SponsorsCountryOrRegionCode = "CR"
+	SponsorsCountryOrRegionCode_CI SponsorsCountryOrRegionCode = "CI"
+	SponsorsCountryOrRegionCode_HR SponsorsCountryOrRegionCode = "HR"
+	SponsorsCountryOrRegionCode_CW SponsorsCountryOrRegionCode = "CW"
 	SponsorsCountryOrRegionCode_CY SponsorsCountryOrRegionCode = "CY"
 	SponsorsCountryOrRegionCode_CZ SponsorsCountryOrRegionCode = "CZ"
-	SponsorsCountryOrRegionCode_DE SponsorsCountryOrRegionCode = "DE"
-	SponsorsCountryOrRegionCode_DJ SponsorsCountryOrRegionCode = "DJ"
 	SponsorsCountryOrRegionCode_DK SponsorsCountryOrRegionCode = "DK"
+	SponsorsCountryOrRegionCode_DJ SponsorsCountryOrRegionCode = "DJ"
 	SponsorsCountryOrRegionCode_DM SponsorsCountryOrRegionCode = "DM"
 	SponsorsCountryOrRegionCode_DO SponsorsCountryOrRegionCode = "DO"
-	SponsorsCountryOrRegionCode_DZ SponsorsCountryOrRegionCode = "DZ"
 	SponsorsCountryOrRegionCode_EC SponsorsCountryOrRegionCode = "EC"
-	SponsorsCountryOrRegionCode_EE SponsorsCountryOrRegionCode = "EE"
 	SponsorsCountryOrRegionCode_EG SponsorsCountryOrRegionCode = "EG"
-	SponsorsCountryOrRegionCode_EH SponsorsCountryOrRegionCode = "EH"
+	SponsorsCountryOrRegionCode_SV SponsorsCountryOrRegionCode = "SV"
+	SponsorsCountryOrRegionCode_GQ SponsorsCountryOrRegionCode = "GQ"
 	SponsorsCountryOrRegionCode_ER SponsorsCountryOrRegionCode = "ER"
-	SponsorsCountryOrRegionCode_ES SponsorsCountryOrRegionCode = "ES"
+	SponsorsCountryOrRegionCode_EE SponsorsCountryOrRegionCode = "EE"
 	SponsorsCountryOrRegionCode_ET SponsorsCountryOrRegionCode = "ET"
-	SponsorsCountryOrRegionCode_FI SponsorsCountryOrRegionCode = "FI"
-	SponsorsCountryOrRegionCode_FJ SponsorsCountryOrRegionCode = "FJ"
 	SponsorsCountryOrRegionCode_FK SponsorsCountryOrRegionCode = "FK"
-	SponsorsCountryOrRegionCode_FM SponsorsCountryOrRegionCode = "FM"
 	SponsorsCountryOrRegionCode_FO SponsorsCountryOrRegionCode = "FO"
+	SponsorsCountryOrRegionCode_FJ SponsorsCountryOrRegionCode = "FJ"
+	SponsorsCountryOrRegionCode_FI SponsorsCountryOrRegionCode = "FI"
 	SponsorsCountryOrRegionCode_FR SponsorsCountryOrRegionCode = "FR"
-	SponsorsCountryOrRegionCode_GA SponsorsCountryOrRegionCode = "GA"
-	SponsorsCountryOrRegionCode_GB SponsorsCountryOrRegionCode = "GB"
-	SponsorsCountryOrRegionCode_GD SponsorsCountryOrRegionCode = "GD"
-	SponsorsCountryOrRegionCode_GE SponsorsCountryOrRegionCode = "GE"
 	SponsorsCountryOrRegionCode_GF SponsorsCountryOrRegionCode = "GF"
-	SponsorsCountryOrRegionCode_GG SponsorsCountryOrRegionCode = "GG"
+	SponsorsCountryOrRegionCode_PF SponsorsCountryOrRegionCode = "PF"
+	SponsorsCountryOrRegionCode_TF SponsorsCountryOrRegionCode = "TF"
+	SponsorsCountryOrRegionCode_GA SponsorsCountryOrRegionCode = "GA"
+	SponsorsCountryOrRegionCode_GM SponsorsCountryOrRegionCode = "GM"
+	SponsorsCountryOrRegionCode_GE SponsorsCountryOrRegionCode = "GE"
+	SponsorsCountryOrRegionCode_DE SponsorsCountryOrRegionCode = "DE"
 	SponsorsCountryOrRegionCode_GH SponsorsCountryOrRegionCode = "GH"
 	SponsorsCountryOrRegionCode_GI SponsorsCountryOrRegionCode = "GI"
-	SponsorsCountryOrRegionCode_GL SponsorsCountryOrRegionCode = "GL"
-	SponsorsCountryOrRegionCode_GM SponsorsCountryOrRegionCode = "GM"
-	SponsorsCountryOrRegionCode_GN SponsorsCountryOrRegionCode = "GN"
-	SponsorsCountryOrRegionCode_GP SponsorsCountryOrRegionCode = "GP"
-	SponsorsCountryOrRegionCode_GQ SponsorsCountryOrRegionCode = "GQ"
 	SponsorsCountryOrRegionCode_GR SponsorsCountryOrRegionCode = "GR"
-	SponsorsCountryOrRegionCode_GS SponsorsCountryOrRegionCode = "GS"
-	SponsorsCountryOrRegionCode_GT SponsorsCountryOrRegionCode = "GT"
+	SponsorsCountryOrRegionCode_GL SponsorsCountryOrRegionCode = "GL"
+	SponsorsCountryOrRegionCode_GD SponsorsCountryOrRegionCode = "GD"
+	SponsorsCountryOrRegionCode_GP SponsorsCountryOrRegionCode = "GP"
 	SponsorsCountryOrRegionCode_GU SponsorsCountryOrRegionCode = "GU"
+	SponsorsCountryOrRegionCode_GT SponsorsCountryOrRegionCode = "GT"
+	SponsorsCountryOrRegionCode_GG SponsorsCountryOrRegionCode = "GG"
+	SponsorsCountryOrRegionCode_GN SponsorsCountryOrRegionCode = "GN"
 	SponsorsCountryOrRegionCode_GW SponsorsCountryOrRegionCode = "GW"
 	SponsorsCountryOrRegionCode_GY SponsorsCountryOrRegionCode = "GY"
-	SponsorsCountryOrRegionCode_HK SponsorsCountryOrRegionCode = "HK"
+	SponsorsCountryOrRegionCode_HT SponsorsCountryOrRegionCode = "HT"
 	SponsorsCountryOrRegionCode_HM SponsorsCountryOrRegionCode = "HM"
 	SponsorsCountryOrRegionCode_HN SponsorsCountryOrRegionCode = "HN"
-	SponsorsCountryOrRegionCode_HR SponsorsCountryOrRegionCode = "HR"
-	SponsorsCountryOrRegionCode_HT SponsorsCountryOrRegionCode = "HT"
+	SponsorsCountryOrRegionCode_HK SponsorsCountryOrRegionCode = "HK"
 	SponsorsCountryOrRegionCode_HU SponsorsCountryOrRegionCode = "HU"
-	SponsorsCountryOrRegionCode_ID SponsorsCountryOrRegionCode = "ID"
-	SponsorsCountryOrRegionCode_IE SponsorsCountryOrRegionCode = "IE"
-	SponsorsCountryOrRegionCode_IL SponsorsCountryOrRegionCode = "IL"
-	SponsorsCountryOrRegionCode_IM SponsorsCountryOrRegionCode = "IM"
-	SponsorsCountryOrRegionCode_IN SponsorsCountryOrRegionCode = "IN"
-	SponsorsCountryOrRegionCode_IO SponsorsCountryOrRegionCode = "IO"
-	SponsorsCountryOrRegionCode_IQ SponsorsCountryOrRegionCode = "IQ"
-	SponsorsCountryOrRegionCode_IR SponsorsCountryOrRegionCode = "IR"
 	SponsorsCountryOrRegionCode_IS SponsorsCountryOrRegionCode = "IS"
+	SponsorsCountryOrRegionCode_IN SponsorsCountryOrRegionCode = "IN"
+	SponsorsCountryOrRegionCode_ID SponsorsCountryOrRegionCode = "ID"
+	SponsorsCountryOrRegionCode_IR SponsorsCountryOrRegionCode = "IR"
+	SponsorsCountryOrRegionCode_IQ SponsorsCountryOrRegionCode = "IQ"
+	SponsorsCountryOrRegionCode_IE SponsorsCountryOrRegionCode = "IE"
+	SponsorsCountryOrRegionCode_IM SponsorsCountryOrRegionCode = "IM"
+	SponsorsCountryOrRegionCode_IL SponsorsCountryOrRegionCode = "IL"
 	SponsorsCountryOrRegionCode_IT SponsorsCountryOrRegionCode = "IT"
-	SponsorsCountryOrRegionCode_JE SponsorsCountryOrRegionCode = "JE"
 	SponsorsCountryOrRegionCode_JM SponsorsCountryOrRegionCode = "JM"
-	SponsorsCountryOrRegionCode_JO SponsorsCountryOrRegionCode = "JO"
 	SponsorsCountryOrRegionCode_JP SponsorsCountryOrRegionCode = "JP"
+	SponsorsCountryOrRegionCode_JE SponsorsCountryOrRegionCode = "JE"
+	SponsorsCountryOrRegionCode_JO SponsorsCountryOrRegionCode = "JO"
+	SponsorsCountryOrRegionCode_KZ SponsorsCountryOrRegionCode = "KZ"
 	SponsorsCountryOrRegionCode_KE SponsorsCountryOrRegionCode = "KE"
-	SponsorsCountryOrRegionCode_KG SponsorsCountryOrRegionCode = "KG"
-	SponsorsCountryOrRegionCode_KH SponsorsCountryOrRegionCode = "KH"
 	SponsorsCountryOrRegionCode_KI SponsorsCountryOrRegionCode = "KI"
-	SponsorsCountryOrRegionCode_KM SponsorsCountryOrRegionCode = "KM"
-	SponsorsCountryOrRegionCode_KN SponsorsCountryOrRegionCode = "KN"
 	SponsorsCountryOrRegionCode_KR SponsorsCountryOrRegionCode = "KR"
 	SponsorsCountryOrRegionCode_KW SponsorsCountryOrRegionCode = "KW"
-	SponsorsCountryOrRegionCode_KY SponsorsCountryOrRegionCode = "KY"
-	SponsorsCountryOrRegionCode_KZ SponsorsCountryOrRegionCode = "KZ"
+	SponsorsCountryOrRegionCode_KG SponsorsCountryOrRegionCode = "KG"
 	SponsorsCountryOrRegionCode_LA SponsorsCountryOrRegionCode = "LA"
+	SponsorsCountryOrRegionCode_LV SponsorsCountryOrRegionCode = "LV"
 	SponsorsCountryOrRegionCode_LB SponsorsCountryOrRegionCode = "LB"
-	SponsorsCountryOrRegionCode_LC SponsorsCountryOrRegionCode = "LC"
-	SponsorsCountryOrRegionCode_LI SponsorsCountryOrRegionCode = "LI"
-	SponsorsCountryOrRegionCode_LK SponsorsCountryOrRegionCode = "LK"
-	SponsorsCountryOrRegionCode_LR SponsorsCountryOrRegionCode = "LR"
 	SponsorsCountryOrRegionCode_LS SponsorsCountryOrRegionCode = "LS"
+	SponsorsCountryOrRegionCode_LR SponsorsCountryOrRegionCode = "LR"
+	SponsorsCountryOrRegionCode_LY SponsorsCountryOrRegionCode = "LY"
+	SponsorsCountryOrRegionCode_LI SponsorsCountryOrRegionCode = "LI"
 	SponsorsCountryOrRegionCode_LT SponsorsCountryOrRegionCode = "LT"
 	SponsorsCountryOrRegionCode_LU SponsorsCountryOrRegionCode = "LU"
-	SponsorsCountryOrRegionCode_LV SponsorsCountryOrRegionCode = "LV"
-	SponsorsCountryOrRegionCode_LY SponsorsCountryOrRegionCode = "LY"
-	SponsorsCountryOrRegionCode_MA SponsorsCountryOrRegionCode = "MA"
-	SponsorsCountryOrRegionCode_MC SponsorsCountryOrRegionCode = "MC"
-	SponsorsCountryOrRegionCode_MD SponsorsCountryOrRegionCode = "MD"
-	SponsorsCountryOrRegionCode_ME SponsorsCountryOrRegionCode = "ME"
-	SponsorsCountryOrRegionCode_MF SponsorsCountryOrRegionCode = "MF"
-	SponsorsCountryOrRegionCode_MG SponsorsCountryOrRegionCode = "MG"
-	SponsorsCountryOrRegionCode_MH SponsorsCountryOrRegionCode = "MH"
-	SponsorsCountryOrRegionCode_MK SponsorsCountryOrRegionCode = "MK"
-	SponsorsCountryOrRegionCode_ML SponsorsCountryOrRegionCode = "ML"
-	SponsorsCountryOrRegionCode_MM SponsorsCountryOrRegionCode = "MM"
-	SponsorsCountryOrRegionCode_MN SponsorsCountryOrRegionCode = "MN"
 	SponsorsCountryOrRegionCode_MO SponsorsCountryOrRegionCode = "MO"
-	SponsorsCountryOrRegionCode_MP SponsorsCountryOrRegionCode = "MP"
+	SponsorsCountryOrRegionCode_MK SponsorsCountryOrRegionCode = "MK"
+	SponsorsCountryOrRegionCode_MG SponsorsCountryOrRegionCode = "MG"
+	SponsorsCountryOrRegionCode_MW SponsorsCountryOrRegionCode = "MW"
+	SponsorsCountryOrRegionCode_MY SponsorsCountryOrRegionCode = "MY"
+	SponsorsCountryOrRegionCode_MV SponsorsCountryOrRegionCode = "MV"
+	SponsorsCountryOrRegionCode_ML SponsorsCountryOrRegionCode = "ML"
+	SponsorsCountryOrRegionCode_MT SponsorsCountryOrRegionCode = "MT"
+	SponsorsCountryOrRegionCode_MH SponsorsCountryOrRegionCode = "MH"
 	SponsorsCountryOrRegionCode_MQ SponsorsCountryOrRegionCode = "MQ"
 	SponsorsCountryOrRegionCode_MR SponsorsCountryOrRegionCode = "MR"
-	SponsorsCountryOrRegionCode_MS SponsorsCountryOrRegionCode = "MS"
-	SponsorsCountryOrRegionCode_MT SponsorsCountryOrRegionCode = "MT"
 	SponsorsCountryOrRegionCode_MU SponsorsCountryOrRegionCode = "MU"
-	SponsorsCountryOrRegionCode_MV SponsorsCountryOrRegionCode = "MV"
-	SponsorsCountryOrRegionCode_MW SponsorsCountryOrRegionCode = "MW"
+	SponsorsCountryOrRegionCode_YT SponsorsCountryOrRegionCode = "YT"
 	SponsorsCountryOrRegionCode_MX SponsorsCountryOrRegionCode = "MX"
-	SponsorsCountryOrRegionCode_MY SponsorsCountryOrRegionCode = "MY"
+	SponsorsCountryOrRegionCode_FM SponsorsCountryOrRegionCode = "FM"
+	SponsorsCountryOrRegionCode_MD SponsorsCountryOrRegionCode = "MD"
+	SponsorsCountryOrRegionCode_MC SponsorsCountryOrRegionCode = "MC"
+	SponsorsCountryOrRegionCode_MN SponsorsCountryOrRegionCode = "MN"
+	SponsorsCountryOrRegionCode_ME SponsorsCountryOrRegionCode = "ME"
+	SponsorsCountryOrRegionCode_MS SponsorsCountryOrRegionCode = "MS"
+	SponsorsCountryOrRegionCode_MA SponsorsCountryOrRegionCode = "MA"
 	SponsorsCountryOrRegionCode_MZ SponsorsCountryOrRegionCode = "MZ"
+	SponsorsCountryOrRegionCode_MM SponsorsCountryOrRegionCode = "MM"
 	SponsorsCountryOrRegionCode_NA SponsorsCountryOrRegionCode = "NA"
-	SponsorsCountryOrRegionCode_NC SponsorsCountryOrRegionCode = "NC"
-	SponsorsCountryOrRegionCode_NE SponsorsCountryOrRegionCode = "NE"
-	SponsorsCountryOrRegionCode_NF SponsorsCountryOrRegionCode = "NF"
-	SponsorsCountryOrRegionCode_NG SponsorsCountryOrRegionCode = "NG"
-	SponsorsCountryOrRegionCode_NI SponsorsCountryOrRegionCode = "NI"
-	SponsorsCountryOrRegionCode_NL SponsorsCountryOrRegionCode = "NL"
-	SponsorsCountryOrRegionCode_NO SponsorsCountryOrRegionCode = "NO"
-	SponsorsCountryOrRegionCode_NP SponsorsCountryOrRegionCode = "NP"
 	SponsorsCountryOrRegionCode_NR SponsorsCountryOrRegionCode = "NR"
-	SponsorsCountryOrRegionCode_NU SponsorsCountryOrRegionCode = "NU"
+	SponsorsCountryOrRegionCode_NP SponsorsCountryOrRegionCode = "NP"
+	SponsorsCountryOrRegionCode_NL SponsorsCountryOrRegionCode = "NL"
+	SponsorsCountryOrRegionCode_NC SponsorsCountryOrRegionCode = "NC"
 	SponsorsCountryOrRegionCode_NZ SponsorsCountryOrRegionCode = "NZ"
+	SponsorsCountryOrRegionCode_NI SponsorsCountryOrRegionCode = "NI"
+	SponsorsCountryOrRegionCode_NE SponsorsCountryOrRegionCode = "NE"
+	SponsorsCountryOrRegionCode_NG SponsorsCountryOrRegionCode = "NG"
+	SponsorsCountryOrRegionCode_NU SponsorsCountryOrRegionCode = "NU"
+	SponsorsCountryOrRegionCode_NF SponsorsCountryOrRegionCode = "NF"
+	SponsorsCountryOrRegionCode_MP SponsorsCountryOrRegionCode = "MP"
+	SponsorsCountryOrRegionCode_NO SponsorsCountryOrRegionCode = "NO"
 	SponsorsCountryOrRegionCode_OM SponsorsCountryOrRegionCode = "OM"
-	SponsorsCountryOrRegionCode_PA SponsorsCountryOrRegionCode = "PA"
-	SponsorsCountryOrRegionCode_PE SponsorsCountryOrRegionCode = "PE"
-	SponsorsCountryOrRegionCode_PF SponsorsCountryOrRegionCode = "PF"
-	SponsorsCountryOrRegionCode_PG SponsorsCountryOrRegionCode = "PG"
-	SponsorsCountryOrRegionCode_PH SponsorsCountryOrRegionCode = "PH"
 	SponsorsCountryOrRegionCode_PK SponsorsCountryOrRegionCode = "PK"
-	SponsorsCountryOrRegionCode_PL SponsorsCountryOrRegionCode = "PL"
-	SponsorsCountryOrRegionCode_PM SponsorsCountryOrRegionCode = "PM"
-	SponsorsCountryOrRegionCode_PN SponsorsCountryOrRegionCode = "PN"
-	SponsorsCountryOrRegionCode_PR SponsorsCountryOrRegionCode = "PR"
-	SponsorsCountryOrRegionCode_PS SponsorsCountryOrRegionCode = "PS"
-	SponsorsCountryOrRegionCode_PT SponsorsCountryOrRegionCode = "PT"
 	SponsorsCountryOrRegionCode_PW SponsorsCountryOrRegionCode = "PW"
+	SponsorsCountryOrRegionCode_PS SponsorsCountryOrRegionCode = "PS"
+	SponsorsCountryOrRegionCode_PA SponsorsCountryOrRegionCode = "PA"
+	SponsorsCountryOrRegionCode_PG SponsorsCountryOrRegionCode = "PG"
 	SponsorsCountryOrRegionCode_PY SponsorsCountryOrRegionCode = "PY"
+	SponsorsCountryOrRegionCode_PE SponsorsCountryOrRegionCode = "PE"
+	SponsorsCountryOrRegionCode_PH SponsorsCountryOrRegionCode = "PH"
+	SponsorsCountryOrRegionCode_PN SponsorsCountryOrRegionCode = "PN"
+	SponsorsCountryOrRegionCode_PL SponsorsCountryOrRegionCode = "PL"
+	SponsorsCountryOrRegionCode_PT SponsorsCountryOrRegionCode = "PT"
+	SponsorsCountryOrRegionCode_PR SponsorsCountryOrRegionCode = "PR"
 	SponsorsCountryOrRegionCode_QA SponsorsCountryOrRegionCode = "QA"
 	SponsorsCountryOrRegionCode_RE SponsorsCountryOrRegionCode = "RE"
 	SponsorsCountryOrRegionCode_RO SponsorsCountryOrRegionCode = "RO"
-	SponsorsCountryOrRegionCode_RS SponsorsCountryOrRegionCode = "RS"
 	SponsorsCountryOrRegionCode_RU SponsorsCountryOrRegionCode = "RU"
 	SponsorsCountryOrRegionCode_RW SponsorsCountryOrRegionCode = "RW"
-	SponsorsCountryOrRegionCode_SA SponsorsCountryOrRegionCode = "SA"
-	SponsorsCountryOrRegionCode_SB SponsorsCountryOrRegionCode = "SB"
-	SponsorsCountryOrRegionCode_SC SponsorsCountryOrRegionCode = "SC"
-	SponsorsCountryOrRegionCode_SD SponsorsCountryOrRegionCode = "SD"
-	SponsorsCountryOrRegionCode_SE SponsorsCountryOrRegionCode = "SE"
-	SponsorsCountryOrRegionCode_SG SponsorsCountryOrRegionCode = "SG"
+	SponsorsCountryOrRegionCode_BL SponsorsCountryOrRegionCode = "BL"
 	SponsorsCountryOrRegionCode_SH SponsorsCountryOrRegionCode = "SH"
-	SponsorsCountryOrRegionCode_SI SponsorsCountryOrRegionCode = "SI"
-	SponsorsCountryOrRegionCode_SJ SponsorsCountryOrRegionCode = "SJ"
-	SponsorsCountryOrRegionCode_SK SponsorsCountryOrRegionCode = "SK"
-	SponsorsCountryOrRegionCode_SL SponsorsCountryOrRegionCode = "SL"
+	SponsorsCountryOrRegionCode_KN SponsorsCountryOrRegionCode = "KN"
+	SponsorsCountryOrRegionCode_LC SponsorsCountryOrRegionCode = "LC"
+	SponsorsCountryOrRegionCode_MF SponsorsCountryOrRegionCode = "MF"
+	SponsorsCountryOrRegionCode_PM SponsorsCountryOrRegionCode = "PM"
+	SponsorsCountryOrRegionCode_VC SponsorsCountryOrRegionCode = "VC"
+	SponsorsCountryOrRegionCode_WS SponsorsCountryOrRegionCode = "WS"
 	SponsorsCountryOrRegionCode_SM SponsorsCountryOrRegionCode = "SM"
-	SponsorsCountryOrRegionCode_SN SponsorsCountryOrRegionCode = "SN"
-	SponsorsCountryOrRegionCode_SO SponsorsCountryOrRegionCode = "SO"
-	SponsorsCountryOrRegionCode_SR SponsorsCountryOrRegionCode = "SR"
-	SponsorsCountryOrRegionCode_SS SponsorsCountryOrRegionCode = "SS"
 	SponsorsCountryOrRegionCode_ST SponsorsCountryOrRegionCode = "ST"
-	SponsorsCountryOrRegionCode_SV SponsorsCountryOrRegionCode = "SV"
+	SponsorsCountryOrRegionCode_SA SponsorsCountryOrRegionCode = "SA"
+	SponsorsCountryOrRegionCode_SN SponsorsCountryOrRegionCode = "SN"
+	SponsorsCountryOrRegionCode_RS SponsorsCountryOrRegionCode = "RS"
+	SponsorsCountryOrRegionCode_SC SponsorsCountryOrRegionCode = "SC"
+	SponsorsCountryOrRegionCode_SL SponsorsCountryOrRegionCode = "SL"
+	SponsorsCountryOrRegionCode_SG SponsorsCountryOrRegionCode = "SG"
 	SponsorsCountryOrRegionCode_SX SponsorsCountryOrRegionCode = "SX"
+	SponsorsCountryOrRegionCode_SK SponsorsCountryOrRegionCode = "SK"
+	SponsorsCountryOrRegionCode_SI SponsorsCountryOrRegionCode = "SI"
+	SponsorsCountryOrRegionCode_SB SponsorsCountryOrRegionCode = "SB"
+	SponsorsCountryOrRegionCode_SO SponsorsCountryOrRegionCode = "SO"
+	SponsorsCountryOrRegionCode_ZA SponsorsCountryOrRegionCode = "ZA"
+	SponsorsCountryOrRegionCode_GS SponsorsCountryOrRegionCode = "GS"
+	SponsorsCountryOrRegionCode_SS SponsorsCountryOrRegionCode = "SS"
+	SponsorsCountryOrRegionCode_ES SponsorsCountryOrRegionCode = "ES"
+	SponsorsCountryOrRegionCode_LK SponsorsCountryOrRegionCode = "LK"
+	SponsorsCountryOrRegionCode_SD SponsorsCountryOrRegionCode = "SD"
+	SponsorsCountryOrRegionCode_SR SponsorsCountryOrRegionCode = "SR"
+	SponsorsCountryOrRegionCode_SJ SponsorsCountryOrRegionCode = "SJ"
 	SponsorsCountryOrRegionCode_SZ SponsorsCountryOrRegionCode = "SZ"
-	SponsorsCountryOrRegionCode_TC SponsorsCountryOrRegionCode = "TC"
-	SponsorsCountryOrRegionCode_TD SponsorsCountryOrRegionCode = "TD"
-	SponsorsCountryOrRegionCode_TF SponsorsCountryOrRegionCode = "TF"
-	SponsorsCountryOrRegionCode_TG SponsorsCountryOrRegionCode = "TG"
-	SponsorsCountryOrRegionCode_TH SponsorsCountryOrRegionCode = "TH"
-	SponsorsCountryOrRegionCode_TJ SponsorsCountryOrRegionCode = "TJ"
-	SponsorsCountryOrRegionCode_TK SponsorsCountryOrRegionCode = "TK"
-	SponsorsCountryOrRegionCode_TL SponsorsCountryOrRegionCode = "TL"
-	SponsorsCountryOrRegionCode_TM SponsorsCountryOrRegionCode = "TM"
-	SponsorsCountryOrRegionCode_TN SponsorsCountryOrRegionCode = "TN"
-	SponsorsCountryOrRegionCode_TO SponsorsCountryOrRegionCode = "TO"
-	SponsorsCountryOrRegionCode_TR SponsorsCountryOrRegionCode = "TR"
-	SponsorsCountryOrRegionCode_TT SponsorsCountryOrRegionCode = "TT"
-	SponsorsCountryOrRegionCode_TV SponsorsCountryOrRegionCode = "TV"
+	SponsorsCountryOrRegionCode_SE SponsorsCountryOrRegionCode = "SE"
+	SponsorsCountryOrRegionCode_CH SponsorsCountryOrRegionCode = "CH"
 	SponsorsCountryOrRegionCode_TW SponsorsCountryOrRegionCode = "TW"
+	SponsorsCountryOrRegionCode_TJ SponsorsCountryOrRegionCode = "TJ"
 	SponsorsCountryOrRegionCode_TZ SponsorsCountryOrRegionCode = "TZ"
-	SponsorsCountryOrRegionCode_UA SponsorsCountryOrRegionCode = "UA"
+	SponsorsCountryOrRegionCode_TH SponsorsCountryOrRegionCode = "TH"
+	SponsorsCountryOrRegionCode_TL SponsorsCountryOrRegionCode = "TL"
+	SponsorsCountryOrRegionCode_TG SponsorsCountryOrRegionCode = "TG"
+	SponsorsCountryOrRegionCode_TK SponsorsCountryOrRegionCode = "TK"
+	SponsorsCountryOrRegionCode_TO SponsorsCountryOrRegionCode = "TO"
+	SponsorsCountryOrRegionCode_TT SponsorsCountryOrRegionCode = "TT"
+	SponsorsCountryOrRegionCode_TN SponsorsCountryOrRegionCode = "TN"
+	SponsorsCountryOrRegionCode_TR SponsorsCountryOrRegionCode = "TR"
+	SponsorsCountryOrRegionCode_TM SponsorsCountryOrRegionCode = "TM"
+	SponsorsCountryOrRegionCode_TC SponsorsCountryOrRegionCode = "TC"
+	SponsorsCountryOrRegionCode_TV SponsorsCountryOrRegionCode = "TV"
 	SponsorsCountryOrRegionCode_UG SponsorsCountryOrRegionCode = "UG"
+	SponsorsCountryOrRegionCode_UA SponsorsCountryOrRegionCode = "UA"
+	SponsorsCountryOrRegionCode_AE SponsorsCountryOrRegionCode = "AE"
+	SponsorsCountryOrRegionCode_GB SponsorsCountryOrRegionCode = "GB"
 	SponsorsCountryOrRegionCode_UM SponsorsCountryOrRegionCode = "UM"
 	SponsorsCountryOrRegionCode_US SponsorsCountryOrRegionCode = "US"
 	SponsorsCountryOrRegionCode_UY SponsorsCountryOrRegionCode = "UY"
 	SponsorsCountryOrRegionCode_UZ SponsorsCountryOrRegionCode = "UZ"
+	SponsorsCountryOrRegionCode_VU SponsorsCountryOrRegionCode = "VU"
 	SponsorsCountryOrRegionCode_VA SponsorsCountryOrRegionCode = "VA"
-	SponsorsCountryOrRegionCode_VC SponsorsCountryOrRegionCode = "VC"
 	SponsorsCountryOrRegionCode_VE SponsorsCountryOrRegionCode = "VE"
+	SponsorsCountryOrRegionCode_VN SponsorsCountryOrRegionCode = "VN"
 	SponsorsCountryOrRegionCode_VG SponsorsCountryOrRegionCode = "VG"
 	SponsorsCountryOrRegionCode_VI SponsorsCountryOrRegionCode = "VI"
-	SponsorsCountryOrRegionCode_VN SponsorsCountryOrRegionCode = "VN"
-	SponsorsCountryOrRegionCode_VU SponsorsCountryOrRegionCode = "VU"
 	SponsorsCountryOrRegionCode_WF SponsorsCountryOrRegionCode = "WF"
-	SponsorsCountryOrRegionCode_WS SponsorsCountryOrRegionCode = "WS"
+	SponsorsCountryOrRegionCode_EH SponsorsCountryOrRegionCode = "EH"
 	SponsorsCountryOrRegionCode_YE SponsorsCountryOrRegionCode = "YE"
-	SponsorsCountryOrRegionCode_YT SponsorsCountryOrRegionCode = "YT"
-	SponsorsCountryOrRegionCode_ZA SponsorsCountryOrRegionCode = "ZA"
 	SponsorsCountryOrRegionCode_ZM SponsorsCountryOrRegionCode = "ZM"
 	SponsorsCountryOrRegionCode_ZW SponsorsCountryOrRegionCode = "ZW"
 )
@@ -1906,8 +1911,8 @@ const (
 type SponsorsGoalKind string
 
 const (
-	SponsorsGoalKind_MONTHLY_SPONSORSHIP_AMOUNT SponsorsGoalKind = "MONTHLY_SPONSORSHIP_AMOUNT"
 	SponsorsGoalKind_TOTAL_SPONSORS_COUNT       SponsorsGoalKind = "TOTAL_SPONSORS_COUNT"
+	SponsorsGoalKind_MONTHLY_SPONSORSHIP_AMOUNT SponsorsGoalKind = "MONTHLY_SPONSORSHIP_AMOUNT"
 )
 
 type SponsorsListingFeaturedItemFeatureableType string
@@ -1939,23 +1944,23 @@ const (
 type SponsorshipPrivacy string
 
 const (
-	SponsorshipPrivacy_PRIVATE SponsorshipPrivacy = "PRIVATE"
 	SponsorshipPrivacy_PUBLIC  SponsorshipPrivacy = "PUBLIC"
+	SponsorshipPrivacy_PRIVATE SponsorshipPrivacy = "PRIVATE"
 )
 
 type SquashMergeCommitMessage string
 
 const (
-	SquashMergeCommitMessage_BLANK           SquashMergeCommitMessage = "BLANK"
-	SquashMergeCommitMessage_COMMIT_MESSAGES SquashMergeCommitMessage = "COMMIT_MESSAGES"
 	SquashMergeCommitMessage_PR_BODY         SquashMergeCommitMessage = "PR_BODY"
+	SquashMergeCommitMessage_COMMIT_MESSAGES SquashMergeCommitMessage = "COMMIT_MESSAGES"
+	SquashMergeCommitMessage_BLANK           SquashMergeCommitMessage = "BLANK"
 )
 
 type SquashMergeCommitTitle string
 
 const (
-	SquashMergeCommitTitle_COMMIT_OR_PR_TITLE SquashMergeCommitTitle = "COMMIT_OR_PR_TITLE"
 	SquashMergeCommitTitle_PR_TITLE           SquashMergeCommitTitle = "PR_TITLE"
+	SquashMergeCommitTitle_COMMIT_OR_PR_TITLE SquashMergeCommitTitle = "COMMIT_OR_PR_TITLE"
 )
 
 type StarOrderField string
@@ -1967,8 +1972,8 @@ const (
 type StatusState string
 
 const (
-	StatusState_ERROR    StatusState = "ERROR"
 	StatusState_EXPECTED StatusState = "EXPECTED"
+	StatusState_ERROR    StatusState = "ERROR"
 	StatusState_FAILURE  StatusState = "FAILURE"
 	StatusState_PENDING  StatusState = "PENDING"
 	StatusState_SUCCESS  StatusState = "SUCCESS"
@@ -1977,9 +1982,9 @@ const (
 type SubscriptionState string
 
 const (
-	SubscriptionState_IGNORED      SubscriptionState = "IGNORED"
-	SubscriptionState_SUBSCRIBED   SubscriptionState = "SUBSCRIBED"
 	SubscriptionState_UNSUBSCRIBED SubscriptionState = "UNSUBSCRIBED"
+	SubscriptionState_SUBSCRIBED   SubscriptionState = "SUBSCRIBED"
+	SubscriptionState_IGNORED      SubscriptionState = "IGNORED"
 )
 
 type TeamDiscussionCommentOrderField string
@@ -1997,8 +2002,8 @@ const (
 type TeamMemberOrderField string
 
 const (
-	TeamMemberOrderField_CREATED_AT TeamMemberOrderField = "CREATED_AT"
 	TeamMemberOrderField_LOGIN      TeamMemberOrderField = "LOGIN"
+	TeamMemberOrderField_CREATED_AT TeamMemberOrderField = "CREATED_AT"
 )
 
 type TeamMemberRole string
@@ -2011,16 +2016,16 @@ const (
 type TeamMembershipType string
 
 const (
-	TeamMembershipType_ALL        TeamMembershipType = "ALL"
-	TeamMembershipType_CHILD_TEAM TeamMembershipType = "CHILD_TEAM"
 	TeamMembershipType_IMMEDIATE  TeamMembershipType = "IMMEDIATE"
+	TeamMembershipType_CHILD_TEAM TeamMembershipType = "CHILD_TEAM"
+	TeamMembershipType_ALL        TeamMembershipType = "ALL"
 )
 
 type TeamNotificationSetting string
 
 const (
-	TeamNotificationSetting_NOTIFICATIONS_DISABLED TeamNotificationSetting = "NOTIFICATIONS_DISABLED"
 	TeamNotificationSetting_NOTIFICATIONS_ENABLED  TeamNotificationSetting = "NOTIFICATIONS_ENABLED"
+	TeamNotificationSetting_NOTIFICATIONS_DISABLED TeamNotificationSetting = "NOTIFICATIONS_DISABLED"
 )
 
 type TeamOrderField string
@@ -2040,18 +2045,11 @@ type TeamRepositoryOrderField string
 
 const (
 	TeamRepositoryOrderField_CREATED_AT TeamRepositoryOrderField = "CREATED_AT"
+	TeamRepositoryOrderField_UPDATED_AT TeamRepositoryOrderField = "UPDATED_AT"
+	TeamRepositoryOrderField_PUSHED_AT  TeamRepositoryOrderField = "PUSHED_AT"
 	TeamRepositoryOrderField_NAME       TeamRepositoryOrderField = "NAME"
 	TeamRepositoryOrderField_PERMISSION TeamRepositoryOrderField = "PERMISSION"
-	TeamRepositoryOrderField_PUSHED_AT  TeamRepositoryOrderField = "PUSHED_AT"
 	TeamRepositoryOrderField_STARGAZERS TeamRepositoryOrderField = "STARGAZERS"
-	TeamRepositoryOrderField_UPDATED_AT TeamRepositoryOrderField = "UPDATED_AT"
-)
-
-type TeamReviewAssignmentAlgorithm string
-
-const (
-	TeamReviewAssignmentAlgorithm_LOAD_BALANCE TeamReviewAssignmentAlgorithm = "LOAD_BALANCE"
-	TeamReviewAssignmentAlgorithm_ROUND_ROBIN  TeamReviewAssignmentAlgorithm = "ROUND_ROBIN"
 )
 
 type TeamRole string
@@ -2061,30 +2059,52 @@ const (
 	TeamRole_MEMBER TeamRole = "MEMBER"
 )
 
+type ThreadSubscriptionFormAction string
+
+const (
+	ThreadSubscriptionFormAction_NONE        ThreadSubscriptionFormAction = "NONE"
+	ThreadSubscriptionFormAction_SUBSCRIBE   ThreadSubscriptionFormAction = "SUBSCRIBE"
+	ThreadSubscriptionFormAction_UNSUBSCRIBE ThreadSubscriptionFormAction = "UNSUBSCRIBE"
+)
+
+type ThreadSubscriptionState string
+
+const (
+	ThreadSubscriptionState_UNAVAILABLE                 ThreadSubscriptionState = "UNAVAILABLE"
+	ThreadSubscriptionState_DISABLED                    ThreadSubscriptionState = "DISABLED"
+	ThreadSubscriptionState_IGNORING_LIST               ThreadSubscriptionState = "IGNORING_LIST"
+	ThreadSubscriptionState_SUBSCRIBED_TO_THREAD_EVENTS ThreadSubscriptionState = "SUBSCRIBED_TO_THREAD_EVENTS"
+	ThreadSubscriptionState_IGNORING_THREAD             ThreadSubscriptionState = "IGNORING_THREAD"
+	ThreadSubscriptionState_SUBSCRIBED_TO_LIST          ThreadSubscriptionState = "SUBSCRIBED_TO_LIST"
+	ThreadSubscriptionState_SUBSCRIBED_TO_THREAD_TYPE   ThreadSubscriptionState = "SUBSCRIBED_TO_THREAD_TYPE"
+	ThreadSubscriptionState_SUBSCRIBED_TO_THREAD        ThreadSubscriptionState = "SUBSCRIBED_TO_THREAD"
+	ThreadSubscriptionState_NONE                        ThreadSubscriptionState = "NONE"
+)
+
 type TopicSuggestionDeclineReason string
 
 const (
 	TopicSuggestionDeclineReason_NOT_RELEVANT        TopicSuggestionDeclineReason = "NOT_RELEVANT"
+	TopicSuggestionDeclineReason_TOO_SPECIFIC        TopicSuggestionDeclineReason = "TOO_SPECIFIC"
 	TopicSuggestionDeclineReason_PERSONAL_PREFERENCE TopicSuggestionDeclineReason = "PERSONAL_PREFERENCE"
 	TopicSuggestionDeclineReason_TOO_GENERAL         TopicSuggestionDeclineReason = "TOO_GENERAL"
-	TopicSuggestionDeclineReason_TOO_SPECIFIC        TopicSuggestionDeclineReason = "TOO_SPECIFIC"
 )
 
 type TrackedIssueStates string
 
 const (
-	TrackedIssueStates_CLOSED TrackedIssueStates = "CLOSED"
 	TrackedIssueStates_OPEN   TrackedIssueStates = "OPEN"
+	TrackedIssueStates_CLOSED TrackedIssueStates = "CLOSED"
 )
 
 type UserBlockDuration string
 
 const (
 	UserBlockDuration_ONE_DAY    UserBlockDuration = "ONE_DAY"
-	UserBlockDuration_ONE_MONTH  UserBlockDuration = "ONE_MONTH"
-	UserBlockDuration_ONE_WEEK   UserBlockDuration = "ONE_WEEK"
-	UserBlockDuration_PERMANENT  UserBlockDuration = "PERMANENT"
 	UserBlockDuration_THREE_DAYS UserBlockDuration = "THREE_DAYS"
+	UserBlockDuration_ONE_WEEK   UserBlockDuration = "ONE_WEEK"
+	UserBlockDuration_ONE_MONTH  UserBlockDuration = "ONE_MONTH"
+	UserBlockDuration_PERMANENT  UserBlockDuration = "PERMANENT"
 )
 
 type UserStatusOrderField string
@@ -2096,8 +2116,8 @@ const (
 type VerifiableDomainOrderField string
 
 const (
-	VerifiableDomainOrderField_CREATED_AT VerifiableDomainOrderField = "CREATED_AT"
 	VerifiableDomainOrderField_DOMAIN     VerifiableDomainOrderField = "DOMAIN"
+	VerifiableDomainOrderField_CREATED_AT VerifiableDomainOrderField = "CREATED_AT"
 )
 
 type WorkflowRunOrderField string
@@ -2154,19 +2174,19 @@ const (
 )
 
 type AbortQueuedMigrationsInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	OwnerId          string  `json:"ownerId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AcceptEnterpriseAdministratorInvitationInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	InvitationId     string  `json:"invitationId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AcceptTopicSuggestionInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Name             string  `json:"name"`
 	RepositoryId     string  `json:"repositoryId"`
+	Name             string  `json:"name"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddAssigneesToAssignableInput struct {
@@ -2176,152 +2196,152 @@ type AddAssigneesToAssignableInput struct {
 }
 
 type AddCommentInput struct {
+	SubjectId        string  `json:"subjectId"`
 	Body             string  `json:"body"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	SubjectId        string  `json:"subjectId"`
 }
 
 type AddDiscussionCommentInput struct {
-	Body             string  `json:"body"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	DiscussionId     string  `json:"discussionId"`
 	ReplyToId        *string `json:"replyToId,omitempty"`
+	Body             string  `json:"body"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddDiscussionPollVoteInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	PollOptionId     string  `json:"pollOptionId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddEnterpriseOrganizationMemberInput struct {
-	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                  `json:"enterpriseId"`
 	OrganizationId   string                  `json:"organizationId"`
-	Role             *OrganizationMemberRole `json:"role,omitempty"`
 	UserIds          []string                `json:"userIds"`
+	Role             *OrganizationMemberRole `json:"role,omitempty"`
+	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 }
 
 type AddEnterpriseSupportEntitlementInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	Login            string  `json:"login"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddLabelsToLabelableInput struct {
-	ClientMutationId *string  `json:"clientMutationId,omitempty"`
-	LabelIds         []string `json:"labelIds"`
 	LabelableId      string   `json:"labelableId"`
+	LabelIds         []string `json:"labelIds"`
+	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 }
 
 type AddProjectCardInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
+	ProjectColumnId  string  `json:"projectColumnId"`
 	ContentId        *string `json:"contentId,omitempty"`
 	Note             *string `json:"note,omitempty"`
-	ProjectColumnId  string  `json:"projectColumnId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddProjectColumnInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Name             string  `json:"name"`
 	ProjectId        string  `json:"projectId"`
+	Name             string  `json:"name"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddProjectV2DraftIssueInput struct {
-	AssigneeIds      *[]string `json:"assigneeIds,omitempty"`
-	Body             *string   `json:"body,omitempty"`
-	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 	ProjectId        string    `json:"projectId"`
 	Title            string    `json:"title"`
+	Body             *string   `json:"body,omitempty"`
+	AssigneeIds      *[]string `json:"assigneeIds,omitempty"`
+	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 }
 
 type AddProjectV2ItemByIdInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ContentId        string  `json:"contentId"`
 	ProjectId        string  `json:"projectId"`
+	ContentId        string  `json:"contentId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddPullRequestReviewCommentInput struct {
-	Body                *string `json:"body,omitempty"`
-	ClientMutationId    *string `json:"clientMutationId,omitempty"`
-	CommitOID           *string `json:"commitOID,omitempty"`
-	InReplyTo           *string `json:"inReplyTo,omitempty"`
-	Path                *string `json:"path,omitempty"`
-	Position            *int    `json:"position,omitempty"`
 	PullRequestId       *string `json:"pullRequestId,omitempty"`
 	PullRequestReviewId *string `json:"pullRequestReviewId,omitempty"`
+	CommitOID           *string `json:"commitOID,omitempty"`
+	Body                *string `json:"body,omitempty"`
+	Path                *string `json:"path,omitempty"`
+	Position            *int    `json:"position,omitempty"`
+	InReplyTo           *string `json:"inReplyTo,omitempty"`
+	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 }
 
 type AddPullRequestReviewInput struct {
-	Body             *string                           `json:"body,omitempty"`
-	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
-	Comments         *[]*DraftPullRequestReviewComment `json:"comments,omitempty"`
-	CommitOID        *string                           `json:"commitOID,omitempty"`
-	Event            *PullRequestReviewEvent           `json:"event,omitempty"`
 	PullRequestId    string                            `json:"pullRequestId"`
+	CommitOID        *string                           `json:"commitOID,omitempty"`
+	Body             *string                           `json:"body,omitempty"`
+	Event            *PullRequestReviewEvent           `json:"event,omitempty"`
+	Comments         *[]*DraftPullRequestReviewComment `json:"comments,omitempty"`
 	Threads          *[]*DraftPullRequestReviewThread  `json:"threads,omitempty"`
+	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
 }
 
 type AddPullRequestReviewThreadInput struct {
-	Body                string                              `json:"body"`
-	ClientMutationId    *string                             `json:"clientMutationId,omitempty"`
-	Line                *int                                `json:"line,omitempty"`
 	Path                string                              `json:"path"`
+	Body                string                              `json:"body"`
 	PullRequestId       *string                             `json:"pullRequestId,omitempty"`
 	PullRequestReviewId *string                             `json:"pullRequestReviewId,omitempty"`
+	Line                *int                                `json:"line,omitempty"`
 	Side                *DiffSide                           `json:"side,omitempty"`
 	StartLine           *int                                `json:"startLine,omitempty"`
 	StartSide           *DiffSide                           `json:"startSide,omitempty"`
 	SubjectType         *PullRequestReviewThreadSubjectType `json:"subjectType,omitempty"`
+	ClientMutationId    *string                             `json:"clientMutationId,omitempty"`
 }
 
 type AddReactionInput struct {
-	ClientMutationId *string         `json:"clientMutationId,omitempty"`
-	Content          ReactionContent `json:"content"`
 	SubjectId        string          `json:"subjectId"`
+	Content          ReactionContent `json:"content"`
+	ClientMutationId *string         `json:"clientMutationId,omitempty"`
 }
 
 type AddStarInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	StarrableId      string  `json:"starrableId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddUpvoteInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	SubjectId        string  `json:"subjectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AddVerifiableDomainInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Domain           string  `json:"domain"`
 	OwnerId          string  `json:"ownerId"`
+	Domain           string  `json:"domain"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ApproveDeploymentsInput struct {
-	ClientMutationId *string  `json:"clientMutationId,omitempty"`
-	Comment          *string  `json:"comment,omitempty"`
-	EnvironmentIds   []string `json:"environmentIds"`
 	WorkflowRunId    string   `json:"workflowRunId"`
+	EnvironmentIds   []string `json:"environmentIds"`
+	Comment          *string  `json:"comment,omitempty"`
+	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 }
 
 type ApproveVerifiableDomainInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ArchiveProjectV2ItemInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ItemId           string  `json:"itemId"`
 	ProjectId        string  `json:"projectId"`
+	ItemId           string  `json:"itemId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ArchiveRepositoryInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type AuditLogOrder struct {
-	Direction *OrderDirection     `json:"direction,omitempty"`
 	Field     *AuditLogOrderField `json:"field,omitempty"`
+	Direction *OrderDirection     `json:"direction,omitempty"`
 }
 
 type BranchNamePatternParametersInput struct {
@@ -2332,76 +2352,76 @@ type BranchNamePatternParametersInput struct {
 }
 
 type BulkSponsorship struct {
-	Amount           int     `json:"amount"`
 	SponsorableId    *string `json:"sponsorableId,omitempty"`
 	SponsorableLogin *string `json:"sponsorableLogin,omitempty"`
+	Amount           int     `json:"amount"`
 }
 
 type CancelEnterpriseAdminInvitationInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	InvitationId     string  `json:"invitationId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CancelSponsorshipInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	SponsorId        *string `json:"sponsorId,omitempty"`
 	SponsorLogin     *string `json:"sponsorLogin,omitempty"`
 	SponsorableId    *string `json:"sponsorableId,omitempty"`
 	SponsorableLogin *string `json:"sponsorableLogin,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ChangeUserStatusInput struct {
-	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 	Emoji               *string `json:"emoji,omitempty"`
-	ExpiresAt           *string `json:"expiresAt,omitempty"`
-	LimitedAvailability *bool   `json:"limitedAvailability,omitempty"`
 	Message             *string `json:"message,omitempty"`
 	OrganizationId      *string `json:"organizationId,omitempty"`
+	LimitedAvailability *bool   `json:"limitedAvailability,omitempty"`
+	ExpiresAt           *string `json:"expiresAt,omitempty"`
+	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 }
 
 type CheckAnnotationData struct {
-	AnnotationLevel CheckAnnotationLevel `json:"annotationLevel"`
-	Location        CheckAnnotationRange `json:"location"`
-	Message         string               `json:"message"`
 	Path            string               `json:"path"`
-	RawDetails      *string              `json:"rawDetails,omitempty"`
+	Location        CheckAnnotationRange `json:"location"`
+	AnnotationLevel CheckAnnotationLevel `json:"annotationLevel"`
+	Message         string               `json:"message"`
 	Title           *string              `json:"title,omitempty"`
+	RawDetails      *string              `json:"rawDetails,omitempty"`
 }
 
 type CheckAnnotationRange struct {
-	EndColumn   *int `json:"endColumn,omitempty"`
-	EndLine     int  `json:"endLine"`
-	StartColumn *int `json:"startColumn,omitempty"`
 	StartLine   int  `json:"startLine"`
+	StartColumn *int `json:"startColumn,omitempty"`
+	EndLine     int  `json:"endLine"`
+	EndColumn   *int `json:"endColumn,omitempty"`
 }
 
 type CheckRunAction struct {
+	Label       string `json:"label"`
 	Description string `json:"description"`
 	Identifier  string `json:"identifier"`
-	Label       string `json:"label"`
 }
 
 type CheckRunFilter struct {
+	CheckType   *CheckRunType           `json:"checkType,omitempty"`
 	AppId       *int                    `json:"appId,omitempty"`
 	CheckName   *string                 `json:"checkName,omitempty"`
-	CheckType   *CheckRunType           `json:"checkType,omitempty"`
-	Conclusions *[]CheckConclusionState `json:"conclusions,omitempty"`
 	Status      *CheckStatusState       `json:"status,omitempty"`
 	Statuses    *[]CheckStatusState     `json:"statuses,omitempty"`
+	Conclusions *[]CheckConclusionState `json:"conclusions,omitempty"`
 }
 
 type CheckRunOutput struct {
-	Annotations *[]CheckAnnotationData `json:"annotations,omitempty"`
-	Images      *[]CheckRunOutputImage `json:"images,omitempty"`
+	Title       string                 `json:"title"`
 	Summary     string                 `json:"summary"`
 	Text        *string                `json:"text,omitempty"`
-	Title       string                 `json:"title"`
+	Annotations *[]CheckAnnotationData `json:"annotations,omitempty"`
+	Images      *[]CheckRunOutputImage `json:"images,omitempty"`
 }
 
 type CheckRunOutputImage struct {
 	Alt      string  `json:"alt"`
-	Caption  *string `json:"caption,omitempty"`
 	ImageUrl string  `json:"imageUrl"`
+	Caption  *string `json:"caption,omitempty"`
 }
 
 type CheckSuiteAutoTriggerPreference struct {
@@ -2415,57 +2435,57 @@ type CheckSuiteFilter struct {
 }
 
 type ClearLabelsFromLabelableInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	LabelableId      string  `json:"labelableId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ClearProjectV2ItemFieldValueInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	FieldId          string  `json:"fieldId"`
-	ItemId           string  `json:"itemId"`
 	ProjectId        string  `json:"projectId"`
+	ItemId           string  `json:"itemId"`
+	FieldId          string  `json:"fieldId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CloneProjectInput struct {
-	Body             *string `json:"body,omitempty"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
+	TargetOwnerId    string  `json:"targetOwnerId"`
+	SourceId         string  `json:"sourceId"`
 	IncludeWorkflows bool    `json:"includeWorkflows"`
 	Name             string  `json:"name"`
+	Body             *string `json:"body,omitempty"`
 	Public           *bool   `json:"public,omitempty"`
-	SourceId         string  `json:"sourceId"`
-	TargetOwnerId    string  `json:"targetOwnerId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CloneTemplateRepositoryInput struct {
-	ClientMutationId   *string              `json:"clientMutationId,omitempty"`
-	Description        *string              `json:"description,omitempty"`
-	IncludeAllBranches *bool                `json:"includeAllBranches,omitempty"`
+	RepositoryId       string               `json:"repositoryId"`
 	Name               string               `json:"name"`
 	OwnerId            string               `json:"ownerId"`
-	RepositoryId       string               `json:"repositoryId"`
+	Description        *string              `json:"description,omitempty"`
 	Visibility         RepositoryVisibility `json:"visibility"`
+	IncludeAllBranches *bool                `json:"includeAllBranches,omitempty"`
+	ClientMutationId   *string              `json:"clientMutationId,omitempty"`
 }
 
 type CloseDiscussionInput struct {
-	ClientMutationId *string                `json:"clientMutationId,omitempty"`
 	DiscussionId     string                 `json:"discussionId"`
 	Reason           *DiscussionCloseReason `json:"reason,omitempty"`
+	ClientMutationId *string                `json:"clientMutationId,omitempty"`
 }
 
 type CloseIssueInput struct {
-	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 	IssueId          string                  `json:"issueId"`
 	StateReason      *IssueClosedStateReason `json:"stateReason,omitempty"`
+	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 }
 
 type ClosePullRequestInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CommitAuthor struct {
-	Emails *[]string `json:"emails,omitempty"`
 	Id     *string   `json:"id,omitempty"`
+	Emails *[]string `json:"emails,omitempty"`
 }
 
 type CommitAuthorEmailPatternParametersInput struct {
@@ -2476,13 +2496,13 @@ type CommitAuthorEmailPatternParametersInput struct {
 }
 
 type CommitContributionOrder struct {
-	Direction OrderDirection               `json:"direction"`
 	Field     CommitContributionOrderField `json:"field"`
+	Direction OrderDirection               `json:"direction"`
 }
 
 type CommitMessage struct {
-	Body     *string `json:"body,omitempty"`
 	Headline string  `json:"headline"`
+	Body     *string `json:"body,omitempty"`
 }
 
 type CommitMessagePatternParametersInput struct {
@@ -2493,9 +2513,9 @@ type CommitMessagePatternParametersInput struct {
 }
 
 type CommittableBranch struct {
-	BranchName              *string `json:"branchName,omitempty"`
 	Id                      *string `json:"id,omitempty"`
 	RepositoryNameWithOwner *string `json:"repositoryNameWithOwner,omitempty"`
+	BranchName              *string `json:"branchName,omitempty"`
 }
 
 type CommitterEmailPatternParametersInput struct {
@@ -2510,320 +2530,288 @@ type ContributionOrder struct {
 }
 
 type ConvertProjectCardNoteToIssueInput struct {
-	Body             *string `json:"body,omitempty"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectCardId    string  `json:"projectCardId"`
 	RepositoryId     string  `json:"repositoryId"`
 	Title            *string `json:"title,omitempty"`
+	Body             *string `json:"body,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ConvertPullRequestToDraftInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CopyProjectV2Input struct {
-	ClientMutationId   *string `json:"clientMutationId,omitempty"`
-	IncludeDraftIssues *bool   `json:"includeDraftIssues,omitempty"`
-	OwnerId            string  `json:"ownerId"`
 	ProjectId          string  `json:"projectId"`
+	OwnerId            string  `json:"ownerId"`
 	Title              string  `json:"title"`
+	IncludeDraftIssues *bool   `json:"includeDraftIssues,omitempty"`
+	ClientMutationId   *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateAttributionInvitationInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	OwnerId          string  `json:"ownerId"`
 	SourceId         string  `json:"sourceId"`
 	TargetId         string  `json:"targetId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateBranchProtectionRuleInput struct {
-	AllowsDeletions                *bool                       `json:"allowsDeletions,omitempty"`
-	AllowsForcePushes              *bool                       `json:"allowsForcePushes,omitempty"`
-	BlocksCreations                *bool                       `json:"blocksCreations,omitempty"`
-	BypassForcePushActorIds        *[]string                   `json:"bypassForcePushActorIds,omitempty"`
-	BypassPullRequestActorIds      *[]string                   `json:"bypassPullRequestActorIds,omitempty"`
-	ClientMutationId               *string                     `json:"clientMutationId,omitempty"`
-	DismissesStaleReviews          *bool                       `json:"dismissesStaleReviews,omitempty"`
-	IsAdminEnforced                *bool                       `json:"isAdminEnforced,omitempty"`
-	LockAllowsFetchAndMerge        *bool                       `json:"lockAllowsFetchAndMerge,omitempty"`
-	LockBranch                     *bool                       `json:"lockBranch,omitempty"`
-	Pattern                        string                      `json:"pattern"`
-	PushActorIds                   *[]string                   `json:"pushActorIds,omitempty"`
 	RepositoryId                   string                      `json:"repositoryId"`
-	RequireLastPushApproval        *bool                       `json:"requireLastPushApproval,omitempty"`
-	RequiredApprovingReviewCount   *int                        `json:"requiredApprovingReviewCount,omitempty"`
-	RequiredDeploymentEnvironments *[]string                   `json:"requiredDeploymentEnvironments,omitempty"`
-	RequiredStatusCheckContexts    *[]string                   `json:"requiredStatusCheckContexts,omitempty"`
-	RequiredStatusChecks           *[]RequiredStatusCheckInput `json:"requiredStatusChecks,omitempty"`
+	Pattern                        string                      `json:"pattern"`
 	RequiresApprovingReviews       *bool                       `json:"requiresApprovingReviews,omitempty"`
-	RequiresCodeOwnerReviews       *bool                       `json:"requiresCodeOwnerReviews,omitempty"`
+	RequiredApprovingReviewCount   *int                        `json:"requiredApprovingReviewCount,omitempty"`
 	RequiresCommitSignatures       *bool                       `json:"requiresCommitSignatures,omitempty"`
-	RequiresConversationResolution *bool                       `json:"requiresConversationResolution,omitempty"`
-	RequiresDeployments            *bool                       `json:"requiresDeployments,omitempty"`
 	RequiresLinearHistory          *bool                       `json:"requiresLinearHistory,omitempty"`
+	BlocksCreations                *bool                       `json:"blocksCreations,omitempty"`
+	AllowsForcePushes              *bool                       `json:"allowsForcePushes,omitempty"`
+	AllowsDeletions                *bool                       `json:"allowsDeletions,omitempty"`
+	IsAdminEnforced                *bool                       `json:"isAdminEnforced,omitempty"`
 	RequiresStatusChecks           *bool                       `json:"requiresStatusChecks,omitempty"`
 	RequiresStrictStatusChecks     *bool                       `json:"requiresStrictStatusChecks,omitempty"`
-	RestrictsPushes                *bool                       `json:"restrictsPushes,omitempty"`
+	RequiresCodeOwnerReviews       *bool                       `json:"requiresCodeOwnerReviews,omitempty"`
+	DismissesStaleReviews          *bool                       `json:"dismissesStaleReviews,omitempty"`
 	RestrictsReviewDismissals      *bool                       `json:"restrictsReviewDismissals,omitempty"`
 	ReviewDismissalActorIds        *[]string                   `json:"reviewDismissalActorIds,omitempty"`
+	BypassPullRequestActorIds      *[]string                   `json:"bypassPullRequestActorIds,omitempty"`
+	BypassForcePushActorIds        *[]string                   `json:"bypassForcePushActorIds,omitempty"`
+	RestrictsPushes                *bool                       `json:"restrictsPushes,omitempty"`
+	PushActorIds                   *[]string                   `json:"pushActorIds,omitempty"`
+	RequiredStatusCheckContexts    *[]string                   `json:"requiredStatusCheckContexts,omitempty"`
+	RequiredStatusChecks           *[]RequiredStatusCheckInput `json:"requiredStatusChecks,omitempty"`
+	RequiresDeployments            *bool                       `json:"requiresDeployments,omitempty"`
+	RequiredDeploymentEnvironments *[]string                   `json:"requiredDeploymentEnvironments,omitempty"`
+	RequiresConversationResolution *bool                       `json:"requiresConversationResolution,omitempty"`
+	RequireLastPushApproval        *bool                       `json:"requireLastPushApproval,omitempty"`
+	LockBranch                     *bool                       `json:"lockBranch,omitempty"`
+	LockAllowsFetchAndMerge        *bool                       `json:"lockAllowsFetchAndMerge,omitempty"`
+	ClientMutationId               *string                     `json:"clientMutationId,omitempty"`
 }
 
 type CreateCheckRunInput struct {
-	Actions          *[]CheckRunAction            `json:"actions,omitempty"`
-	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
-	CompletedAt      *string                      `json:"completedAt,omitempty"`
-	Conclusion       *CheckConclusionState        `json:"conclusion,omitempty"`
+	RepositoryId     string                       `json:"repositoryId"`
+	Name             string                       `json:"name"`
+	HeadSha          string                       `json:"headSha"`
 	DetailsUrl       *string                      `json:"detailsUrl,omitempty"`
 	ExternalId       *string                      `json:"externalId,omitempty"`
-	HeadSha          string                       `json:"headSha"`
-	Name             string                       `json:"name"`
-	Output           *CheckRunOutput              `json:"output,omitempty"`
-	RepositoryId     string                       `json:"repositoryId"`
-	StartedAt        *string                      `json:"startedAt,omitempty"`
 	Status           *RequestableCheckStatusState `json:"status,omitempty"`
+	StartedAt        *string                      `json:"startedAt,omitempty"`
+	Conclusion       *CheckConclusionState        `json:"conclusion,omitempty"`
+	CompletedAt      *string                      `json:"completedAt,omitempty"`
+	Output           *CheckRunOutput              `json:"output,omitempty"`
+	Actions          *[]CheckRunAction            `json:"actions,omitempty"`
+	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
 }
 
 type CreateCheckSuiteInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	HeadSha          string  `json:"headSha"`
 	RepositoryId     string  `json:"repositoryId"`
+	HeadSha          string  `json:"headSha"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateCommitOnBranchInput struct {
 	Branch           CommittableBranch `json:"branch"`
-	ClientMutationId *string           `json:"clientMutationId,omitempty"`
-	ExpectedHeadOid  string            `json:"expectedHeadOid"`
 	FileChanges      *FileChanges      `json:"fileChanges,omitempty"`
 	Message          CommitMessage     `json:"message"`
-}
-
-type CreateDeploymentInput struct {
-	AutoMerge        *bool     `json:"autoMerge,omitempty"`
-	ClientMutationId *string   `json:"clientMutationId,omitempty"`
-	Description      *string   `json:"description,omitempty"`
-	Environment      *string   `json:"environment,omitempty"`
-	Payload          *string   `json:"payload,omitempty"`
-	RefId            string    `json:"refId"`
-	RepositoryId     string    `json:"repositoryId"`
-	RequiredContexts *[]string `json:"requiredContexts,omitempty"`
-	Task             *string   `json:"task,omitempty"`
-}
-
-type CreateDeploymentStatusInput struct {
-	AutoInactive     *bool                 `json:"autoInactive,omitempty"`
-	ClientMutationId *string               `json:"clientMutationId,omitempty"`
-	DeploymentId     string                `json:"deploymentId"`
-	Description      *string               `json:"description,omitempty"`
-	Environment      *string               `json:"environment,omitempty"`
-	EnvironmentUrl   *string               `json:"environmentUrl,omitempty"`
-	LogUrl           *string               `json:"logUrl,omitempty"`
-	State            DeploymentStatusState `json:"state"`
+	ExpectedHeadOid  string            `json:"expectedHeadOid"`
+	ClientMutationId *string           `json:"clientMutationId,omitempty"`
 }
 
 type CreateDiscussionInput struct {
+	RepositoryId     string  `json:"repositoryId"`
+	Title            string  `json:"title"`
 	Body             string  `json:"body"`
 	CategoryId       string  `json:"categoryId"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	RepositoryId     string  `json:"repositoryId"`
-	Title            string  `json:"title"`
 }
 
 type CreateEnterpriseOrganizationInput struct {
-	AdminLogins      []string `json:"adminLogins"`
-	BillingEmail     string   `json:"billingEmail"`
-	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 	EnterpriseId     string   `json:"enterpriseId"`
 	Login            string   `json:"login"`
 	ProfileName      string   `json:"profileName"`
+	BillingEmail     string   `json:"billingEmail"`
+	AdminLogins      []string `json:"adminLogins"`
+	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 }
 
 type CreateEnvironmentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Name             string  `json:"name"`
 	RepositoryId     string  `json:"repositoryId"`
+	Name             string  `json:"name"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateIpAllowListEntryInput struct {
-	AllowListValue   string  `json:"allowListValue"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	IsActive         bool    `json:"isActive"`
-	Name             *string `json:"name,omitempty"`
 	OwnerId          string  `json:"ownerId"`
+	AllowListValue   string  `json:"allowListValue"`
+	Name             *string `json:"name,omitempty"`
+	IsActive         bool    `json:"isActive"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateIssueInput struct {
-	AssigneeIds      *[]string `json:"assigneeIds,omitempty"`
-	Body             *string   `json:"body,omitempty"`
-	ClientMutationId *string   `json:"clientMutationId,omitempty"`
-	IssueTemplate    *string   `json:"issueTemplate,omitempty"`
-	LabelIds         *[]string `json:"labelIds,omitempty"`
-	MilestoneId      *string   `json:"milestoneId,omitempty"`
-	ProjectIds       *[]string `json:"projectIds,omitempty"`
 	RepositoryId     string    `json:"repositoryId"`
 	Title            string    `json:"title"`
-}
-
-type CreateLabelInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Color            string  `json:"color"`
-	Description      *string `json:"description,omitempty"`
-	Name             string  `json:"name"`
-	RepositoryId     string  `json:"repositoryId"`
+	Body             *string   `json:"body,omitempty"`
+	AssigneeIds      *[]string `json:"assigneeIds,omitempty"`
+	MilestoneId      *string   `json:"milestoneId,omitempty"`
+	LabelIds         *[]string `json:"labelIds,omitempty"`
+	ProjectIds       *[]string `json:"projectIds,omitempty"`
+	IssueTemplate    *string   `json:"issueTemplate,omitempty"`
+	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 }
 
 type CreateLinkedBranchInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	IssueId          string  `json:"issueId"`
-	Name             *string `json:"name,omitempty"`
 	Oid              string  `json:"oid"`
+	Name             *string `json:"name,omitempty"`
 	RepositoryId     *string `json:"repositoryId,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateMigrationSourceInput struct {
-	AccessToken      *string             `json:"accessToken,omitempty"`
-	ClientMutationId *string             `json:"clientMutationId,omitempty"`
-	GithubPat        *string             `json:"githubPat,omitempty"`
 	Name             string              `json:"name"`
-	OwnerId          string              `json:"ownerId"`
-	Type             MigrationSourceType `json:"type"`
 	Url              *string             `json:"url,omitempty"`
+	AccessToken      *string             `json:"accessToken,omitempty"`
+	Type             MigrationSourceType `json:"type"`
+	OwnerId          string              `json:"ownerId"`
+	GithubPat        *string             `json:"githubPat,omitempty"`
+	ClientMutationId *string             `json:"clientMutationId,omitempty"`
 }
 
 type CreateProjectInput struct {
-	Body             *string          `json:"body,omitempty"`
-	ClientMutationId *string          `json:"clientMutationId,omitempty"`
-	Name             string           `json:"name"`
 	OwnerId          string           `json:"ownerId"`
-	RepositoryIds    *[]string        `json:"repositoryIds,omitempty"`
+	Name             string           `json:"name"`
+	Body             *string          `json:"body,omitempty"`
 	Template         *ProjectTemplate `json:"template,omitempty"`
+	RepositoryIds    *[]string        `json:"repositoryIds,omitempty"`
+	ClientMutationId *string          `json:"clientMutationId,omitempty"`
 }
 
 type CreateProjectV2FieldInput struct {
-	ClientMutationId    *string                                  `json:"clientMutationId,omitempty"`
+	ProjectId           string                                   `json:"projectId"`
 	DataType            ProjectV2CustomFieldType                 `json:"dataType"`
 	Name                string                                   `json:"name"`
-	ProjectId           string                                   `json:"projectId"`
 	SingleSelectOptions *[]ProjectV2SingleSelectFieldOptionInput `json:"singleSelectOptions,omitempty"`
+	ClientMutationId    *string                                  `json:"clientMutationId,omitempty"`
 }
 
 type CreateProjectV2Input struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	OwnerId          string  `json:"ownerId"`
+	Title            string  `json:"title"`
 	RepositoryId     *string `json:"repositoryId,omitempty"`
 	TeamId           *string `json:"teamId,omitempty"`
-	Title            string  `json:"title"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreatePullRequestInput struct {
+	RepositoryId        string  `json:"repositoryId"`
 	BaseRefName         string  `json:"baseRefName"`
-	Body                *string `json:"body,omitempty"`
-	ClientMutationId    *string `json:"clientMutationId,omitempty"`
-	Draft               *bool   `json:"draft,omitempty"`
 	HeadRefName         string  `json:"headRefName"`
 	HeadRepositoryId    *string `json:"headRepositoryId,omitempty"`
-	MaintainerCanModify *bool   `json:"maintainerCanModify,omitempty"`
-	RepositoryId        string  `json:"repositoryId"`
 	Title               string  `json:"title"`
+	Body                *string `json:"body,omitempty"`
+	MaintainerCanModify *bool   `json:"maintainerCanModify,omitempty"`
+	Draft               *bool   `json:"draft,omitempty"`
+	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateRefInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
+	RepositoryId     string  `json:"repositoryId"`
 	Name             string  `json:"name"`
 	Oid              string  `json:"oid"`
-	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateRepositoryInput struct {
-	ClientMutationId *string              `json:"clientMutationId,omitempty"`
-	Description      *string              `json:"description,omitempty"`
-	HasIssuesEnabled *bool                `json:"hasIssuesEnabled,omitempty"`
-	HasWikiEnabled   *bool                `json:"hasWikiEnabled,omitempty"`
-	HomepageUrl      *string              `json:"homepageUrl,omitempty"`
 	Name             string               `json:"name"`
 	OwnerId          *string              `json:"ownerId,omitempty"`
-	TeamId           *string              `json:"teamId,omitempty"`
-	Template         *bool                `json:"template,omitempty"`
+	Description      *string              `json:"description,omitempty"`
 	Visibility       RepositoryVisibility `json:"visibility"`
+	Template         *bool                `json:"template,omitempty"`
+	HomepageUrl      *string              `json:"homepageUrl,omitempty"`
+	HasWikiEnabled   *bool                `json:"hasWikiEnabled,omitempty"`
+	HasIssuesEnabled *bool                `json:"hasIssuesEnabled,omitempty"`
+	TeamId           *string              `json:"teamId,omitempty"`
+	ClientMutationId *string              `json:"clientMutationId,omitempty"`
 }
 
 type CreateRepositoryRulesetInput struct {
-	BypassActorIds   *[]string                     `json:"bypassActorIds,omitempty"`
-	BypassMode       *RuleBypassMode               `json:"bypassMode,omitempty"`
-	ClientMutationId *string                       `json:"clientMutationId,omitempty"`
-	Conditions       RepositoryRuleConditionsInput `json:"conditions"`
-	Enforcement      RuleEnforcement               `json:"enforcement"`
-	Name             string                        `json:"name"`
-	Rules            *[]RepositoryRuleInput        `json:"rules,omitempty"`
-	SourceId         string                        `json:"sourceId"`
-	Target           *RepositoryRulesetTarget      `json:"target,omitempty"`
+	SourceId         string                               `json:"sourceId"`
+	Name             string                               `json:"name"`
+	Target           *RepositoryRulesetTarget             `json:"target,omitempty"`
+	Rules            *[]RepositoryRuleInput               `json:"rules,omitempty"`
+	Conditions       RepositoryRuleConditionsInput        `json:"conditions"`
+	Enforcement      RuleEnforcement                      `json:"enforcement"`
+	BypassActors     *[]RepositoryRulesetBypassActorInput `json:"bypassActors,omitempty"`
+	ClientMutationId *string                              `json:"clientMutationId,omitempty"`
 }
 
 type CreateSponsorsListingInput struct {
-	BillingCountryOrRegionCode      *SponsorsCountryOrRegionCode `json:"billingCountryOrRegionCode,omitempty"`
-	ClientMutationId                *string                      `json:"clientMutationId,omitempty"`
-	ContactEmail                    *string                      `json:"contactEmail,omitempty"`
+	SponsorableLogin                *string                      `json:"sponsorableLogin,omitempty"`
 	FiscalHostLogin                 *string                      `json:"fiscalHostLogin,omitempty"`
 	FiscallyHostedProjectProfileUrl *string                      `json:"fiscallyHostedProjectProfileUrl,omitempty"`
-	FullDescription                 *string                      `json:"fullDescription,omitempty"`
+	BillingCountryOrRegionCode      *SponsorsCountryOrRegionCode `json:"billingCountryOrRegionCode,omitempty"`
 	ResidenceCountryOrRegionCode    *SponsorsCountryOrRegionCode `json:"residenceCountryOrRegionCode,omitempty"`
-	SponsorableLogin                *string                      `json:"sponsorableLogin,omitempty"`
+	ContactEmail                    *string                      `json:"contactEmail,omitempty"`
+	FullDescription                 *string                      `json:"fullDescription,omitempty"`
+	ClientMutationId                *string                      `json:"clientMutationId,omitempty"`
 }
 
 type CreateSponsorsTierInput struct {
-	Amount               int     `json:"amount"`
-	ClientMutationId     *string `json:"clientMutationId,omitempty"`
-	Description          string  `json:"description"`
-	IsRecurring          *bool   `json:"isRecurring,omitempty"`
-	Publish              *bool   `json:"publish,omitempty"`
-	RepositoryId         *string `json:"repositoryId,omitempty"`
-	RepositoryName       *string `json:"repositoryName,omitempty"`
-	RepositoryOwnerLogin *string `json:"repositoryOwnerLogin,omitempty"`
 	SponsorableId        *string `json:"sponsorableId,omitempty"`
 	SponsorableLogin     *string `json:"sponsorableLogin,omitempty"`
+	Amount               int     `json:"amount"`
+	IsRecurring          *bool   `json:"isRecurring,omitempty"`
+	RepositoryId         *string `json:"repositoryId,omitempty"`
+	RepositoryOwnerLogin *string `json:"repositoryOwnerLogin,omitempty"`
+	RepositoryName       *string `json:"repositoryName,omitempty"`
 	WelcomeMessage       *string `json:"welcomeMessage,omitempty"`
+	Description          string  `json:"description"`
+	Publish              *bool   `json:"publish,omitempty"`
+	ClientMutationId     *string `json:"clientMutationId,omitempty"`
 }
 
 type CreateSponsorshipInput struct {
-	Amount           *int                `json:"amount,omitempty"`
-	ClientMutationId *string             `json:"clientMutationId,omitempty"`
-	IsRecurring      *bool               `json:"isRecurring,omitempty"`
-	PrivacyLevel     *SponsorshipPrivacy `json:"privacyLevel,omitempty"`
-	ReceiveEmails    *bool               `json:"receiveEmails,omitempty"`
 	SponsorId        *string             `json:"sponsorId,omitempty"`
 	SponsorLogin     *string             `json:"sponsorLogin,omitempty"`
 	SponsorableId    *string             `json:"sponsorableId,omitempty"`
 	SponsorableLogin *string             `json:"sponsorableLogin,omitempty"`
 	TierId           *string             `json:"tierId,omitempty"`
+	Amount           *int                `json:"amount,omitempty"`
+	IsRecurring      *bool               `json:"isRecurring,omitempty"`
+	ReceiveEmails    *bool               `json:"receiveEmails,omitempty"`
+	PrivacyLevel     *SponsorshipPrivacy `json:"privacyLevel,omitempty"`
+	ClientMutationId *string             `json:"clientMutationId,omitempty"`
 }
 
 type CreateSponsorshipsInput struct {
-	ClientMutationId *string             `json:"clientMutationId,omitempty"`
-	PrivacyLevel     *SponsorshipPrivacy `json:"privacyLevel,omitempty"`
-	ReceiveEmails    *bool               `json:"receiveEmails,omitempty"`
 	SponsorLogin     string              `json:"sponsorLogin"`
 	Sponsorships     []BulkSponsorship   `json:"sponsorships"`
+	ReceiveEmails    *bool               `json:"receiveEmails,omitempty"`
+	PrivacyLevel     *SponsorshipPrivacy `json:"privacyLevel,omitempty"`
+	ClientMutationId *string             `json:"clientMutationId,omitempty"`
 }
 
 type CreateTeamDiscussionCommentInput struct {
-	Body             string  `json:"body"`
+	DiscussionId     *string `json:"discussionId,omitempty"`
+	Body             *string `json:"body,omitempty"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	DiscussionId     string  `json:"discussionId"`
 }
 
 type CreateTeamDiscussionInput struct {
-	Body             string  `json:"body"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
+	TeamId           *string `json:"teamId,omitempty"`
+	Title            *string `json:"title,omitempty"`
+	Body             *string `json:"body,omitempty"`
 	Private          *bool   `json:"private,omitempty"`
-	TeamId           string  `json:"teamId"`
-	Title            string  `json:"title"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeclineTopicSuggestionInput struct {
-	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
+	RepositoryId     string                       `json:"repositoryId"`
 	Name             string                       `json:"name"`
 	Reason           TopicSuggestionDeclineReason `json:"reason"`
-	RepositoryId     string                       `json:"repositoryId"`
+	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
 }
 
 type DeleteBranchProtectionRuleInput struct {
@@ -2832,53 +2820,43 @@ type DeleteBranchProtectionRuleInput struct {
 }
 
 type DeleteDeploymentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteDiscussionCommentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteDiscussionInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteEnvironmentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteIpAllowListEntryInput struct {
-	ClientMutationId   *string `json:"clientMutationId,omitempty"`
 	IpAllowListEntryId string  `json:"ipAllowListEntryId"`
+	ClientMutationId   *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteIssueCommentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteIssueInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	IssueId          string  `json:"issueId"`
-}
-
-type DeleteLabelInput struct {
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Id               string  `json:"id"`
 }
 
 type DeleteLinkedBranchInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	LinkedBranchId   string  `json:"linkedBranchId"`
-}
-
-type DeletePackageVersionInput struct {
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	PackageVersionId string  `json:"packageVersionId"`
 }
 
 type DeleteProjectCardInput struct {
@@ -2887,178 +2865,183 @@ type DeleteProjectCardInput struct {
 }
 
 type DeleteProjectColumnInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ColumnId         string  `json:"columnId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteProjectInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteProjectV2FieldInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	FieldId          string  `json:"fieldId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteProjectV2Input struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteProjectV2ItemInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ItemId           string  `json:"itemId"`
 	ProjectId        string  `json:"projectId"`
+	ItemId           string  `json:"itemId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteProjectV2WorkflowInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	WorkflowId       string  `json:"workflowId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeletePullRequestReviewCommentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeletePullRequestReviewInput struct {
-	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 	PullRequestReviewId string  `json:"pullRequestReviewId"`
+	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteRefInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	RefId            string  `json:"refId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteRepositoryRulesetInput struct {
-	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 	RepositoryRulesetId string  `json:"repositoryRulesetId"`
+	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteTeamDiscussionCommentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteTeamDiscussionInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeleteVerifiableDomainInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DeploymentOrder struct {
-	Direction OrderDirection       `json:"direction"`
 	Field     DeploymentOrderField `json:"field"`
+	Direction OrderDirection       `json:"direction"`
 }
 
 type DequeuePullRequestInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DisablePullRequestAutoMergeInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type DiscussionOrder struct {
-	Direction OrderDirection       `json:"direction"`
 	Field     DiscussionOrderField `json:"field"`
+	Direction OrderDirection       `json:"direction"`
 }
 
 type DiscussionPollOptionOrder struct {
-	Direction OrderDirection                 `json:"direction"`
 	Field     DiscussionPollOptionOrderField `json:"field"`
+	Direction OrderDirection                 `json:"direction"`
 }
 
 type DismissPullRequestReviewInput struct {
-	ClientMutationId    *string `json:"clientMutationId,omitempty"`
-	Message             string  `json:"message"`
 	PullRequestReviewId string  `json:"pullRequestReviewId"`
+	Message             string  `json:"message"`
+	ClientMutationId    *string `json:"clientMutationId,omitempty"`
 }
 
 type DismissRepositoryVulnerabilityAlertInput struct {
-	ClientMutationId               *string       `json:"clientMutationId,omitempty"`
-	DismissReason                  DismissReason `json:"dismissReason"`
 	RepositoryVulnerabilityAlertId string        `json:"repositoryVulnerabilityAlertId"`
+	DismissReason                  DismissReason `json:"dismissReason"`
+	ClientMutationId               *string       `json:"clientMutationId,omitempty"`
 }
 
 type DraftPullRequestReviewComment struct {
-	Body     string `json:"body"`
 	Path     string `json:"path"`
 	Position int    `json:"position"`
+	Body     string `json:"body"`
 }
 
 type DraftPullRequestReviewThread struct {
-	Body      string    `json:"body"`
-	Line      int       `json:"line"`
 	Path      string    `json:"path"`
+	Line      int       `json:"line"`
 	Side      *DiffSide `json:"side,omitempty"`
 	StartLine *int      `json:"startLine,omitempty"`
 	StartSide *DiffSide `json:"startSide,omitempty"`
+	Body      string    `json:"body"`
 }
 
 type EnablePullRequestAutoMergeInput struct {
-	AuthorEmail      *string                 `json:"authorEmail,omitempty"`
-	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
-	CommitBody       *string                 `json:"commitBody,omitempty"`
-	CommitHeadline   *string                 `json:"commitHeadline,omitempty"`
-	ExpectedHeadOid  *string                 `json:"expectedHeadOid,omitempty"`
-	MergeMethod      *PullRequestMergeMethod `json:"mergeMethod,omitempty"`
 	PullRequestId    string                  `json:"pullRequestId"`
+	CommitHeadline   *string                 `json:"commitHeadline,omitempty"`
+	CommitBody       *string                 `json:"commitBody,omitempty"`
+	MergeMethod      *PullRequestMergeMethod `json:"mergeMethod,omitempty"`
+	AuthorEmail      *string                 `json:"authorEmail,omitempty"`
+	ExpectedHeadOid  *string                 `json:"expectedHeadOid,omitempty"`
+	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 }
 
 type EnqueuePullRequestInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ExpectedHeadOid  *string `json:"expectedHeadOid,omitempty"`
-	Jump             *bool   `json:"jump,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	Jump             *bool   `json:"jump,omitempty"`
+	ExpectedHeadOid  *string `json:"expectedHeadOid,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type EnterpriseAdministratorInvitationOrder struct {
-	Direction OrderDirection                              `json:"direction"`
 	Field     EnterpriseAdministratorInvitationOrderField `json:"field"`
+	Direction OrderDirection                              `json:"direction"`
 }
 
 type EnterpriseMemberOrder struct {
-	Direction OrderDirection             `json:"direction"`
 	Field     EnterpriseMemberOrderField `json:"field"`
+	Direction OrderDirection             `json:"direction"`
 }
 
 type EnterpriseServerInstallationOrder struct {
-	Direction OrderDirection                         `json:"direction"`
 	Field     EnterpriseServerInstallationOrderField `json:"field"`
+	Direction OrderDirection                         `json:"direction"`
 }
 
 type EnterpriseServerUserAccountEmailOrder struct {
-	Direction OrderDirection                             `json:"direction"`
 	Field     EnterpriseServerUserAccountEmailOrderField `json:"field"`
+	Direction OrderDirection                             `json:"direction"`
 }
 
 type EnterpriseServerUserAccountOrder struct {
-	Direction OrderDirection                        `json:"direction"`
 	Field     EnterpriseServerUserAccountOrderField `json:"field"`
+	Direction OrderDirection                        `json:"direction"`
 }
 
 type EnterpriseServerUserAccountsUploadOrder struct {
-	Direction OrderDirection                               `json:"direction"`
 	Field     EnterpriseServerUserAccountsUploadOrderField `json:"field"`
+	Direction OrderDirection                               `json:"direction"`
+}
+
+type Environments struct {
+	Field     EnvironmentOrderField `json:"field"`
+	Direction OrderDirection        `json:"direction"`
 }
 
 type FileAddition struct {
-	Contents string `json:"contents"`
 	Path     string `json:"path"`
+	Contents string `json:"contents"`
 }
 
 type FileChanges struct {
-	Additions *[]FileAddition `json:"additions,omitempty"`
 	Deletions *[]FileDeletion `json:"deletions,omitempty"`
+	Additions *[]FileAddition `json:"additions,omitempty"`
 }
 
 type FileDeletion struct {
@@ -3066,58 +3049,49 @@ type FileDeletion struct {
 }
 
 type FollowOrganizationInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	OrganizationId   string  `json:"organizationId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type FollowUserInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	UserId           string  `json:"userId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type GistOrder struct {
-	Direction OrderDirection `json:"direction"`
 	Field     GistOrderField `json:"field"`
+	Direction OrderDirection `json:"direction"`
 }
 
 type GrantEnterpriseOrganizationsMigratorRoleInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	Login            string  `json:"login"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type GrantMigratorRoleInput struct {
+	OrganizationId   string    `json:"organizationId"`
 	Actor            string    `json:"actor"`
 	ActorType        ActorType `json:"actorType"`
 	ClientMutationId *string   `json:"clientMutationId,omitempty"`
-	OrganizationId   string    `json:"organizationId"`
-}
-
-type ImportProjectInput struct {
-	Body             *string               `json:"body,omitempty"`
-	ClientMutationId *string               `json:"clientMutationId,omitempty"`
-	ColumnImports    []ProjectColumnImport `json:"columnImports"`
-	Name             string                `json:"name"`
-	OwnerName        string                `json:"ownerName"`
-	Public           *bool                 `json:"public,omitempty"`
 }
 
 type InviteEnterpriseAdminInput struct {
-	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
-	Email            *string                      `json:"email,omitempty"`
 	EnterpriseId     string                       `json:"enterpriseId"`
 	Invitee          *string                      `json:"invitee,omitempty"`
+	Email            *string                      `json:"email,omitempty"`
 	Role             *EnterpriseAdministratorRole `json:"role,omitempty"`
+	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
 }
 
 type IpAllowListEntryOrder struct {
-	Direction OrderDirection             `json:"direction"`
 	Field     IpAllowListEntryOrderField `json:"field"`
+	Direction OrderDirection             `json:"direction"`
 }
 
 type IssueCommentOrder struct {
-	Direction OrderDirection         `json:"direction"`
 	Field     IssueCommentOrderField `json:"field"`
+	Direction OrderDirection         `json:"direction"`
 }
 
 type IssueFilters struct {
@@ -3133,165 +3107,165 @@ type IssueFilters struct {
 }
 
 type IssueOrder struct {
-	Direction OrderDirection  `json:"direction"`
 	Field     IssueOrderField `json:"field"`
+	Direction OrderDirection  `json:"direction"`
 }
 
 type LabelOrder struct {
-	Direction OrderDirection  `json:"direction"`
 	Field     LabelOrderField `json:"field"`
+	Direction OrderDirection  `json:"direction"`
 }
 
 type LanguageOrder struct {
-	Direction OrderDirection     `json:"direction"`
 	Field     LanguageOrderField `json:"field"`
+	Direction OrderDirection     `json:"direction"`
 }
 
 type LinkProjectV2ToRepositoryInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
 	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type LinkProjectV2ToTeamInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
 	TeamId           string  `json:"teamId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type LinkRepositoryToProjectInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
 	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type LockLockableInput struct {
-	ClientMutationId *string     `json:"clientMutationId,omitempty"`
-	LockReason       *LockReason `json:"lockReason,omitempty"`
 	LockableId       string      `json:"lockableId"`
+	LockReason       *LockReason `json:"lockReason,omitempty"`
+	ClientMutationId *string     `json:"clientMutationId,omitempty"`
 }
 
 type MannequinOrder struct {
-	Direction OrderDirection      `json:"direction"`
 	Field     MannequinOrderField `json:"field"`
+	Direction OrderDirection      `json:"direction"`
 }
 
 type MarkDiscussionCommentAsAnswerInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type MarkFileAsViewedInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Path             string  `json:"path"`
 	PullRequestId    string  `json:"pullRequestId"`
+	Path             string  `json:"path"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
+}
+
+type MarkProjectV2AsTemplateInput struct {
+	ProjectId        string  `json:"projectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type MarkPullRequestReadyForReviewInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type MergeBranchInput struct {
-	AuthorEmail      *string `json:"authorEmail,omitempty"`
-	Base             string  `json:"base"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	CommitMessage    *string `json:"commitMessage,omitempty"`
-	Head             string  `json:"head"`
 	RepositoryId     string  `json:"repositoryId"`
+	Base             string  `json:"base"`
+	Head             string  `json:"head"`
+	CommitMessage    *string `json:"commitMessage,omitempty"`
+	AuthorEmail      *string `json:"authorEmail,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type MergePullRequestInput struct {
-	AuthorEmail      *string                 `json:"authorEmail,omitempty"`
-	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
-	CommitBody       *string                 `json:"commitBody,omitempty"`
+	PullRequestId    string                  `json:"pullRequestId"`
 	CommitHeadline   *string                 `json:"commitHeadline,omitempty"`
+	CommitBody       *string                 `json:"commitBody,omitempty"`
 	ExpectedHeadOid  *string                 `json:"expectedHeadOid,omitempty"`
 	MergeMethod      *PullRequestMergeMethod `json:"mergeMethod,omitempty"`
-	PullRequestId    string                  `json:"pullRequestId"`
+	AuthorEmail      *string                 `json:"authorEmail,omitempty"`
+	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 }
 
 type MilestoneOrder struct {
-	Direction OrderDirection      `json:"direction"`
 	Field     MilestoneOrderField `json:"field"`
+	Direction OrderDirection      `json:"direction"`
 }
 
 type MinimizeCommentInput struct {
+	SubjectId        string                     `json:"subjectId"`
 	Classifier       ReportedContentClassifiers `json:"classifier"`
 	ClientMutationId *string                    `json:"clientMutationId,omitempty"`
-	SubjectId        string                     `json:"subjectId"`
 }
 
 type MoveProjectCardInput struct {
-	AfterCardId      *string `json:"afterCardId,omitempty"`
 	CardId           string  `json:"cardId"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ColumnId         string  `json:"columnId"`
+	AfterCardId      *string `json:"afterCardId,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type MoveProjectColumnInput struct {
+	ColumnId         string  `json:"columnId"`
 	AfterColumnId    *string `json:"afterColumnId,omitempty"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ColumnId         string  `json:"columnId"`
 }
 
 type OrgEnterpriseOwnerOrder struct {
-	Direction OrderDirection               `json:"direction"`
 	Field     OrgEnterpriseOwnerOrderField `json:"field"`
+	Direction OrderDirection               `json:"direction"`
 }
 
 type OrganizationOrder struct {
-	Direction OrderDirection         `json:"direction"`
 	Field     OrganizationOrderField `json:"field"`
+	Direction OrderDirection         `json:"direction"`
 }
 
 type PackageFileOrder struct {
-	Direction *OrderDirection        `json:"direction,omitempty"`
 	Field     *PackageFileOrderField `json:"field,omitempty"`
+	Direction *OrderDirection        `json:"direction,omitempty"`
 }
 
 type PackageOrder struct {
-	Direction *OrderDirection    `json:"direction,omitempty"`
 	Field     *PackageOrderField `json:"field,omitempty"`
+	Direction *OrderDirection    `json:"direction,omitempty"`
 }
 
 type PackageVersionOrder struct {
-	Direction *OrderDirection           `json:"direction,omitempty"`
 	Field     *PackageVersionOrderField `json:"field,omitempty"`
+	Direction *OrderDirection           `json:"direction,omitempty"`
 }
 
 type PinIssueInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	IssueId          string  `json:"issueId"`
-}
-
-type ProjectCardImport struct {
-	Number     int    `json:"number"`
-	Repository string `json:"repository"`
-}
-
-type ProjectColumnImport struct {
-	ColumnName string               `json:"columnName"`
-	Issues     *[]ProjectCardImport `json:"issues,omitempty"`
-	Position   int                  `json:"position"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ProjectOrder struct {
-	Direction OrderDirection    `json:"direction"`
 	Field     ProjectOrderField `json:"field"`
+	Direction OrderDirection    `json:"direction"`
+}
+
+type ProjectV2Collaborator struct {
+	UserId *string        `json:"userId,omitempty"`
+	TeamId *string        `json:"teamId,omitempty"`
+	Role   ProjectV2Roles `json:"role"`
 }
 
 type ProjectV2FieldOrder struct {
-	Direction OrderDirection           `json:"direction"`
 	Field     ProjectV2FieldOrderField `json:"field"`
+	Direction OrderDirection           `json:"direction"`
 }
 
 type ProjectV2FieldValue struct {
-	Date                 *string  `json:"date,omitempty"`
-	IterationId          *string  `json:"iterationId,omitempty"`
-	Number               *float32 `json:"number,omitempty"`
-	SingleSelectOptionId *string  `json:"singleSelectOptionId,omitempty"`
 	Text                 *string  `json:"text,omitempty"`
+	Number               *float32 `json:"number,omitempty"`
+	Date                 *string  `json:"date,omitempty"`
+	SingleSelectOptionId *string  `json:"singleSelectOptionId,omitempty"`
+	IterationId          *string  `json:"iterationId,omitempty"`
 }
 
 type ProjectV2Filters struct {
@@ -3299,44 +3273,44 @@ type ProjectV2Filters struct {
 }
 
 type ProjectV2ItemFieldValueOrder struct {
-	Direction OrderDirection                    `json:"direction"`
 	Field     ProjectV2ItemFieldValueOrderField `json:"field"`
+	Direction OrderDirection                    `json:"direction"`
 }
 
 type ProjectV2ItemOrder struct {
-	Direction OrderDirection          `json:"direction"`
 	Field     ProjectV2ItemOrderField `json:"field"`
+	Direction OrderDirection          `json:"direction"`
 }
 
 type ProjectV2Order struct {
-	Direction OrderDirection      `json:"direction"`
 	Field     ProjectV2OrderField `json:"field"`
+	Direction OrderDirection      `json:"direction"`
 }
 
 type ProjectV2SingleSelectFieldOptionInput struct {
+	Name        string                                `json:"name"`
 	Color       ProjectV2SingleSelectFieldOptionColor `json:"color"`
 	Description string                                `json:"description"`
-	Name        string                                `json:"name"`
 }
 
 type ProjectV2ViewOrder struct {
-	Direction OrderDirection          `json:"direction"`
 	Field     ProjectV2ViewOrderField `json:"field"`
+	Direction OrderDirection          `json:"direction"`
 }
 
 type ProjectV2WorkflowOrder struct {
-	Direction OrderDirection               `json:"direction"`
 	Field     ProjectV2WorkflowsOrderField `json:"field"`
+	Direction OrderDirection               `json:"direction"`
 }
 
 type PublishSponsorsTierInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	TierId           string  `json:"tierId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type PullRequestOrder struct {
-	Direction OrderDirection        `json:"direction"`
 	Field     PullRequestOrderField `json:"field"`
+	Direction OrderDirection        `json:"direction"`
 }
 
 type PullRequestParametersInput struct {
@@ -3348,8 +3322,8 @@ type PullRequestParametersInput struct {
 }
 
 type ReactionOrder struct {
-	Direction OrderDirection     `json:"direction"`
 	Field     ReactionOrderField `json:"field"`
+	Direction OrderDirection     `json:"direction"`
 }
 
 type RefNameConditionTargetInput struct {
@@ -3358,37 +3332,30 @@ type RefNameConditionTargetInput struct {
 }
 
 type RefOrder struct {
-	Direction OrderDirection `json:"direction"`
 	Field     RefOrderField  `json:"field"`
-}
-
-type RefUpdate struct {
-	AfterOid  string  `json:"afterOid"`
-	BeforeOid *string `json:"beforeOid,omitempty"`
-	Force     *bool   `json:"force,omitempty"`
-	Name      string  `json:"name"`
+	Direction OrderDirection `json:"direction"`
 }
 
 type RegenerateEnterpriseIdentityProviderRecoveryCodesInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RegenerateVerifiableDomainTokenInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RejectDeploymentsInput struct {
-	ClientMutationId *string  `json:"clientMutationId,omitempty"`
-	Comment          *string  `json:"comment,omitempty"`
-	EnvironmentIds   []string `json:"environmentIds"`
 	WorkflowRunId    string   `json:"workflowRunId"`
+	EnvironmentIds   []string `json:"environmentIds"`
+	Comment          *string  `json:"comment,omitempty"`
+	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 }
 
 type ReleaseOrder struct {
-	Direction OrderDirection    `json:"direction"`
 	Field     ReleaseOrderField `json:"field"`
+	Direction OrderDirection    `json:"direction"`
 }
 
 type RemoveAssigneesFromAssignableInput struct {
@@ -3398,85 +3365,89 @@ type RemoveAssigneesFromAssignableInput struct {
 }
 
 type RemoveEnterpriseAdminInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	Login            string  `json:"login"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveEnterpriseIdentityProviderInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveEnterpriseMemberInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	UserId           string  `json:"userId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveEnterpriseOrganizationInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	OrganizationId   string  `json:"organizationId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveEnterpriseSupportEntitlementInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	Login            string  `json:"login"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveLabelsFromLabelableInput struct {
-	ClientMutationId *string  `json:"clientMutationId,omitempty"`
-	LabelIds         []string `json:"labelIds"`
 	LabelableId      string   `json:"labelableId"`
+	LabelIds         []string `json:"labelIds"`
+	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 }
 
 type RemoveOutsideCollaboratorInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	OrganizationId   string  `json:"organizationId"`
 	UserId           string  `json:"userId"`
+	OrganizationId   string  `json:"organizationId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveReactionInput struct {
-	ClientMutationId *string         `json:"clientMutationId,omitempty"`
-	Content          ReactionContent `json:"content"`
 	SubjectId        string          `json:"subjectId"`
+	Content          ReactionContent `json:"content"`
+	ClientMutationId *string         `json:"clientMutationId,omitempty"`
 }
 
 type RemoveStarInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	StarrableId      string  `json:"starrableId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RemoveUpvoteInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	SubjectId        string  `json:"subjectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ReopenDiscussionInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	DiscussionId     string  `json:"discussionId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ReopenIssueInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	IssueId          string  `json:"issueId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type ReopenPullRequestInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
+}
+
+type RepositoryIdConditionTargetInput struct {
+	RepositoryIds []string `json:"repositoryIds"`
 }
 
 type RepositoryInvitationOrder struct {
-	Direction OrderDirection                 `json:"direction"`
 	Field     RepositoryInvitationOrderField `json:"field"`
+	Direction OrderDirection                 `json:"direction"`
 }
 
 type RepositoryMigrationOrder struct {
-	Direction RepositoryMigrationOrderDirection `json:"direction"`
 	Field     RepositoryMigrationOrderField     `json:"field"`
+	Direction RepositoryMigrationOrderDirection `json:"direction"`
 }
 
 type RepositoryNameConditionTargetInput struct {
@@ -3486,27 +3457,35 @@ type RepositoryNameConditionTargetInput struct {
 }
 
 type RepositoryOrder struct {
-	Direction OrderDirection       `json:"direction"`
 	Field     RepositoryOrderField `json:"field"`
+	Direction OrderDirection       `json:"direction"`
 }
 
 type RepositoryRuleConditionsInput struct {
 	RefName        *RefNameConditionTargetInput        `json:"refName,omitempty"`
 	RepositoryName *RepositoryNameConditionTargetInput `json:"repositoryName,omitempty"`
+	RepositoryId   *RepositoryIdConditionTargetInput   `json:"repositoryId,omitempty"`
 }
 
 type RepositoryRuleInput struct {
 	Id         *string              `json:"id,omitempty"`
-	Parameters *RuleParametersInput `json:"parameters,omitempty"`
 	Type       RepositoryRuleType   `json:"type"`
+	Parameters *RuleParametersInput `json:"parameters,omitempty"`
+}
+
+type RepositoryRulesetBypassActorInput struct {
+	ActorId                  *string                                `json:"actorId,omitempty"`
+	RepositoryRoleDatabaseId *int                                   `json:"repositoryRoleDatabaseId,omitempty"`
+	OrganizationAdmin        *bool                                  `json:"organizationAdmin,omitempty"`
+	BypassMode               RepositoryRulesetBypassActorBypassMode `json:"bypassMode"`
 }
 
 type RequestReviewsInput struct {
-	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 	PullRequestId    string    `json:"pullRequestId"`
+	UserIds          *[]string `json:"userIds,omitempty"`
 	TeamIds          *[]string `json:"teamIds,omitempty"`
 	Union            *bool     `json:"union,omitempty"`
-	UserIds          *[]string `json:"userIds,omitempty"`
+	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 }
 
 type RequiredDeploymentsParametersInput struct {
@@ -3514,8 +3493,8 @@ type RequiredDeploymentsParametersInput struct {
 }
 
 type RequiredStatusCheckInput struct {
-	AppId   *string `json:"appId,omitempty"`
 	Context string  `json:"context"`
+	AppId   *string `json:"appId,omitempty"`
 }
 
 type RequiredStatusChecksParametersInput struct {
@@ -3524,57 +3503,57 @@ type RequiredStatusChecksParametersInput struct {
 }
 
 type RerequestCheckSuiteInput struct {
+	RepositoryId     string  `json:"repositoryId"`
 	CheckSuiteId     string  `json:"checkSuiteId"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	RepositoryId     string  `json:"repositoryId"`
 }
 
 type ResolveReviewThreadInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ThreadId         string  `json:"threadId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RetireSponsorsTierInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	TierId           string  `json:"tierId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RevertPullRequestInput struct {
-	Body             *string `json:"body,omitempty"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Draft            *bool   `json:"draft,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
 	Title            *string `json:"title,omitempty"`
+	Body             *string `json:"body,omitempty"`
+	Draft            *bool   `json:"draft,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RevokeEnterpriseOrganizationsMigratorRoleInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
 	Login            string  `json:"login"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type RevokeMigratorRoleInput struct {
+	OrganizationId   string    `json:"organizationId"`
 	Actor            string    `json:"actor"`
 	ActorType        ActorType `json:"actorType"`
 	ClientMutationId *string   `json:"clientMutationId,omitempty"`
-	OrganizationId   string    `json:"organizationId"`
 }
 
 type RuleParametersInput struct {
-	BranchNamePattern        *BranchNamePatternParametersInput        `json:"branchNamePattern,omitempty"`
-	CommitAuthorEmailPattern *CommitAuthorEmailPatternParametersInput `json:"commitAuthorEmailPattern,omitempty"`
-	CommitMessagePattern     *CommitMessagePatternParametersInput     `json:"commitMessagePattern,omitempty"`
-	CommitterEmailPattern    *CommitterEmailPatternParametersInput    `json:"committerEmailPattern,omitempty"`
-	PullRequest              *PullRequestParametersInput              `json:"pullRequest,omitempty"`
-	RequiredDeployments      *RequiredDeploymentsParametersInput      `json:"requiredDeployments,omitempty"`
-	RequiredStatusChecks     *RequiredStatusChecksParametersInput     `json:"requiredStatusChecks,omitempty"`
-	TagNamePattern           *TagNamePatternParametersInput           `json:"tagNamePattern,omitempty"`
 	Update                   *UpdateParametersInput                   `json:"update,omitempty"`
+	RequiredDeployments      *RequiredDeploymentsParametersInput      `json:"requiredDeployments,omitempty"`
+	PullRequest              *PullRequestParametersInput              `json:"pullRequest,omitempty"`
+	RequiredStatusChecks     *RequiredStatusChecksParametersInput     `json:"requiredStatusChecks,omitempty"`
+	CommitMessagePattern     *CommitMessagePatternParametersInput     `json:"commitMessagePattern,omitempty"`
+	CommitAuthorEmailPattern *CommitAuthorEmailPatternParametersInput `json:"commitAuthorEmailPattern,omitempty"`
+	CommitterEmailPattern    *CommitterEmailPatternParametersInput    `json:"committerEmailPattern,omitempty"`
+	BranchNamePattern        *BranchNamePatternParametersInput        `json:"branchNamePattern,omitempty"`
+	TagNamePattern           *TagNamePatternParametersInput           `json:"tagNamePattern,omitempty"`
 }
 
 type SavedReplyOrder struct {
-	Direction OrderDirection       `json:"direction"`
 	Field     SavedReplyOrderField `json:"field"`
+	Direction OrderDirection       `json:"direction"`
 }
 
 type SecurityAdvisoryIdentifierFilter struct {
@@ -3583,103 +3562,103 @@ type SecurityAdvisoryIdentifierFilter struct {
 }
 
 type SecurityAdvisoryOrder struct {
-	Direction OrderDirection             `json:"direction"`
 	Field     SecurityAdvisoryOrderField `json:"field"`
+	Direction OrderDirection             `json:"direction"`
 }
 
 type SecurityVulnerabilityOrder struct {
-	Direction OrderDirection                  `json:"direction"`
 	Field     SecurityVulnerabilityOrderField `json:"field"`
+	Direction OrderDirection                  `json:"direction"`
 }
 
 type SetEnterpriseIdentityProviderInput struct {
-	ClientMutationId *string                `json:"clientMutationId,omitempty"`
-	DigestMethod     SamlDigestAlgorithm    `json:"digestMethod"`
 	EnterpriseId     string                 `json:"enterpriseId"`
-	IdpCertificate   string                 `json:"idpCertificate"`
-	Issuer           *string                `json:"issuer,omitempty"`
-	SignatureMethod  SamlSignatureAlgorithm `json:"signatureMethod"`
 	SsoUrl           string                 `json:"ssoUrl"`
+	Issuer           *string                `json:"issuer,omitempty"`
+	IdpCertificate   string                 `json:"idpCertificate"`
+	SignatureMethod  SamlSignatureAlgorithm `json:"signatureMethod"`
+	DigestMethod     SamlDigestAlgorithm    `json:"digestMethod"`
+	ClientMutationId *string                `json:"clientMutationId,omitempty"`
 }
 
 type SetOrganizationInteractionLimitInput struct {
-	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
-	Expiry           *RepositoryInteractionLimitExpiry `json:"expiry,omitempty"`
-	Limit            RepositoryInteractionLimit        `json:"limit"`
 	OrganizationId   string                            `json:"organizationId"`
+	Limit            RepositoryInteractionLimit        `json:"limit"`
+	Expiry           *RepositoryInteractionLimitExpiry `json:"expiry,omitempty"`
+	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
 }
 
 type SetRepositoryInteractionLimitInput struct {
-	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
-	Expiry           *RepositoryInteractionLimitExpiry `json:"expiry,omitempty"`
-	Limit            RepositoryInteractionLimit        `json:"limit"`
 	RepositoryId     string                            `json:"repositoryId"`
+	Limit            RepositoryInteractionLimit        `json:"limit"`
+	Expiry           *RepositoryInteractionLimitExpiry `json:"expiry,omitempty"`
+	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
 }
 
 type SetUserInteractionLimitInput struct {
-	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
-	Expiry           *RepositoryInteractionLimitExpiry `json:"expiry,omitempty"`
-	Limit            RepositoryInteractionLimit        `json:"limit"`
 	UserId           string                            `json:"userId"`
+	Limit            RepositoryInteractionLimit        `json:"limit"`
+	Expiry           *RepositoryInteractionLimitExpiry `json:"expiry,omitempty"`
+	ClientMutationId *string                           `json:"clientMutationId,omitempty"`
 }
 
 type SponsorOrder struct {
-	Direction OrderDirection    `json:"direction"`
 	Field     SponsorOrderField `json:"field"`
+	Direction OrderDirection    `json:"direction"`
 }
 
 type SponsorableOrder struct {
-	Direction OrderDirection        `json:"direction"`
 	Field     SponsorableOrderField `json:"field"`
+	Direction OrderDirection        `json:"direction"`
 }
 
 type SponsorsActivityOrder struct {
-	Direction OrderDirection             `json:"direction"`
 	Field     SponsorsActivityOrderField `json:"field"`
+	Direction OrderDirection             `json:"direction"`
 }
 
 type SponsorsTierOrder struct {
-	Direction OrderDirection         `json:"direction"`
 	Field     SponsorsTierOrderField `json:"field"`
+	Direction OrderDirection         `json:"direction"`
 }
 
 type SponsorshipNewsletterOrder struct {
-	Direction OrderDirection                  `json:"direction"`
 	Field     SponsorshipNewsletterOrderField `json:"field"`
+	Direction OrderDirection                  `json:"direction"`
 }
 
 type SponsorshipOrder struct {
-	Direction OrderDirection        `json:"direction"`
 	Field     SponsorshipOrderField `json:"field"`
+	Direction OrderDirection        `json:"direction"`
 }
 
 type StarOrder struct {
-	Direction OrderDirection `json:"direction"`
 	Field     StarOrderField `json:"field"`
+	Direction OrderDirection `json:"direction"`
 }
 
 type StartOrganizationMigrationInput struct {
-	ClientMutationId   *string `json:"clientMutationId,omitempty"`
-	SourceAccessToken  string  `json:"sourceAccessToken"`
 	SourceOrgUrl       string  `json:"sourceOrgUrl"`
-	TargetEnterpriseId string  `json:"targetEnterpriseId"`
 	TargetOrgName      string  `json:"targetOrgName"`
+	TargetEnterpriseId string  `json:"targetEnterpriseId"`
+	SourceAccessToken  string  `json:"sourceAccessToken"`
+	ClientMutationId   *string `json:"clientMutationId,omitempty"`
 }
 
 type StartRepositoryMigrationInput struct {
-	AccessToken          *string `json:"accessToken,omitempty"`
-	ClientMutationId     *string `json:"clientMutationId,omitempty"`
+	SourceId             string  `json:"sourceId"`
+	OwnerId              string  `json:"ownerId"`
+	SourceRepositoryUrl  *string `json:"sourceRepositoryUrl,omitempty"`
+	RepositoryName       string  `json:"repositoryName"`
 	ContinueOnError      *bool   `json:"continueOnError,omitempty"`
 	GitArchiveUrl        *string `json:"gitArchiveUrl,omitempty"`
-	GithubPat            *string `json:"githubPat,omitempty"`
-	LockSource           *bool   `json:"lockSource,omitempty"`
 	MetadataArchiveUrl   *string `json:"metadataArchiveUrl,omitempty"`
-	OwnerId              string  `json:"ownerId"`
-	RepositoryName       string  `json:"repositoryName"`
+	AccessToken          *string `json:"accessToken,omitempty"`
+	GithubPat            *string `json:"githubPat,omitempty"`
 	SkipReleases         *bool   `json:"skipReleases,omitempty"`
-	SourceId             string  `json:"sourceId"`
-	SourceRepositoryUrl  *string `json:"sourceRepositoryUrl,omitempty"`
 	TargetRepoVisibility *string `json:"targetRepoVisibility,omitempty"`
+	LockSource           *bool   `json:"lockSource,omitempty"`
+	ClientMutationId     *string `json:"clientMutationId,omitempty"`
 }
 
 type StatusCheckConfigurationInput struct {
@@ -3688,11 +3667,11 @@ type StatusCheckConfigurationInput struct {
 }
 
 type SubmitPullRequestReviewInput struct {
-	Body                *string                `json:"body,omitempty"`
-	ClientMutationId    *string                `json:"clientMutationId,omitempty"`
-	Event               PullRequestReviewEvent `json:"event"`
 	PullRequestId       *string                `json:"pullRequestId,omitempty"`
 	PullRequestReviewId *string                `json:"pullRequestReviewId,omitempty"`
+	Event               PullRequestReviewEvent `json:"event"`
+	Body                *string                `json:"body,omitempty"`
+	ClientMutationId    *string                `json:"clientMutationId,omitempty"`
 }
 
 type TagNamePatternParametersInput struct {
@@ -3703,367 +3682,364 @@ type TagNamePatternParametersInput struct {
 }
 
 type TeamDiscussionCommentOrder struct {
-	Direction OrderDirection                  `json:"direction"`
 	Field     TeamDiscussionCommentOrderField `json:"field"`
+	Direction OrderDirection                  `json:"direction"`
 }
 
 type TeamDiscussionOrder struct {
-	Direction OrderDirection           `json:"direction"`
 	Field     TeamDiscussionOrderField `json:"field"`
+	Direction OrderDirection           `json:"direction"`
 }
 
 type TeamMemberOrder struct {
-	Direction OrderDirection       `json:"direction"`
 	Field     TeamMemberOrderField `json:"field"`
+	Direction OrderDirection       `json:"direction"`
 }
 
 type TeamOrder struct {
-	Direction OrderDirection `json:"direction"`
 	Field     TeamOrderField `json:"field"`
+	Direction OrderDirection `json:"direction"`
 }
 
 type TeamRepositoryOrder struct {
-	Direction OrderDirection           `json:"direction"`
 	Field     TeamRepositoryOrderField `json:"field"`
+	Direction OrderDirection           `json:"direction"`
 }
 
 type TransferEnterpriseOrganizationInput struct {
-	ClientMutationId        *string `json:"clientMutationId,omitempty"`
-	DestinationEnterpriseId string  `json:"destinationEnterpriseId"`
 	OrganizationId          string  `json:"organizationId"`
+	DestinationEnterpriseId string  `json:"destinationEnterpriseId"`
+	ClientMutationId        *string `json:"clientMutationId,omitempty"`
 }
 
 type TransferIssueInput struct {
-	ClientMutationId      *string `json:"clientMutationId,omitempty"`
-	CreateLabelsIfMissing *bool   `json:"createLabelsIfMissing,omitempty"`
 	IssueId               string  `json:"issueId"`
 	RepositoryId          string  `json:"repositoryId"`
+	CreateLabelsIfMissing *bool   `json:"createLabelsIfMissing,omitempty"`
+	ClientMutationId      *string `json:"clientMutationId,omitempty"`
 }
 
 type UnarchiveProjectV2ItemInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ItemId           string  `json:"itemId"`
 	ProjectId        string  `json:"projectId"`
+	ItemId           string  `json:"itemId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnarchiveRepositoryInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnfollowOrganizationInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	OrganizationId   string  `json:"organizationId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnfollowUserInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	UserId           string  `json:"userId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnlinkProjectV2FromRepositoryInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
 	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnlinkProjectV2FromTeamInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
 	TeamId           string  `json:"teamId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnlinkRepositoryFromProjectInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ProjectId        string  `json:"projectId"`
 	RepositoryId     string  `json:"repositoryId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnlockLockableInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	LockableId       string  `json:"lockableId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnmarkDiscussionCommentAsAnswerInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnmarkFileAsViewedInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Path             string  `json:"path"`
 	PullRequestId    string  `json:"pullRequestId"`
+	Path             string  `json:"path"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnmarkIssueAsDuplicateInput struct {
+	DuplicateId      string  `json:"duplicateId"`
 	CanonicalId      string  `json:"canonicalId"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	DuplicateId      string  `json:"duplicateId"`
+}
+
+type UnmarkProjectV2AsTemplateInput struct {
+	ProjectId        string  `json:"projectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnminimizeCommentInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	SubjectId        string  `json:"subjectId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnpinIssueInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	IssueId          string  `json:"issueId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UnresolveReviewThreadInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	ThreadId         string  `json:"threadId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateBranchProtectionRuleInput struct {
-	AllowsDeletions                *bool                       `json:"allowsDeletions,omitempty"`
-	AllowsForcePushes              *bool                       `json:"allowsForcePushes,omitempty"`
-	BlocksCreations                *bool                       `json:"blocksCreations,omitempty"`
 	BranchProtectionRuleId         string                      `json:"branchProtectionRuleId"`
-	BypassForcePushActorIds        *[]string                   `json:"bypassForcePushActorIds,omitempty"`
-	BypassPullRequestActorIds      *[]string                   `json:"bypassPullRequestActorIds,omitempty"`
-	ClientMutationId               *string                     `json:"clientMutationId,omitempty"`
-	DismissesStaleReviews          *bool                       `json:"dismissesStaleReviews,omitempty"`
-	IsAdminEnforced                *bool                       `json:"isAdminEnforced,omitempty"`
-	LockAllowsFetchAndMerge        *bool                       `json:"lockAllowsFetchAndMerge,omitempty"`
-	LockBranch                     *bool                       `json:"lockBranch,omitempty"`
 	Pattern                        *string                     `json:"pattern,omitempty"`
-	PushActorIds                   *[]string                   `json:"pushActorIds,omitempty"`
-	RequireLastPushApproval        *bool                       `json:"requireLastPushApproval,omitempty"`
-	RequiredApprovingReviewCount   *int                        `json:"requiredApprovingReviewCount,omitempty"`
-	RequiredDeploymentEnvironments *[]string                   `json:"requiredDeploymentEnvironments,omitempty"`
-	RequiredStatusCheckContexts    *[]string                   `json:"requiredStatusCheckContexts,omitempty"`
-	RequiredStatusChecks           *[]RequiredStatusCheckInput `json:"requiredStatusChecks,omitempty"`
 	RequiresApprovingReviews       *bool                       `json:"requiresApprovingReviews,omitempty"`
-	RequiresCodeOwnerReviews       *bool                       `json:"requiresCodeOwnerReviews,omitempty"`
+	RequiredApprovingReviewCount   *int                        `json:"requiredApprovingReviewCount,omitempty"`
 	RequiresCommitSignatures       *bool                       `json:"requiresCommitSignatures,omitempty"`
-	RequiresConversationResolution *bool                       `json:"requiresConversationResolution,omitempty"`
-	RequiresDeployments            *bool                       `json:"requiresDeployments,omitempty"`
 	RequiresLinearHistory          *bool                       `json:"requiresLinearHistory,omitempty"`
+	BlocksCreations                *bool                       `json:"blocksCreations,omitempty"`
+	AllowsForcePushes              *bool                       `json:"allowsForcePushes,omitempty"`
+	AllowsDeletions                *bool                       `json:"allowsDeletions,omitempty"`
+	IsAdminEnforced                *bool                       `json:"isAdminEnforced,omitempty"`
 	RequiresStatusChecks           *bool                       `json:"requiresStatusChecks,omitempty"`
 	RequiresStrictStatusChecks     *bool                       `json:"requiresStrictStatusChecks,omitempty"`
-	RestrictsPushes                *bool                       `json:"restrictsPushes,omitempty"`
+	RequiresCodeOwnerReviews       *bool                       `json:"requiresCodeOwnerReviews,omitempty"`
+	DismissesStaleReviews          *bool                       `json:"dismissesStaleReviews,omitempty"`
 	RestrictsReviewDismissals      *bool                       `json:"restrictsReviewDismissals,omitempty"`
 	ReviewDismissalActorIds        *[]string                   `json:"reviewDismissalActorIds,omitempty"`
+	BypassPullRequestActorIds      *[]string                   `json:"bypassPullRequestActorIds,omitempty"`
+	BypassForcePushActorIds        *[]string                   `json:"bypassForcePushActorIds,omitempty"`
+	RestrictsPushes                *bool                       `json:"restrictsPushes,omitempty"`
+	PushActorIds                   *[]string                   `json:"pushActorIds,omitempty"`
+	RequiredStatusCheckContexts    *[]string                   `json:"requiredStatusCheckContexts,omitempty"`
+	RequiredStatusChecks           *[]RequiredStatusCheckInput `json:"requiredStatusChecks,omitempty"`
+	RequiresDeployments            *bool                       `json:"requiresDeployments,omitempty"`
+	RequiredDeploymentEnvironments *[]string                   `json:"requiredDeploymentEnvironments,omitempty"`
+	RequiresConversationResolution *bool                       `json:"requiresConversationResolution,omitempty"`
+	RequireLastPushApproval        *bool                       `json:"requireLastPushApproval,omitempty"`
+	LockBranch                     *bool                       `json:"lockBranch,omitempty"`
+	LockAllowsFetchAndMerge        *bool                       `json:"lockAllowsFetchAndMerge,omitempty"`
+	ClientMutationId               *string                     `json:"clientMutationId,omitempty"`
 }
 
 type UpdateCheckRunInput struct {
-	Actions          *[]CheckRunAction            `json:"actions,omitempty"`
+	RepositoryId     string                       `json:"repositoryId"`
 	CheckRunId       string                       `json:"checkRunId"`
-	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
-	CompletedAt      *string                      `json:"completedAt,omitempty"`
-	Conclusion       *CheckConclusionState        `json:"conclusion,omitempty"`
+	Name             *string                      `json:"name,omitempty"`
 	DetailsUrl       *string                      `json:"detailsUrl,omitempty"`
 	ExternalId       *string                      `json:"externalId,omitempty"`
-	Name             *string                      `json:"name,omitempty"`
-	Output           *CheckRunOutput              `json:"output,omitempty"`
-	RepositoryId     string                       `json:"repositoryId"`
-	StartedAt        *string                      `json:"startedAt,omitempty"`
 	Status           *RequestableCheckStatusState `json:"status,omitempty"`
+	StartedAt        *string                      `json:"startedAt,omitempty"`
+	Conclusion       *CheckConclusionState        `json:"conclusion,omitempty"`
+	CompletedAt      *string                      `json:"completedAt,omitempty"`
+	Output           *CheckRunOutput              `json:"output,omitempty"`
+	Actions          *[]CheckRunAction            `json:"actions,omitempty"`
+	ClientMutationId *string                      `json:"clientMutationId,omitempty"`
 }
 
 type UpdateCheckSuitePreferencesInput struct {
+	RepositoryId           string                            `json:"repositoryId"`
 	AutoTriggerPreferences []CheckSuiteAutoTriggerPreference `json:"autoTriggerPreferences"`
 	ClientMutationId       *string                           `json:"clientMutationId,omitempty"`
-	RepositoryId           string                            `json:"repositoryId"`
 }
 
 type UpdateDiscussionCommentInput struct {
+	CommentId        string  `json:"commentId"`
 	Body             string  `json:"body"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	CommentId        string  `json:"commentId"`
 }
 
 type UpdateDiscussionInput struct {
+	DiscussionId     string  `json:"discussionId"`
+	Title            *string `json:"title,omitempty"`
 	Body             *string `json:"body,omitempty"`
 	CategoryId       *string `json:"categoryId,omitempty"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	DiscussionId     string  `json:"discussionId"`
-	Title            *string `json:"title,omitempty"`
 }
 
 type UpdateEnterpriseAdministratorRoleInput struct {
-	ClientMutationId *string                     `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                      `json:"enterpriseId"`
 	Login            string                      `json:"login"`
 	Role             EnterpriseAdministratorRole `json:"role"`
+	ClientMutationId *string                     `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput struct {
-	ClientMutationId *string                                             `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                              `json:"enterpriseId"`
-	PolicyValue      *EnterpriseAllowPrivateRepositoryForkingPolicyValue `json:"policyValue,omitempty"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue               `json:"settingValue"`
+	PolicyValue      *EnterpriseAllowPrivateRepositoryForkingPolicyValue `json:"policyValue,omitempty"`
+	ClientMutationId *string                                             `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseDefaultRepositoryPermissionSettingInput struct {
-	ClientMutationId *string                                           `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                            `json:"enterpriseId"`
 	SettingValue     EnterpriseDefaultRepositoryPermissionSettingValue `json:"settingValue"`
+	ClientMutationId *string                                           `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanCreateRepositoriesSettingInput struct {
-	ClientMutationId                          *string                                             `json:"clientMutationId,omitempty"`
 	EnterpriseId                              string                                              `json:"enterpriseId"`
-	MembersCanCreateInternalRepositories      *bool                                               `json:"membersCanCreateInternalRepositories,omitempty"`
-	MembersCanCreatePrivateRepositories       *bool                                               `json:"membersCanCreatePrivateRepositories,omitempty"`
-	MembersCanCreatePublicRepositories        *bool                                               `json:"membersCanCreatePublicRepositories,omitempty"`
-	MembersCanCreateRepositoriesPolicyEnabled *bool                                               `json:"membersCanCreateRepositoriesPolicyEnabled,omitempty"`
 	SettingValue                              *EnterpriseMembersCanCreateRepositoriesSettingValue `json:"settingValue,omitempty"`
+	MembersCanCreateRepositoriesPolicyEnabled *bool                                               `json:"membersCanCreateRepositoriesPolicyEnabled,omitempty"`
+	MembersCanCreatePublicRepositories        *bool                                               `json:"membersCanCreatePublicRepositories,omitempty"`
+	MembersCanCreatePrivateRepositories       *bool                                               `json:"membersCanCreatePrivateRepositories,omitempty"`
+	MembersCanCreateInternalRepositories      *bool                                               `json:"membersCanCreateInternalRepositories,omitempty"`
+	ClientMutationId                          *string                                             `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanDeleteIssuesSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanMakePurchasesSettingInput struct {
-	ClientMutationId *string                                       `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                        `json:"enterpriseId"`
 	SettingValue     EnterpriseMembersCanMakePurchasesSettingValue `json:"settingValue"`
+	ClientMutationId *string                                       `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseOrganizationProjectsSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseOwnerOrganizationRoleInput struct {
-	ClientMutationId *string            `json:"clientMutationId,omitempty"`
 	EnterpriseId     string             `json:"enterpriseId"`
 	OrganizationId   string             `json:"organizationId"`
 	OrganizationRole RoleInOrganization `json:"organizationRole"`
+	ClientMutationId *string            `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseProfileInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Description      *string `json:"description,omitempty"`
 	EnterpriseId     string  `json:"enterpriseId"`
-	Location         *string `json:"location,omitempty"`
 	Name             *string `json:"name,omitempty"`
+	Description      *string `json:"description,omitempty"`
 	WebsiteUrl       *string `json:"websiteUrl,omitempty"`
+	Location         *string `json:"location,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseRepositoryProjectsSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseTeamDiscussionsSettingInput struct {
-	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                                `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledDisabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                               `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput struct {
-	ClientMutationId *string                       `json:"clientMutationId,omitempty"`
 	EnterpriseId     string                        `json:"enterpriseId"`
 	SettingValue     EnterpriseEnabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                       `json:"clientMutationId,omitempty"`
 }
 
 type UpdateEnvironmentInput struct {
-	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 	EnvironmentId    string    `json:"environmentId"`
-	Reviewers        *[]string `json:"reviewers,omitempty"`
 	WaitTimer        *int      `json:"waitTimer,omitempty"`
+	Reviewers        *[]string `json:"reviewers,omitempty"`
+	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 }
 
 type UpdateIpAllowListEnabledSettingInput struct {
-	ClientMutationId *string                        `json:"clientMutationId,omitempty"`
 	OwnerId          string                         `json:"ownerId"`
 	SettingValue     IpAllowListEnabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                        `json:"clientMutationId,omitempty"`
 }
 
 type UpdateIpAllowListEntryInput struct {
-	AllowListValue     string  `json:"allowListValue"`
-	ClientMutationId   *string `json:"clientMutationId,omitempty"`
 	IpAllowListEntryId string  `json:"ipAllowListEntryId"`
-	IsActive           bool    `json:"isActive"`
+	AllowListValue     string  `json:"allowListValue"`
 	Name               *string `json:"name,omitempty"`
+	IsActive           bool    `json:"isActive"`
+	ClientMutationId   *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateIpAllowListForInstalledAppsEnabledSettingInput struct {
-	ClientMutationId *string                                        `json:"clientMutationId,omitempty"`
 	OwnerId          string                                         `json:"ownerId"`
 	SettingValue     IpAllowListForInstalledAppsEnabledSettingValue `json:"settingValue"`
+	ClientMutationId *string                                        `json:"clientMutationId,omitempty"`
 }
 
 type UpdateIssueCommentInput struct {
+	Id               string  `json:"id"`
 	Body             string  `json:"body"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Id               string  `json:"id"`
 }
 
 type UpdateIssueInput struct {
-	AssigneeIds      *[]string   `json:"assigneeIds,omitempty"`
-	Body             *string     `json:"body,omitempty"`
-	ClientMutationId *string     `json:"clientMutationId,omitempty"`
 	Id               string      `json:"id"`
-	LabelIds         *[]string   `json:"labelIds,omitempty"`
-	MilestoneId      *string     `json:"milestoneId,omitempty"`
-	ProjectIds       *[]string   `json:"projectIds,omitempty"`
-	State            *IssueState `json:"state,omitempty"`
 	Title            *string     `json:"title,omitempty"`
-}
-
-type UpdateLabelInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Color            *string `json:"color,omitempty"`
-	Description      *string `json:"description,omitempty"`
-	Id               string  `json:"id"`
-	Name             *string `json:"name,omitempty"`
+	Body             *string     `json:"body,omitempty"`
+	AssigneeIds      *[]string   `json:"assigneeIds,omitempty"`
+	MilestoneId      *string     `json:"milestoneId,omitempty"`
+	LabelIds         *[]string   `json:"labelIds,omitempty"`
+	State            *IssueState `json:"state,omitempty"`
+	ProjectIds       *[]string   `json:"projectIds,omitempty"`
+	ClientMutationId *string     `json:"clientMutationId,omitempty"`
 }
 
 type UpdateNotificationRestrictionSettingInput struct {
-	ClientMutationId *string                             `json:"clientMutationId,omitempty"`
 	OwnerId          string                              `json:"ownerId"`
 	SettingValue     NotificationRestrictionSettingValue `json:"settingValue"`
+	ClientMutationId *string                             `json:"clientMutationId,omitempty"`
 }
 
 type UpdateOrganizationAllowPrivateRepositoryForkingSettingInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ForkingEnabled   bool    `json:"forkingEnabled"`
 	OrganizationId   string  `json:"organizationId"`
+	ForkingEnabled   bool    `json:"forkingEnabled"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateOrganizationWebCommitSignoffSettingInput struct {
-	ClientMutationId         *string `json:"clientMutationId,omitempty"`
 	OrganizationId           string  `json:"organizationId"`
 	WebCommitSignoffRequired bool    `json:"webCommitSignoffRequired"`
+	ClientMutationId         *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateParametersInput struct {
@@ -4071,207 +4047,196 @@ type UpdateParametersInput struct {
 }
 
 type UpdateProjectCardInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
+	ProjectCardId    string  `json:"projectCardId"`
 	IsArchived       *bool   `json:"isArchived,omitempty"`
 	Note             *string `json:"note,omitempty"`
-	ProjectCardId    string  `json:"projectCardId"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateProjectColumnInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Name             string  `json:"name"`
 	ProjectColumnId  string  `json:"projectColumnId"`
+	Name             string  `json:"name"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateProjectInput struct {
-	Body             *string       `json:"body,omitempty"`
-	ClientMutationId *string       `json:"clientMutationId,omitempty"`
-	Name             *string       `json:"name,omitempty"`
 	ProjectId        string        `json:"projectId"`
-	Public           *bool         `json:"public,omitempty"`
+	Name             *string       `json:"name,omitempty"`
+	Body             *string       `json:"body,omitempty"`
 	State            *ProjectState `json:"state,omitempty"`
+	Public           *bool         `json:"public,omitempty"`
+	ClientMutationId *string       `json:"clientMutationId,omitempty"`
+}
+
+type UpdateProjectV2CollaboratorsInput struct {
+	ProjectId        string                  `json:"projectId"`
+	Collaborators    []ProjectV2Collaborator `json:"collaborators"`
+	ClientMutationId *string                 `json:"clientMutationId,omitempty"`
 }
 
 type UpdateProjectV2DraftIssueInput struct {
-	AssigneeIds      *[]string `json:"assigneeIds,omitempty"`
-	Body             *string   `json:"body,omitempty"`
-	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 	DraftIssueId     string    `json:"draftIssueId"`
 	Title            *string   `json:"title,omitempty"`
+	Body             *string   `json:"body,omitempty"`
+	AssigneeIds      *[]string `json:"assigneeIds,omitempty"`
+	ClientMutationId *string   `json:"clientMutationId,omitempty"`
 }
 
 type UpdateProjectV2Input struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Closed           *bool   `json:"closed,omitempty"`
 	ProjectId        string  `json:"projectId"`
-	Public           *bool   `json:"public,omitempty"`
-	Readme           *string `json:"readme,omitempty"`
-	ShortDescription *string `json:"shortDescription,omitempty"`
 	Title            *string `json:"title,omitempty"`
+	ShortDescription *string `json:"shortDescription,omitempty"`
+	Readme           *string `json:"readme,omitempty"`
+	Closed           *bool   `json:"closed,omitempty"`
+	Public           *bool   `json:"public,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateProjectV2ItemFieldValueInput struct {
-	ClientMutationId *string             `json:"clientMutationId,omitempty"`
-	FieldId          string              `json:"fieldId"`
-	ItemId           string              `json:"itemId"`
 	ProjectId        string              `json:"projectId"`
+	ItemId           string              `json:"itemId"`
+	FieldId          string              `json:"fieldId"`
 	Value            ProjectV2FieldValue `json:"value"`
+	ClientMutationId *string             `json:"clientMutationId,omitempty"`
 }
 
 type UpdateProjectV2ItemPositionInput struct {
+	ProjectId        string  `json:"projectId"`
+	ItemId           string  `json:"itemId"`
 	AfterId          *string `json:"afterId,omitempty"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ItemId           string  `json:"itemId"`
-	ProjectId        string  `json:"projectId"`
 }
 
 type UpdatePullRequestBranchInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	ExpectedHeadOid  *string `json:"expectedHeadOid,omitempty"`
 	PullRequestId    string  `json:"pullRequestId"`
+	ExpectedHeadOid  *string `json:"expectedHeadOid,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdatePullRequestInput struct {
-	AssigneeIds         *[]string               `json:"assigneeIds,omitempty"`
-	BaseRefName         *string                 `json:"baseRefName,omitempty"`
-	Body                *string                 `json:"body,omitempty"`
-	ClientMutationId    *string                 `json:"clientMutationId,omitempty"`
-	LabelIds            *[]string               `json:"labelIds,omitempty"`
-	MaintainerCanModify *bool                   `json:"maintainerCanModify,omitempty"`
-	MilestoneId         *string                 `json:"milestoneId,omitempty"`
-	ProjectIds          *[]string               `json:"projectIds,omitempty"`
 	PullRequestId       string                  `json:"pullRequestId"`
-	State               *PullRequestUpdateState `json:"state,omitempty"`
+	BaseRefName         *string                 `json:"baseRefName,omitempty"`
 	Title               *string                 `json:"title,omitempty"`
+	Body                *string                 `json:"body,omitempty"`
+	State               *PullRequestUpdateState `json:"state,omitempty"`
+	MaintainerCanModify *bool                   `json:"maintainerCanModify,omitempty"`
+	AssigneeIds         *[]string               `json:"assigneeIds,omitempty"`
+	MilestoneId         *string                 `json:"milestoneId,omitempty"`
+	LabelIds            *[]string               `json:"labelIds,omitempty"`
+	ProjectIds          *[]string               `json:"projectIds,omitempty"`
+	ClientMutationId    *string                 `json:"clientMutationId,omitempty"`
 }
 
 type UpdatePullRequestReviewCommentInput struct {
+	PullRequestReviewCommentId string  `json:"pullRequestReviewCommentId"`
 	Body                       string  `json:"body"`
 	ClientMutationId           *string `json:"clientMutationId,omitempty"`
-	PullRequestReviewCommentId string  `json:"pullRequestReviewCommentId"`
 }
 
 type UpdatePullRequestReviewInput struct {
+	PullRequestReviewId string  `json:"pullRequestReviewId"`
 	Body                string  `json:"body"`
 	ClientMutationId    *string `json:"clientMutationId,omitempty"`
-	PullRequestReviewId string  `json:"pullRequestReviewId"`
 }
 
 type UpdateRefInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Force            *bool   `json:"force,omitempty"`
-	Oid              string  `json:"oid"`
 	RefId            string  `json:"refId"`
-}
-
-type UpdateRefsInput struct {
-	ClientMutationId *string     `json:"clientMutationId,omitempty"`
-	RefUpdates       []RefUpdate `json:"refUpdates"`
-	RepositoryId     string      `json:"repositoryId"`
+	Oid              string  `json:"oid"`
+	Force            *bool   `json:"force,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateRepositoryInput struct {
-	ClientMutationId      *string `json:"clientMutationId,omitempty"`
+	RepositoryId          string  `json:"repositoryId"`
+	Name                  *string `json:"name,omitempty"`
 	Description           *string `json:"description,omitempty"`
-	HasDiscussionsEnabled *bool   `json:"hasDiscussionsEnabled,omitempty"`
+	Template              *bool   `json:"template,omitempty"`
+	HomepageUrl           *string `json:"homepageUrl,omitempty"`
+	HasWikiEnabled        *bool   `json:"hasWikiEnabled,omitempty"`
 	HasIssuesEnabled      *bool   `json:"hasIssuesEnabled,omitempty"`
 	HasProjectsEnabled    *bool   `json:"hasProjectsEnabled,omitempty"`
-	HasWikiEnabled        *bool   `json:"hasWikiEnabled,omitempty"`
-	HomepageUrl           *string `json:"homepageUrl,omitempty"`
-	Name                  *string `json:"name,omitempty"`
-	RepositoryId          string  `json:"repositoryId"`
-	Template              *bool   `json:"template,omitempty"`
+	HasDiscussionsEnabled *bool   `json:"hasDiscussionsEnabled,omitempty"`
+	ClientMutationId      *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateRepositoryRulesetInput struct {
-	BypassActorIds      *[]string                      `json:"bypassActorIds,omitempty"`
-	BypassMode          *RuleBypassMode                `json:"bypassMode,omitempty"`
-	ClientMutationId    *string                        `json:"clientMutationId,omitempty"`
-	Conditions          *RepositoryRuleConditionsInput `json:"conditions,omitempty"`
-	Enforcement         *RuleEnforcement               `json:"enforcement,omitempty"`
-	Name                *string                        `json:"name,omitempty"`
-	RepositoryRulesetId string                         `json:"repositoryRulesetId"`
-	Rules               *[]RepositoryRuleInput         `json:"rules,omitempty"`
-	Target              *RepositoryRulesetTarget       `json:"target,omitempty"`
+	RepositoryRulesetId string                               `json:"repositoryRulesetId"`
+	Name                *string                              `json:"name,omitempty"`
+	Target              *RepositoryRulesetTarget             `json:"target,omitempty"`
+	Rules               *[]RepositoryRuleInput               `json:"rules,omitempty"`
+	Conditions          *RepositoryRuleConditionsInput       `json:"conditions,omitempty"`
+	Enforcement         *RuleEnforcement                     `json:"enforcement,omitempty"`
+	BypassActors        *[]RepositoryRulesetBypassActorInput `json:"bypassActors,omitempty"`
+	ClientMutationId    *string                              `json:"clientMutationId,omitempty"`
 }
 
 type UpdateRepositoryWebCommitSignoffSettingInput struct {
-	ClientMutationId         *string `json:"clientMutationId,omitempty"`
 	RepositoryId             string  `json:"repositoryId"`
 	WebCommitSignoffRequired bool    `json:"webCommitSignoffRequired"`
+	ClientMutationId         *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateSponsorshipPreferencesInput struct {
-	ClientMutationId *string             `json:"clientMutationId,omitempty"`
-	PrivacyLevel     *SponsorshipPrivacy `json:"privacyLevel,omitempty"`
-	ReceiveEmails    *bool               `json:"receiveEmails,omitempty"`
 	SponsorId        *string             `json:"sponsorId,omitempty"`
 	SponsorLogin     *string             `json:"sponsorLogin,omitempty"`
 	SponsorableId    *string             `json:"sponsorableId,omitempty"`
 	SponsorableLogin *string             `json:"sponsorableLogin,omitempty"`
+	ReceiveEmails    *bool               `json:"receiveEmails,omitempty"`
+	PrivacyLevel     *SponsorshipPrivacy `json:"privacyLevel,omitempty"`
+	ClientMutationId *string             `json:"clientMutationId,omitempty"`
 }
 
 type UpdateSubscriptionInput struct {
-	ClientMutationId *string           `json:"clientMutationId,omitempty"`
-	State            SubscriptionState `json:"state"`
 	SubscribableId   string            `json:"subscribableId"`
+	State            SubscriptionState `json:"state"`
+	ClientMutationId *string           `json:"clientMutationId,omitempty"`
 }
 
 type UpdateTeamDiscussionCommentInput struct {
+	Id               string  `json:"id"`
 	Body             string  `json:"body"`
 	BodyVersion      *string `json:"bodyVersion,omitempty"`
 	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Id               string  `json:"id"`
 }
 
 type UpdateTeamDiscussionInput struct {
+	Id               string  `json:"id"`
+	Title            *string `json:"title,omitempty"`
 	Body             *string `json:"body,omitempty"`
 	BodyVersion      *string `json:"bodyVersion,omitempty"`
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
-	Id               string  `json:"id"`
 	Pinned           *bool   `json:"pinned,omitempty"`
-	Title            *string `json:"title,omitempty"`
-}
-
-type UpdateTeamReviewAssignmentInput struct {
-	Algorithm             *TeamReviewAssignmentAlgorithm `json:"algorithm,omitempty"`
-	ClientMutationId      *string                        `json:"clientMutationId,omitempty"`
-	Enabled               bool                           `json:"enabled"`
-	ExcludedTeamMemberIds *[]string                      `json:"excludedTeamMemberIds,omitempty"`
-	Id                    string                         `json:"id"`
-	NotifyTeam            *bool                          `json:"notifyTeam,omitempty"`
-	TeamMemberCount       *int                           `json:"teamMemberCount,omitempty"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type UpdateTeamsRepositoryInput struct {
-	ClientMutationId *string              `json:"clientMutationId,omitempty"`
-	Permission       RepositoryPermission `json:"permission"`
 	RepositoryId     string               `json:"repositoryId"`
 	TeamIds          []string             `json:"teamIds"`
+	Permission       RepositoryPermission `json:"permission"`
+	ClientMutationId *string              `json:"clientMutationId,omitempty"`
 }
 
 type UpdateTopicsInput struct {
-	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 	RepositoryId     string   `json:"repositoryId"`
 	TopicNames       []string `json:"topicNames"`
+	ClientMutationId *string  `json:"clientMutationId,omitempty"`
 }
 
 type UserStatusOrder struct {
-	Direction OrderDirection       `json:"direction"`
 	Field     UserStatusOrderField `json:"field"`
+	Direction OrderDirection       `json:"direction"`
 }
 
 type VerifiableDomainOrder struct {
-	Direction OrderDirection             `json:"direction"`
 	Field     VerifiableDomainOrderField `json:"field"`
+	Direction OrderDirection             `json:"direction"`
 }
 
 type VerifyVerifiableDomainInput struct {
-	ClientMutationId *string `json:"clientMutationId,omitempty"`
 	Id               string  `json:"id"`
+	ClientMutationId *string `json:"clientMutationId,omitempty"`
 }
 
 type WorkflowRunOrder struct {
-	Direction OrderDirection        `json:"direction"`
 	Field     WorkflowRunOrderField `json:"field"`
+	Direction OrderDirection        `json:"direction"`
 }

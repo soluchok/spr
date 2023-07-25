@@ -17,7 +17,23 @@ query PullRequests(
 				repository {
 					id
 				}
-				commits(first:100) {
+				mergeQueueEntry {
+          pullRequest {
+            commits(first:100) {
+					    nodes {
+						    commit {
+							    oid
+							    messageHeadline
+							    messageBody
+							    statusCheckRollup {
+								    state
+							    }
+						    }
+					    }
+				    }
+          }
+        }
+        commits(first:100) {
 					nodes {
 						commit {
 							oid

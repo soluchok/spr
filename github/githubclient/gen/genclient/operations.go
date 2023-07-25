@@ -18,20 +18,48 @@ type PullRequestsViewerPullRequests struct {
 }
 
 type PullRequestsViewerPullRequestsNodes []*struct {
-	Id             string
-	Number         int
-	Title          string
-	Body           string
-	BaseRefName    string
-	HeadRefName    string
-	Mergeable      MergeableState
-	ReviewDecision *PullRequestReviewDecision
-	Repository     PullRequestsViewerPullRequestsNodesRepository
-	Commits        PullRequestsViewerPullRequestsNodesCommits
+	Id              string
+	Number          int
+	Title           string
+	Body            string
+	BaseRefName     string
+	HeadRefName     string
+	Mergeable       MergeableState
+	ReviewDecision  *PullRequestReviewDecision
+	Repository      PullRequestsViewerPullRequestsNodesRepository
+	MergeQueueEntry *PullRequestsViewerPullRequestsNodesMergeQueueEntry
+	Commits         PullRequestsViewerPullRequestsNodesCommits
 }
 
 type PullRequestsViewerPullRequestsNodesRepository struct {
 	Id string
+}
+
+type PullRequestsViewerPullRequestsNodesMergeQueueEntry struct {
+	PullRequest *PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequest
+}
+
+type PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequest struct {
+	Commits PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommits
+}
+
+type PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommits struct {
+	Nodes *PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommitsNodes
+}
+
+type PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommitsNodes []*struct {
+	Commit PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommitsNodesCommit
+}
+
+type PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommitsNodesCommit struct {
+	Oid               string
+	MessageHeadline   string
+	MessageBody       string
+	StatusCheckRollup *PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommitsNodesCommitStatusCheckRollup
+}
+
+type PullRequestsViewerPullRequestsNodesMergeQueueEntryPullRequestCommitsNodesCommitStatusCheckRollup struct {
+	State StatusState
 }
 
 type PullRequestsViewerPullRequestsNodesCommits struct {
@@ -85,6 +113,22 @@ func (c *gqlclient) PullRequests(ctx context.Context,
 					reviewDecision
 					repository {
 						id
+					}
+					mergeQueueEntry {
+						pullRequest {
+							commits(first: 100) {
+								nodes {
+									commit {
+										oid
+										messageHeadline
+										messageBody
+										statusCheckRollup {
+											state
+										}
+									}
+								}
+							}
+						}
 					}
 					commits(first: 100) {
 						nodes {
@@ -161,7 +205,7 @@ type AssignableUsersResponse struct {
 	Repository *AssignableUsersRepository
 }
 
-// AssignableUsers from github/githubclient/queries.graphql:40
+// AssignableUsers from github/githubclient/queries.graphql:56
 func (c *gqlclient) AssignableUsers(ctx context.Context,
 	repoOwner string,
 	repoName string,
@@ -230,7 +274,7 @@ type CreatePullRequestResponse struct {
 	CreatePullRequest *CreatePullRequestCreatePullRequest
 }
 
-// CreatePullRequest from github/githubclient/queries.graphql:60
+// CreatePullRequest from github/githubclient/queries.graphql:76
 func (c *gqlclient) CreatePullRequest(ctx context.Context,
 	input CreatePullRequestInput,
 ) (*CreatePullRequestResponse, error) {
@@ -287,7 +331,7 @@ type UpdatePullRequestResponse struct {
 	UpdatePullRequest *UpdatePullRequestUpdatePullRequest
 }
 
-// UpdatePullRequest from github/githubclient/queries.graphql:73
+// UpdatePullRequest from github/githubclient/queries.graphql:89
 func (c *gqlclient) UpdatePullRequest(ctx context.Context,
 	input UpdatePullRequestInput,
 ) (*UpdatePullRequestResponse, error) {
@@ -343,7 +387,7 @@ type AddReviewersResponse struct {
 	RequestReviews *AddReviewersRequestReviews
 }
 
-// AddReviewers from github/githubclient/queries.graphql:85
+// AddReviewers from github/githubclient/queries.graphql:101
 func (c *gqlclient) AddReviewers(ctx context.Context,
 	input RequestReviewsInput,
 ) (*AddReviewersResponse, error) {
@@ -395,7 +439,7 @@ type CommentPullRequestResponse struct {
 	AddComment *CommentPullRequestAddComment
 }
 
-// CommentPullRequest from github/githubclient/queries.graphql:97
+// CommentPullRequest from github/githubclient/queries.graphql:113
 func (c *gqlclient) CommentPullRequest(ctx context.Context,
 	input AddCommentInput,
 ) (*CommentPullRequestResponse, error) {
@@ -449,7 +493,7 @@ type MergePullRequestResponse struct {
 	MergePullRequest *MergePullRequestMergePullRequest
 }
 
-// MergePullRequest from github/githubclient/queries.graphql:107
+// MergePullRequest from github/githubclient/queries.graphql:123
 func (c *gqlclient) MergePullRequest(ctx context.Context,
 	input MergePullRequestInput,
 ) (*MergePullRequestResponse, error) {
@@ -505,7 +549,7 @@ type AutoMergePullRequestResponse struct {
 	EnablePullRequestAutoMerge *AutoMergePullRequestEnablePullRequestAutoMerge
 }
 
-// AutoMergePullRequest from github/githubclient/queries.graphql:119
+// AutoMergePullRequest from github/githubclient/queries.graphql:135
 func (c *gqlclient) AutoMergePullRequest(ctx context.Context,
 	input EnablePullRequestAutoMergeInput,
 ) (*AutoMergePullRequestResponse, error) {
@@ -561,7 +605,7 @@ type ClosePullRequestResponse struct {
 	ClosePullRequest *ClosePullRequestClosePullRequest
 }
 
-// ClosePullRequest from github/githubclient/queries.graphql:131
+// ClosePullRequest from github/githubclient/queries.graphql:147
 func (c *gqlclient) ClosePullRequest(ctx context.Context,
 	input ClosePullRequestInput,
 ) (*ClosePullRequestResponse, error) {
@@ -627,7 +671,7 @@ type StarCheckResponse struct {
 	Viewer StarCheckViewer
 }
 
-// StarCheck from github/githubclient/queries.graphql:143
+// StarCheck from github/githubclient/queries.graphql:159
 func (c *gqlclient) StarCheck(ctx context.Context,
 	after *string,
 ) (*StarCheckResponse, error) {
@@ -685,7 +729,7 @@ type StarGetRepoResponse struct {
 	Repository *StarGetRepoRepository
 }
 
-// StarGetRepo from github/githubclient/queries.graphql:159
+// StarGetRepo from github/githubclient/queries.graphql:175
 func (c *gqlclient) StarGetRepo(ctx context.Context,
 	owner string,
 	name string,
@@ -737,7 +781,7 @@ type StarAddResponse struct {
 	AddStar *StarAddAddStar
 }
 
-// StarAdd from github/githubclient/queries.graphql:168
+// StarAdd from github/githubclient/queries.graphql:184
 func (c *gqlclient) StarAdd(ctx context.Context,
 	input AddStarInput,
 ) (*StarAddResponse, error) {

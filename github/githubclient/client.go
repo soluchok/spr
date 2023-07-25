@@ -218,6 +218,28 @@ func matchPullRequestStack(
 	// pullRequestMap is a map from commit-id to pull request
 	pullRequestMap := make(map[string]*github.PullRequest)
 	for _, node := range *allPullRequests.Nodes {
+
+		var commits []git.Commit
+		for _, v := range *node.Commits.Nodes {
+			var cID string
+			for _, line := range strings.Split(v.Commit.MessageBody, "\n") {
+				if strings.HasPrefix(line, "commit-id:") {
+					cID = strings.Split(line, ":")[1]
+				}
+			}
+
+			if len(cID) == 0 {
+				continue
+			}
+
+			commits = append(commits, git.Commit{
+				CommitID:   cID,
+				CommitHash: v.Commit.Oid,
+				Subject:    v.Commit.MessageHeadline,
+				Body:       v.Commit.MessageBody,
+			})
+		}
+
 		pullRequest := &github.PullRequest{
 			ID:         node.Id,
 			Number:     node.Number,
@@ -225,11 +247,13 @@ func matchPullRequestStack(
 			Body:       node.Body,
 			FromBranch: node.HeadRefName,
 			ToBranch:   node.BaseRefName,
+			Queued:     commits,
+			InQueue:    node.MergeQueueEntry != nil,
 		}
 
 		matches := git.BranchNameRegex.FindStringSubmatch(node.HeadRefName)
 		if matches != nil {
-			commit := (*node.Commits.Nodes)[0].Commit
+			commit := (*node.Commits.Nodes)[len(*node.Commits.Nodes)-1].Commit
 			pullRequest.Commit = git.Commit{
 				CommitID:   matches[2],
 				CommitHash: commit.Oid,
@@ -394,6 +418,11 @@ func (c *client) CreatePullRequest(ctx context.Context, gitcmd git.GitInterface,
 func formatStackMarkdown(commit git.Commit, stack []*github.PullRequest) string {
 	var buf bytes.Buffer
 	for i := len(stack) - 1; i >= 0; i-- {
+		// fmt.Println(stack, i)
+		// time.Sleep(time.Second)
+		if stack[i] == nil {
+			continue
+		}
 		isCurrent := stack[i].Commit == commit
 		var suffix string
 		if isCurrent {
